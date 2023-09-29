@@ -1,0 +1,3 @@
+<template>
+    Default footer
+</template>
