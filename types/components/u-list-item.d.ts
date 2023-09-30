@@ -1,4 +1,4 @@
-export interface ListItem {
+export interface UListItem {
     as?: string,
     to?: string | object,
     dense?: boolean,
@@ -6,4 +6,7 @@ export interface ListItem {
     title?: string,
     description?: string,
     activeClass?: string,
+    isActive?: boolean,
+    badge?: string,
+    value?: string,
 }

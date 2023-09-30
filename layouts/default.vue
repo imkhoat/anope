@@ -1,5 +1,5 @@
 <template>
-<div class="default-layout">
+<div class="default-layout font-sans">
     <the-default-sidebar></the-default-sidebar>
     <the-default-header></the-default-header>
     <slot/>
