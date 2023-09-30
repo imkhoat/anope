@@ -9,4 +9,5 @@ export interface UListItem {
     isActive?: boolean,
     badge?: string,
     value?: string,
+    collapse?: boolean
 }
