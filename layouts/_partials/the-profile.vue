@@ -6,27 +6,26 @@ const items = [
       src: 'https://avatars.githubusercontent.com/u/739984?v=4'
     }
   }], [{
-    label: 'Edit',
-    icon: 'i-heroicons-pencil-square-20-solid',
-    shortcuts: ['E'],
+    label: 'Workspace miguel',
+    icon: 'i-heroicons-briefcase-20-solid',
+    shortcuts: ['1'],
     click: () => {
       console.log('Edit')
     }
   }, {
-    label: 'Duplicate',
-    icon: 'i-heroicons-document-duplicate-20-solid',
-    shortcuts: ['D'],
+    label: 'Workspace manipute',
+    icon: 'i-heroicons-briefcase-20-solid',
+    shortcuts: ['2'],
     disabled: true
   }], [{
-    label: 'Archive',
-    icon: 'i-heroicons-archive-box-20-solid'
+    label: 'Setting',
+    icon: 'i-heroicons-cog-8-tooth-20-solid'
   }, {
-    label: 'Move',
-    icon: 'i-heroicons-arrow-right-circle-20-solid'
+    label: 'Security',
+    icon: 'i-heroicons-shield-check-20-solid'
   }], [{
-    label: 'Delete',
-    icon: 'i-heroicons-trash-20-solid',
-    shortcuts: ['⌘', 'D']
+    label: 'Logout',
+    icon: 'i-heroicons-arrow-left-circle-20-solid'
   }]
 ]
 </script>
