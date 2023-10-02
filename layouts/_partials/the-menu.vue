@@ -1,10 +1,10 @@
 <template>
-    <u-list :items="menus" v-model="activeMenu" active-class="bg-gray-100 text-primary-900">
+    <u-list :items="menus" v-model="activeMenu" :collapse="collapse" active-class="bg-gray-100 text-primary-900">
         <template v-slot:item="{ item }">
-            <u-list-item v-if="!item?.childs?.length" v-bind="item" :is-active="item?.value === activeMenu"></u-list-item>
+            <u-list-item v-if="!item?.childs?.length" v-bind="item" :collapse="collapse" :is-active="item?.value === activeMenu"></u-list-item>
             <u-accordion v-else :items="[item]">
                 <template #default>
-                    <u-list-item v-bind="item" :is-active="item?.value === activeMenu">
+                    <u-list-item v-bind="item" :collapse="collapse" :is-active="item?.value === activeMenu">
                         <template #action>
                             <u-icon name="i-heroicons-chevron-down" class="h-4 w-4"></u-icon>
                         </template>
@@ -12,7 +12,7 @@
                 </template>
                 <template #item>
                     <div class="pl-4">
-                        <u-list :items="item.childs" v-model="activeMenu" active-class="bg-gray-100 text-primary-900">
+                        <u-list :items="item.childs" :collapse="collapse" v-model="activeMenu" active-class="bg-gray-100 text-primary-900">
                         </u-list>
                     </div>
                 </template>
@@ -34,6 +34,11 @@ interface MenuItem extends UListProps{
     value?: string;
     description?: string
 }
+
+//props
+defineProps<{
+    collapse?: boolean
+}>()
 
 //data
 const activeMenu = ref<string>('DASHBOARD')

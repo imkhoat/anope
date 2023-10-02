@@ -1,9 +1,7 @@
 <template>
     <u-container :ui="containerUI" class="border-b">
         <div class="the-default-header flex flex-row justify-start items-stretch">
-            <div class="md:hidden flex justify-start items-center">
-                <u-button color="gray" variant="ghost" icon="i-heroicons-bars-3" @click="toggleSidebar" />
-            </div>
+            <the-logo class="self-center"></the-logo>
             <div class="flex-grow">
 
             </div>
@@ -16,7 +14,7 @@
     </u-container>
 </template>
 <script lang="ts" setup>
-import { useApplicationStore } from '@/store/application'
+import TheLogo from '@/layouts/_partials/the-logo.vue';
 import TheLocale from '@/layouts/_partials/the-locale.vue';
 import TheProfile from '@/layouts/_partials/the-profile.vue';
 import TheNotification from '@/layouts/_partials/the-notification.vue';
@@ -27,5 +25,4 @@ const containerUI = {
     constrained: ''
 }
 
-const { toggleSidebar } = useApplicationStore()
 </script>

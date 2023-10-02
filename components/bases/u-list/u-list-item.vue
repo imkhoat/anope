@@ -42,7 +42,8 @@ const router = useRouter()
 const props = withDefaults(defineProps<UListItem>(), {
   as: "div",
   activeClass: 'bg-gray-50 text-primary-600',
-  collapse: false
+  collapse: false,
+  dense: true
 });
 
 
@@ -51,12 +52,16 @@ const stateClass = computed(() => {
   return props.isActive ? props.activeClass : ''
 })
 
+const denseClass = computed(() => {
+  return props.dense ? 'min-h-[40px]' : 'min-h-[56px]'
+})
+
 const collapseClass = computed(() => {
   return props.collapse ? 'w-fit': 'w-full'
 })
 
 const uListItemClass = computed(() => {
-  return twJoin(stateClass.value, collapseClass.value)
+  return twJoin(stateClass.value, collapseClass.value, denseClass.value)
 })
 
 // methods
