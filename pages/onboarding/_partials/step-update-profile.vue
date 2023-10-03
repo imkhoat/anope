@@ -11,18 +11,21 @@
             <u-form :state="form" class="flex flex-col gap-y-6">
                 <u-form-group label="Full name">
                     <div class="grid grid-cols-12 gap-x-2">
-                        <u-input v-model="form.fullName.firstName" class="col-span-4" placeholder="Firstname"></u-input>
-                        <u-input v-model="form.fullName.lastName" class="col-span-4" placeholder="Lastname"></u-input>
+                        <u-input size="md" v-model="form.fullName.firstName" class="col-span-4"
+                            placeholder="Firstname"></u-input>
+                        <u-input size="md" v-model="form.fullName.lastName" class="col-span-4"
+                            placeholder="Lastname"></u-input>
                     </div>
                 </u-form-group>
                 <u-form-group label="Email address">
                     <div class="grid grid-cols-12 gap-x-2">
-                        <u-input v-model="form.email" class="col-span-8" placeholder="Email"></u-input>
+                        <u-input size="md" v-model="form.email" class="col-span-8" placeholder="Email"></u-input>
                     </div>
                 </u-form-group>
                 <u-form-group label="Job title">
                     <div class="grid grid-cols-12 gap-x-2">
-                        <u-input v-model="form.jobTitle" class="col-span-12" placeholder="Senior house kepper"></u-input>
+                        <u-input size="md" v-model="form.jobTitle" class="col-span-12"
+                            placeholder="Senior house kepper"></u-input>
                     </div>
                 </u-form-group>
                 <u-form-group label="About">
@@ -32,32 +35,36 @@
                 </u-form-group>
                 <u-form-group label="Country">
                     <div class="grid grid-cols-12 gap-x-2">
-                        <u-input v-model="form.country" class="col-span-6" placeholder="Australia"></u-input>
+                        <u-input size="md" v-model="form.country" class="col-span-6" placeholder="Australia"></u-input>
                     </div>
                 </u-form-group>
                 <u-form-group label="Address">
                     <div class="grid grid-cols-12 grid-rows-2 gap-2">
-                        <u-input v-model="form.jobTitle" class="col-span-12" placeholder="Street address"></u-input>
-                        <u-input v-model="form.jobTitle" class="col-span-4" placeholder="Tower/City"></u-input>
-                        <u-input v-model="form.jobTitle" class="col-span-4" placeholder="State/Provide"></u-input>
-                        <u-input v-model="form.jobTitle" class="col-span-4" placeholder="ZIP/Postal code"></u-input>
+                        <u-input size="md" v-model="form.jobTitle" class="col-span-12"
+                            placeholder="Street address"></u-input>
+                        <u-input size="md" v-model="form.jobTitle" class="col-span-4" placeholder="Tower/City"></u-input>
+                        <u-input size="md" v-model="form.jobTitle" class="col-span-4" placeholder="State/Provide"></u-input>
+                        <u-input size="md" v-model="form.jobTitle" class="col-span-4"
+                            placeholder="ZIP/Postal code"></u-input>
                     </div>
                 </u-form-group>
                 <u-form-group label="Phone">
                     <div class="grid grid-cols-12 grid-rows-2 gap-2">
-                        <u-input v-model="form.phone" class="col-span-8" placeholder="+1 000-000-000"></u-input>
-                        <u-input v-model="form.phone" class="col-span-8" placeholder="+1 000-000-000"></u-input>
+                        <u-input size="md" v-model="form.phone" class="col-span-8" placeholder="+1 000-000-000"></u-input>
+                        <u-input size="md" v-model="form.phone" class="col-span-8" placeholder="+1 000-000-000"></u-input>
                     </div>
                 </u-form-group>
                 <u-form-group label="Second email">
                     <div class="grid grid-cols-12 gap-x-2">
-                        <u-input v-model="form.email2" class="col-span-8" placeholder="Senior house kepper"></u-input>
+                        <u-input size="md" v-model="form.email2" class="col-span-8"
+                            placeholder="Senior house kepper"></u-input>
                     </div>
                 </u-form-group>
             </u-form>
             <template #footer>
                 <div class="flex flex-row justify-end items-center gap-x-2">
-                    <u-button color="gray" variant="ghost">Prev</u-button> <u-button>Next</u-button>
+                    <u-button size="md" color="gray" variant="soft" class="px-6">Back</u-button> <u-button size="md">Save
+                        and Next Step</u-button>
                 </div>
             </template>
         </u-card>

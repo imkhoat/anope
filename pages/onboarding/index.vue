@@ -5,7 +5,7 @@
             <step-enter-business-information v-else-if="activeStep === 'STEP_02'"></step-enter-business-information>
         </div>
         <div class="right-side min-h-full bg-white col-span-3 -my-4 -mr-4 flex flex-col justify-between items-stretch">
-            <onboarding-stepper/>
+            <onboarding-stepper />
             <support-card></support-card>
         </div>
     </div>

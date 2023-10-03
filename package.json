@@ -9,10 +9,13 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "storybook": "storybook dev --port 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "lint:fix": "yarn lint --fix"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/storybook": "7.0.0",
     "@storybook-vue/nuxt": "0.1.4",
     "@storybook/addon-essentials": "7.4.4",
@@ -23,13 +26,16 @@
     "@storybook/testing-library": "^0.2.0",
     "@storybook/vue3": "7.4.4",
     "@types/node": "^18.17.5",
+    "eslint": "^8.50.0",
     "nuxt": "^3.7.4",
+    "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "7.4.4"
   },
   "dependencies": {
     "@nuxt/ui": "^2.8.1",
+    "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@pinia/nuxt": "^0.4.11",
     "pinia": "^2.1.6",
     "tailwind-merge": "^1.14.0"
