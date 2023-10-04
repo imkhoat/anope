@@ -1,5 +1,56 @@
 {
     "general": {
-        "Save and Next Step": "Save and Next Step"
+        "button": {
+            "Save and Next Step": "Save and Next Step",
+            "Back": "Back",
+            "Add more email": "Add more email",
+            "Add more phone": "Add more phone"
+        },
+        "form": {
+            "Fullname": "Fullname",
+            "Email address": "Email address",
+            "Firstname": "Firstname",
+            "Lastname": "Lastname",
+            "Job title": "Job title",
+            "About": "About",
+            "Country": "Country",
+            "Address": "Address",
+            "Street address": "Street address",
+            "Tower City": "Tower/City",
+            "State Provide": "State/Provide",
+            "ZIP Postal code": "ZIP/Postal code",
+            "Phone": "Phone",
+            "Second email": "Second email",
+            "ABN NZBN": "ABN / NZBN",
+            "Company name": "Company name",
+            "Register business Address": "Register business Address",
+            "Postal Address": "Postal Address",
+            "Company website": "Company website",
+            "Currency": "Currency",
+            "Datetime format": "Datetime format",
+            "This present format base on datetime format": "This present format base on datetime format"
+        }
+    },
+    "onboarding": {
+        "steps": {
+            "Update your profile": "Update your profile",
+            "Enter your business information": "Enter your business information",
+            "Enter your property information": "Enter your property information",
+            "Setup your hourses": "Setup your hourses",
+            "Intergrate your Account System": "Intergrate your Account System",
+            "Setup your Product and Service": "Setup your Product and Service",
+            "Setup your Supplier": "Setup your Supplier",
+            "Setup your Contacts Customers": "Setup your Contacts/Customers",
+            "Invite Users": "Invite Users",
+            "Completed": "Completed"
+        },
+        "profile": {
+            "My Profile": "My Profile",
+            "The information we collect as part of your profile": "The information we collect as part of your profile is critical of Anope, platform, imparticula task notification and automatic logment"
+        },
+        "business": {
+            "My Business Information": "My Business Information",
+            "The information we collect about your business" : "The information we collect about your business to facilitate automated lodgerment"
+        }
     }
 }
