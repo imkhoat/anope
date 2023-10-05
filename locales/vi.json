@@ -29,6 +29,11 @@
             "Currency": "Tiền tệ",
             "Datetime format": "Định dạng ngày giờ",
             "This present format base on datetime format": "Định dạng hiện tại dựa trên định dạng ngày giờ"
+        },
+        "text": {
+            "Success": "Thành công",
+            "Language changed": "Ngôn ngữ đã thay đổi",
+            "You have changed language to": "Bạn vừa thay đổi ngôn ngữ sang Tiếng Việt"
         }
     },
     "onboarding": {
