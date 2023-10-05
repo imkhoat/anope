@@ -1,7 +1,10 @@
 <script lang="ts" setup>
-const { locale, locales } = useI18n()
+import { DropdownItem } from '@nuxt/ui/dist/runtime/types/dropdown';
 
-const localeOptions = computed(() => {
+const toast = useToast()
+const { locale, locales, t } = useI18n()
+
+const localeOptions = computed<DropdownItem[][]>(() => {
     return [locales.value.map(item => {
         const avatar = item.code === 'vi' ? {
             src: 'https://cdn-icons-png.flaticon.com/128/197/197473.png'
@@ -13,11 +16,16 @@ const localeOptions = computed(() => {
             label: item.name,
             click: () => {
                 locale.value = item.code
+                toast.add({
+                    title: t('general.text.Success'),
+                    description: t('general.text.You have changed language to'),
+                    icon: 'i-heroicons-check-badge'
+                })
             },
             avatar,
             icon: locale.value === item.code ? 'i-heroicons-check-circle-20-solid' : null
         }
-    })]
+    })] as DropdownItem[][]
 })
 
 </script>

@@ -29,6 +29,11 @@
             "Currency": "Currency",
             "Datetime format": "Datetime format",
             "This present format base on datetime format": "This present format base on datetime format"
+        },
+        "text": {
+            "Success": "Success",
+            "Language changed": "Language changed",
+            "You have changed language to": "You have changed language to English"
         }
     },
     "onboarding": {
