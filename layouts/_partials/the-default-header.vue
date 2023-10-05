@@ -4,8 +4,8 @@
             <div class="md:hidden flex justify-start items-center">
                 <u-button color="gray" variant="ghost" icon="i-heroicons-bars-3" @click="toggleSidebar" />
             </div>
-            <div class="flex-grow">
-                <the-extra-search class="w-1/2"></the-extra-search>
+            <div class="flex-grow flex justify-start items-center">
+                <the-extra-search class="w-full md:w-1/2"></the-extra-search>
             </div>
             <div class="flex flex-row justify-end items-center gap-x-1">
                 <the-notification></the-notification>
