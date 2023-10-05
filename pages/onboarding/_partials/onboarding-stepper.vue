@@ -1,8 +1,5 @@
 <template>
-    <u-card :ui="{
-        ring: '',
-        shadow: ''
-    }">
+    <u-card :ui="cardUI">
         <u-step :items="steps" v-model="activeStep" @next="emits('next')" @prev="emits('prev')" />
     </u-card>
 </template>
@@ -17,6 +14,11 @@ const { activeStep, steps } = inject<{
     steps: object[] | undefined
 }>(onboardingInjectionKey, { activeStep: '', steps: [] })
 
+//setup
+const cardUI = {
+    ring: '',
+    shadow: ''
+}
 // props & emits
 const emits = defineEmits<{
     (event: 'next'): () => void,

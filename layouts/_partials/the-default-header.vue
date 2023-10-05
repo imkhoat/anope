@@ -5,7 +5,7 @@
                 <u-button color="gray" variant="ghost" icon="i-heroicons-bars-3" @click="toggleSidebar" />
             </div>
             <div class="flex-grow">
-
+                <the-extra-search class="w-1/2"></the-extra-search>
             </div>
             <div class="flex flex-row justify-end items-center gap-x-1">
                 <the-notification></the-notification>
@@ -20,7 +20,7 @@ import { useApplicationStore } from '@/store/application'
 import TheLocale from '@/layouts/_partials/the-locale.vue';
 import TheProfile from '@/layouts/_partials/the-profile.vue';
 import TheNotification from '@/layouts/_partials/the-notification.vue';
-
+import TheExtraSearch from '@/layouts/_partials/the-extra-search.vue';
 const containerUI = {
     base: '',
     padding: "p-2 sm:px-4 lg:px-4",
