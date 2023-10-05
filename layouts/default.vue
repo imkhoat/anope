@@ -1,13 +1,15 @@
 <template>
-    <div class="default-layout font-sans flex flex-row justify-start items-stretch w-screen h-screen">
+    <div class="default-layout font-sans flex flex-row justify-start items-stretch w-screen h-screen max-h-screen">
         <the-default-sidebar></the-default-sidebar>
-        <div class="flex-grow flex flex-col justify-start items-stretch">
+        <div class="flex-grow flex flex-col justify-start items-stretch max-h-screen">
             <the-default-header></the-default-header>
-            <u-container :ui="containerUI" class="flex-grow bg-gray-50">
-                <div class="w-full h-full">
-                    <slot />
-                </div>
-            </u-container>
+            <div class="flex-grow overflow-y-auto bg-gray-50">
+                <u-container :ui="containerUI" class="w-full h-full">
+                    <div class="w-full h-full">
+                        <slot />
+                    </div>
+                </u-container>
+            </div>
             <!-- <the-default-footer></the-default-footer> -->
         </div>
     </div>
