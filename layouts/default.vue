@@ -4,7 +4,7 @@
         <div class="flex-grow flex flex-col justify-start items-stretch max-h-screen">
             <the-default-header></the-default-header>
             <div class="flex-grow overflow-y-auto bg-gray-50">
-                <u-container :ui="containerUI" class="w-full h-full">
+                <u-container :ui="containerUI" class="min-w-full min-h-full">
                     <div class="w-full h-full">
                         <slot />
                     </div>
