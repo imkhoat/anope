@@ -4,7 +4,9 @@
             "Save and Next Step": "Lưu và Bước Tiếp",
             "Back": "Trở lại",
             "Add more email": "Thêm email",
-            "Add more phone": "Thêm số điện thoại"
+            "Add more phone": "Thêm số điện thoại",
+            "Login": "Đăng nhập",
+            "Register": "Đăng ký"
         },
         "form": {
             "Fullname": "Họ và Tên",
@@ -28,7 +30,10 @@
             "Company website": "Trang web công ty",
             "Currency": "Tiền tệ",
             "Datetime format": "Định dạng ngày giờ",
-            "This present format base on datetime format": "Định dạng hiện tại dựa trên định dạng ngày giờ"
+            "This present format base on datetime format": "Định dạng hiện tại dựa trên định dạng ngày giờ",
+            "Email": "Email",
+            "Password": "Mật khẩu",
+            "Confirm password": "Xác nhận mật khẩu"
         },
         "text": {
             "Success": "Thành công",

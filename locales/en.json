@@ -4,7 +4,9 @@
             "Save and Next Step": "Save and Next Step",
             "Back": "Back",
             "Add more email": "Add more email",
-            "Add more phone": "Add more phone"
+            "Add more phone": "Add more phone",
+            "Login": "Login",
+            "Register": "Register"
         },
         "form": {
             "Fullname": "Fullname",
@@ -28,7 +30,10 @@
             "Company website": "Company website",
             "Currency": "Currency",
             "Datetime format": "Datetime format",
-            "This present format base on datetime format": "This present format base on datetime format"
+            "This present format base on datetime format": "This present format base on datetime format",
+            "Email": "Email",
+            "Password": "Password",
+            "Confirm password": "Confirm password"
         },
         "text": {
             "Success": "Success",
