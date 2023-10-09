@@ -4,27 +4,26 @@
         <div class="absolute z-[2] top-0 left-0 p-4 h-full w-full flex flex-col justify-start items-stretch gap-y-3">
             <u-list-item>
                 <div class="flex flex-row justify-start items-stretch gap-x-2">
-                    <u-avatar size="2xl" src="https://avatars.githubusercontent.com/u/739984?v=4"
+                    <u-avatar size="lg" src="https://avatars.githubusercontent.com/u/739984?v=4"
                         class="ring-2 ring-gray-100"></u-avatar>
                     <div class="flex flex-col justify-start items-start">
                         <strong class="text-sm">Bahasmas</strong>
                         <span class="text-xs">Bloodstock Manager</span>
-                        <span class="text-xs opacity-50">bhsmas@gmail.com <span class="opacity-30">|</span> +88 323-111-2321</span>
                     </div>
                 </div>
             </u-list-item>
-            <div class="flex flex-row justify-start items-start gap-x-1 flex-grow">
+            <!-- <div class="flex flex-row justify-start items-start gap-x-1 flex-grow">
                 <u-button variant="soft" square :ui="{ rounded: 'rounded-full' }" color="sky" icon="i-heroicons-chart-bar"></u-button>
                 <u-button variant="soft" square :ui="{ rounded: 'rounded-full' }" color="rose" icon="i-heroicons-bookmark-square"></u-button>
                 <u-button variant="soft" square :ui="{ rounded: 'rounded-full' }" color="emerald" icon="i-heroicons-at-symbol"></u-button>
                 <u-button variant="soft" square :ui="{ rounded: 'rounded-full' }" color="amber" icon="i-heroicons-phone"></u-button>
-            </div>
-            <!-- <div class="flex flex-col justify-start items-stretch gap-y-3 border rounded-md divide-y">
-                <div v-for="(info, index) in infos" :key="index + 'about_info'" class="flex flex-row justify-start items-start text-sm p-2">
-                    <span class="opacity-70 w-2/5">{{ info.title }}</span>
-                    <span>{{ info.description }}</span>
-                </div>
             </div> -->
+            <div class="flex flex-col justify-start items-stretch border rounded-md divide-y bg-white">
+                <div v-for="(info, index) in infos" :key="index + 'about_info'" class="flex flex-col justify-start items-start text-sm leading-0 p-2 py-1">
+                    <span class="opacity-50 text-xs">{{ info.title }}</span>
+                    <span class="text-right">{{ info.description }}</span>
+                </div>
+            </div>
 
             <div class="flex flex-row justify-end items-end">
                 <u-button color="gray" variant="soft" icon="i-heroicons-adjustments-horizontal">
@@ -38,7 +37,6 @@ const cardUI = {
     shadow: '',
 }
 const infos = reactive([
-    { title: 'Title', description: 'Bloodstock Manager' },
     { title: 'Workspace Role', description: 'Admin' },
     { title: 'Email', description: 'bâhsmas@gmail.com' },
     { title: 'Mobile', description: '+88 323-111-2321' }
