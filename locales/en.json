@@ -33,7 +33,8 @@
             "This present format base on datetime format": "This present format base on datetime format",
             "Email": "Email",
             "Password": "Password",
-            "Confirm password": "Confirm password"
+            "Confirm password": "Confirm password",
+            "Workspace": "Workspace"
         },
         "text": {
             "Success": "Success",

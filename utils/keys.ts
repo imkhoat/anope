@@ -5,3 +5,13 @@ export const onboardingInjectionKey = Symbol() as InjectionKey<{
   activeStep: object | string | undefined,
   steps: object[] | undefined
 }>;
+
+export const authRegisterInjectionKey = Symbol() as InjectionKey<{
+  state?: object;
+  form?: object | undefined;
+}>;
+
+export const authLoginInjectionKey = Symbol() as InjectionKey<{
+  state?: object;
+  form?: object | undefined;
+}>;

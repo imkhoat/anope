@@ -1,5 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    hooks: {
+        'pages:extend'(pages) {
+            function removePagesMatching(pattern: RegExp, pages: NuxtPage[] = []) {
+                const pagesToRemove = []
+                for (const page of pages) {
+                    if (pattern.test(page.file)) {
+                        pagesToRemove.push(page)
+                    } else {
+                        removePagesMatching(pattern, page.children)
+                    }
+                }
+                for (const page of pagesToRemove) {
+                    pages.splice(pages.indexOf(page), 1)
+                }
+            }
+            removePagesMatching(/\_partials/, pages)
+        }
+    },
     colorMode: {
         preference: 'light'
     },
@@ -11,7 +29,7 @@ export default defineNuxtConfig({
             },
         },
     },
-    modules: ['@pinia/nuxt', "@nuxt/ui", '@nuxtjs/i18n', "@nuxtjs/storybook"],
+    modules: ['@pinia/nuxt', "@nuxt/ui", '@nuxtjs/i18n', "@nuxtjs/storybook", '@nuxt/image', '@pinia/nuxt', '@nuxtjs/google-fonts'],
     i18n: {
         locales: [
             { code: "vi", name: 'Tiếng Viêt', iso: "vi-VN", file: "vi.json" },
@@ -19,5 +37,10 @@ export default defineNuxtConfig({
         ],
         defaultLocale: "vi",
         langDir: './locales'
+    },
+    googleFonts: {
+        families: {
+            "AR+One+Sans": true
+        }
     }
 });
