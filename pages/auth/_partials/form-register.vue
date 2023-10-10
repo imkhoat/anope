@@ -18,7 +18,9 @@
                 <u-form-group :label="$t('general.form.Password')">
                     <u-input v-model="state.password" size="lg" type="password"></u-input>
                 </u-form-group>
-                
+                <u-form-group :label="$t('general.form.Confirm password')">
+                    <u-input v-model="state.confirmPassword" size="lg" type="password"></u-input>
+                </u-form-group>
             </div>
             <div class="flex flex-col justify-start items-stretch gap-y-2">
                 <u-button size="lg" block>{{ $t(`general.button.Register`)}}</u-button>

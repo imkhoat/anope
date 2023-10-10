@@ -12,15 +12,17 @@
                 <u-form-group :label="$t('general.form.Email')">
                     <u-input v-model="state.email" size="lg"></u-input>
                 </u-form-group>
-                <u-form-group :label="$t('general.form.Password')">
-                    <u-input v-model="state.password" size="lg" type="password"></u-input>
-                </u-form-group>
-                <u-form-group :label="$t('general.form.Confirm password')">
-                    <u-input v-model="state.confirmPassword" size="lg" type="password"></u-input>
+                <u-form-group :label="$t('general.form.Password')" hint="Forgot password?">
+                    <template v-slot:hint="{hint}">
+                        <u-button to="/auth/forgot-password">{{ hint }}</u-button>
+                    </template>
+                    <template #default>
+                        <u-input v-model="state.password" size="lg" type="password"></u-input>
+                    </template>
                 </u-form-group>
             </div>
             <div class="flex flex-col justify-start items-stretch gap-y-2">
-                <u-button size="lg" block>{{ $t(`general.button.Login`)}}</u-button>
+                <u-button size="lg" block>{{ $t(`general.button.Login`) }}</u-button>
                 <div class="flex flex-row justify-between items-stretch gap-x-2 text-center">
                     <u-button size="lg" variant="soft" class="flex-grow text-center justify-center">Google</u-button>
                     <u-button size="lg" variant="soft" class="flex-grow text-center justify-center">Twitter</u-button>
@@ -33,6 +35,6 @@
 import { authLoginInjectionKey } from '@/utils/keys'
 
 const { state } = inject<{
-    state: {[key: string]: string}
+    state: { [key: string]: string }
 }>(authLoginInjectionKey, { state: {} })
 </script>

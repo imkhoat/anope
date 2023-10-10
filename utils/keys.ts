@@ -15,3 +15,13 @@ export const authLoginInjectionKey = Symbol() as InjectionKey<{
   state?: object;
   form?: object | undefined;
 }>;
+
+export const authResetPasswordInjectionKey = Symbol() as InjectionKey<{
+  state?: object;
+  form?: object | undefined;
+}>;
+
+export const authForgotPasswordInjectionKey = Symbol() as InjectionKey<{
+  state?: object;
+  form?: object | undefined;
+}>;
