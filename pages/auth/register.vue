@@ -16,6 +16,7 @@ definePageMeta({
 const state = ref({
   email: undefined,
   password: undefined,
+  confirmPassword: undefined,
   workspace: 'New Australian workspace'
 })
 

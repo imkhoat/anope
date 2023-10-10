@@ -15,8 +15,7 @@ definePageMeta({
 // data
 const state = ref({
   email: undefined,
-  password: undefined,
-  confirmPassword: undefined
+  password: undefined
 })
 
 provide(authLoginInjectionKey, {

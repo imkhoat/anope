@@ -6,7 +6,9 @@
             "Add more email": "Add more email",
             "Add more phone": "Add more phone",
             "Login": "Login",
-            "Register": "Register"
+            "Register": "Register",
+            "Reset": "Reset",
+            "Send": "Send"
         },
         "form": {
             "Fullname": "Fullname",
@@ -34,7 +36,8 @@
             "Email": "Email",
             "Password": "Password",
             "Confirm password": "Confirm password",
-            "Workspace": "Workspace"
+            "Workspace": "Workspace",
+            "New password": "New password"
         },
         "text": {
             "Success": "Success",
