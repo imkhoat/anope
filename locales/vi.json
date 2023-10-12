@@ -1,70 +1,70 @@
 {
     "general": {
         "button": {
-            "Save and Next Step": "Save and Next Step",
-            "Back": "Back",
-            "Add more email": "Add more email",
-            "Add more phone": "Add more phone",
-            "Login": "Login",
-            "Register": "Register",
-            "Reset": "Reset",
-            "Send": "Send"
+            "Save and Next Step": "Lưu và tiếp theo",
+            "Back": "Quay lại",
+            "Add more email": "Thêm email khác",
+            "Add more phone": "Thêm điện thoại khác",
+            "Login": "Đăng nhập",
+            "Register": "Đăng ký",
+            "Reset": "Đặt lại",
+            "Send": "Gửi"
         },
         "form": {
-            "Fullname": "Fullname",
-            "Email address": "Email address",
-            "Firstname": "Firstname",
-            "Lastname": "Lastname",
-            "Job title": "Job title",
-            "About": "About",
-            "Country": "Country",
-            "Address": "Address",
-            "Street address": "Street address",
-            "Tower City": "Tower/City",
-            "State Provide": "State/Provide",
-            "ZIP Postal code": "ZIP/Postal code",
-            "Phone": "Phone",
-            "Second email": "Second email",
-            "ABN NZBN": "ABN / NZBN",
-            "Company name": "Company name",
-            "Register business Address": "Register business Address",
-            "Postal Address": "Postal Address",
-            "Company website": "Company website",
-            "Currency": "Currency",
-            "Datetime format": "Datetime format",
-            "This present format base on datetime format": "This present format base on datetime format",
+            "Fullname": "Họ và tên",
+            "Email address": "Địa chỉ email",
+            "Firstname": "Tên",
+            "Lastname": "Họ",
+            "Job title": "Chức danh công việc",
+            "About": "Giới thiệu bản thân",
+            "Country": "Quốc gia",
+            "Address": "Địa chỉ",
+            "Street address": "Địa chỉ đường phố",
+            "Tower City": "Tòa nhà/Thành phố",
+            "State Provide": "Tiểu bang/Vùng",
+            "ZIP Postal code": "Mã bưu điện",
+            "Phone": "Số điện thoại",
+            "Second email": "Email thứ hai",
+            "ABN NZBN": "ABN/NZBN",
+            "Company name": "Tên công ty",
+            "Register business Address": "Địa chỉ kinh doanh đã đăng ký",
+            "Postal Address": "Địa chỉ bưu điện",
+            "Company website": "Trang web công ty",
+            "Currency": "Đơn vị tiền tệ",
+            "Datetime format": "Định dạng ngày giờ",
+            "This present format base on datetime format": "Định dạng hiện tại dựa trên định dạng ngày giờ",
             "Email": "Email",
-            "Password": "Password",
-            "Confirm password": "Confirm password",
-            "Workspace": "Workspace",
-            "New password": "New password"
+            "Password": "Mật khẩu",
+            "Confirm password": "Xác nhận mật khẩu",
+            "Workspace": "Không gian làm việc",
+            "New password": "Mật khẩu mới"
         },
         "text": {
-            "Success": "Success",
-            "Language changed": "Language changed",
-            "You have changed language to": "You have changed language to English"
+            "Success": "Thành công",
+            "Language changed": "Đã thay đổi ngôn ngữ",
+            "You have changed language to": "Bạn đã thay đổi ngôn ngữ thành"
         }
     },
     "onboarding": {
         "steps": {
-            "Update your profile": "Update your profile",
-            "Enter your business information": "Enter your business information",
-            "Enter your property information": "Enter your property information",
-            "Setup your hourses": "Setup your hourses",
-            "Intergrate your Account System": "Intergrate your Account System",
-            "Setup your Product and Service": "Setup your Product and Service",
-            "Setup your Supplier": "Setup your Supplier",
-            "Setup your Contacts Customers": "Setup your Contacts/Customers",
-            "Invite Users": "Invite Users",
-            "Completed": "Completed"
+            "Update your profile": "Cập nhật hồ sơ của bạn",
+            "Enter your business information": "Nhập thông tin doanh nghiệp của bạn",
+            "Enter your property information": "Nhập thông tin tài sản của bạn",
+            "Setup your hourses": "Thiết lập giờ làm việc của bạn",
+            "Intergrate your Account System": "Tích hợp hệ thống tài khoản của bạn",
+            "Setup your Product and Service": "Thiết lập sản phẩm và dịch vụ của bạn",
+            "Setup your Supplier": "Thiết lập nhà cung cấp của bạn",
+            "Setup your Contacts/Customers": "Thiết lập danh bạ/khách hàng của bạn",
+            "Invite Users": "Mời người dùng",
+            "Completed": "Đã hoàn thành"
         },
         "profile": {
-            "My Profile": "My Profile",
-            "The information we collect as part of your profile": "The information we collect as part of your profile is critical of Anope, platform, imparticula task notification and automatic logment"
-        },
-        "business": {
-            "My Business Information": "My Business Information",
-            "The information we collect about your business" : "The information we collect about your business to facilitate automated lodgerment"
+            "My Profile": "Hồ sơ của tôi",
+            "The information we collect as part of your profile": "Thông tin chúng tôi thu thập như một phần của hồ sơ của bạn rất quan trọng đối với Anope, nền tảng, thông báo nhiệm vụ khách quan và đăng nhập tự động",
+            "business": {
+                "My Business Information": "Thông tin kinh doanh của tôi",
+                "The information we collect about your business": "Thông tin chúng tôi thu thập về doanh nghiệp của bạn để tạo điều kiện đăng ký tự động"
+            }
         }
     }
 }

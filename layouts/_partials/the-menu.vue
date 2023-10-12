@@ -45,20 +45,20 @@ const activeMenu = ref<string>('DASHBOARD')
 
 const menus = reactive<MenuItem[]>([
     { title: "Dashboard", to: "#Dashboard", icon: "i-heroicons-academic-cap", badge: "10", value: 'DASHBOARD' },
-    { title: "Team", to: "#Team", icon: "i-heroicons-arrow-down-on-square-stack", value: 'TEAM' },
-    { title: "Projects", to: "#Projects", icon: "i-heroicons-banknotes", value: 'PROJECTS' },
-    { title: "Calendar", to: "#Calendar", icon: "i-heroicons-building-library", value: 'CALENDAR' },
+    { title: "Calendar", to: "#Team", icon: "i-heroicons-calendar-days", value: 'TEAM' },
+    { title: "Horses", to: "#Projects", icon: "i-heroicons-arrow-path-rounded-square", value: 'PROJECTS' },
+    { title: "Contacts", to: "#Calendar", icon: "i-heroicons-inbox-stack", value: 'CALENDAR' },
     {
-        title: "Documents",
+        title: "Locations and Maps",
         to: "#Documents",
-        icon: "i-heroicons-chat-bubble-bottom-center-text",
+        icon: "i-heroicons-map-pin",
         value: 'DOCUMENTS'
     },
-    { title: "Reports", to: "#Reports", icon: "i-heroicons-circle-stack", value: 'REPORTS' },
+    { title: "Financials", to: "#Reports", icon: "i-heroicons-credit-card", value: 'REPORTS' },
     {
-        title: "Projects",
+        title: "Communications",
         to: "#Projects",
-        icon: "i-heroicons-cursor-arrow-ripple",
+        icon: "i-heroicons-chat-bubble-left-right",
         childs: [
             {
                 title: "Website redesign",
@@ -86,5 +86,7 @@ const menus = reactive<MenuItem[]>([
             },
         ],
     },
+    { title: "Completition", to: "#Reports", icon: "i-heroicons-cpu-chip", value: 'REPORTS' },
+    { title: "Training", to: "#Reports", icon: "i-heroicons-bookmark-square", value: 'REPORTS' },
 ]);
 </script>

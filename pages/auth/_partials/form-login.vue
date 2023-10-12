@@ -12,9 +12,9 @@
                 <u-form-group :label="$t('general.form.Email')">
                     <u-input v-model="state.email" size="lg"></u-input>
                 </u-form-group>
-                <u-form-group :label="$t('general.form.Password')" hint="Forgot password?">
-                    <template v-slot:hint="{hint}">
-                        <u-button to="/auth/forgot-password">{{ hint }}</u-button>
+                <u-form-group :label="$t('general.form.Password')">
+                    <template #hint>
+                        <u-button to="/auth/forgot-password" variant="ghost" size="xs">Forgot password?</u-button>
                     </template>
                     <template #default>
                         <u-input v-model="state.password" size="lg" type="password"></u-input>

@@ -13,6 +13,9 @@
                     <u-input v-model="state.workspace" disabled color="gray" size="lg"></u-input>
                 </u-form-group>
                 <u-form-group :label="$t('general.form.Email')">
+                    <template #hint>
+                        <u-button to="/auth/login" variant="ghost" size="xs">Have account? Login</u-button>
+                    </template>
                     <u-input v-model="state.email" size="lg"></u-input>
                 </u-form-group>
                 <u-form-group :label="$t('general.form.Password')">

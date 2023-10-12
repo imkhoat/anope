@@ -13,11 +13,11 @@
 <script lang="ts" setup>
 import { provide } from 'vue'
 import { onboardingInjectionKey } from '@/utils/keys'
-import SupportCard from './_partials/support-card.vue';
-import { UStepItem } from '~/types/components/u-step-item';
-import OnboardingStepper from './_partials/onboarding-stepper.vue';
-import StepUpdateProfile from './_partials/step-update-profile.vue';
-import StepEnterBusinessInformation from './_partials/step-enter-business-information.vue';
+import { UStepItem } from '@/types/components/u-step-item';
+import SupportCard from '@/pages/workspace/_partials/onboarding/support-card.vue';
+import OnboardingStepper from '@/pages/workspace/_partials/onboarding/onboarding-stepper.vue';
+import StepUpdateProfile from '@/pages/workspace/_partials/onboarding/step-update-profile.vue';
+import StepEnterBusinessInformation from '@/pages/workspace/_partials/onboarding/step-enter-business-information.vue';
 
 // type
 type StepValue = 'STEP-01' | 'STEP-02' | 'STEP-03' | 'STEP-04' | 'STEP-05' | 'STEP-06' | 'STEP-07' | 'STEP-08' | 'STEP-09' | 'STEP-10'
