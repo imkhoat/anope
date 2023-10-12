@@ -1,7 +1,7 @@
 <template>
     <u-card :ui="cardUI"
         class="w-full h-full line relative after:brightness-100 after:w-full after:h-full after:absolute after:top-0 after:left-0 after:z-[1] after:opacity-20">
-        <div class="absolute z-[2] top-0 left-0 p-4 h-full w-full flex flex-col justify-start items-stretch gap-y-3">
+        <div class="relative z-[2] top-0 left-0 h-full w-full flex flex-col justify-start items-stretch gap-y-3">
             <u-list-item>
                 <div class="flex flex-row justify-start items-stretch gap-x-2">
                     <u-avatar size="lg" src="https://avatars.githubusercontent.com/u/739984?v=4"

@@ -10,6 +10,9 @@
             </div>
             <div class="flex flex-col justify-start items-stretch gap-y-2">
                 <u-form-group :label="$t('general.form.Email')">
+                    <template #hint>
+                        <u-button to="/auth/login" variant="ghost" size="xs">Back to login?</u-button>
+                    </template>
                     <u-input v-model="state.email" size="lg"></u-input>
                 </u-form-group>
             </div>

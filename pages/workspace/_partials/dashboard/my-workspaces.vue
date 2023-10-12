@@ -7,11 +7,11 @@
             </div>
         </template>
         <u-list :items="items">
-            <template #item="{item}">
+            <template #item="{ item }">
                 <u-list-item v-bind="item" hover-class="hover:bg-gray-100 hover:text-gray-900" class="whitespace-nowrap">
-                    <template #icon="{icon}">
+                    <template #icon="{ icon }">
                         <u-avatar size="sm" :icon="icon" class="ring-4 ring-gray-50">
-                            </u-avatar>
+                        </u-avatar>
                     </template>
                 </u-list-item>
             </template>
@@ -20,13 +20,12 @@
 </template>
 <script lang="ts" setup>
 import UList from '@/components/bases/u-list/u-list.vue';
-import { IUListItem } from '@/types/components/u-list-item';
 import UListItem from '@/components/bases/u-list/u-list-item.vue';
 const cardUI = {
     shadow: ''
 }
 
-const items = reactive<IUListItem[]>([{
+const items = reactive<>([{
     title: 'Workspace Mabouse',
     description: 'Create by MiguelBui',
     icon: 'i-heroicons-briefcase',
