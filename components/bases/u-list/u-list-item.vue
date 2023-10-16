@@ -5,9 +5,9 @@
     :class="uListItemClass"
     @click="onClickListItem"
   >
-    <div class="ml-auto shrink-0 flex justify-start items-center">
+    <div class="ml-0 shrink-0 flex justify-center items-center">
       <slot name="icon" :icon="icon">
-        <u-icon v-if="icon" :name="icon" class="h-5 w-5" />
+        <u-icon v-if="icon" :name="icon" class="h-6 w-6" />
       </slot>
     </div>
     <div v-if="!collapse" class="flex flex-col justify-center items-start flex-grow">
@@ -54,7 +54,7 @@ const stateClass = computed(() => {
 })
 
 const denseClass = computed(() => {
-  return props.dense ? 'min-h-[40px]' : 'min-h-[56px]'
+  return props.dense ? 'min-h-[40px] min-w-[40px]' : 'min-h-[56px] min-w-[56px]'
 })
 
 const collapseClass = computed(() => {

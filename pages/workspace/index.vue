@@ -7,7 +7,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import MyWorkspace from '@/pages/workspace/_partials/workspace/my-workspace.vue'
+import MyWorkspace from '@/pages/workspace/_partials/workspace/my-workspaces.vue'
 
 const isOpen = ref(true)
 </script>
