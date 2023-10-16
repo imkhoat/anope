@@ -24,7 +24,10 @@
         </div>
       </u-card>
       <u-card :ui="cardUI">
-        <the-support-card :minimum="collapse"></the-support-card>
+        <div class="flex flex-col justify-start items-stretch gap-y-4">
+          <the-setting-menu :minimum="collapse"></the-setting-menu>
+          <!-- <the-support-card :minimum="collapse" v-if="!collapse"></the-support-card> -->
+        </div>
       </u-card>
       <u-button variant="soft"
         :icon="collapse ? 'i-heroicons-chevron-right-20-solid' : 'i-heroicons-chevron-left-20-solid'"
@@ -38,6 +41,7 @@ import TheMenu from '@/layouts/_partials/the-menu.vue';
 import TheLogo from '@/layouts/_partials/the-logo.vue';
 import { useApplicationStore } from '@/store/application'
 import TheSupportCard from '@/layouts/_partials/the-support-card.vue';
+import TheSettingMenu from '@/layouts/_partials/the-setting-menu.vue';
 
 const { sidebar } = storeToRefs(useApplicationStore())
 const { toggleSidebar } = useApplicationStore()
@@ -51,7 +55,7 @@ const cardUI = {
   shadow: '',
   ring: '',
   body: {
-    padding: 'p-2 sm:px-4 sm:py-2 lg:px-6 lg:py-2'
+    padding: 'p-2 sm:px-4 sm:py-2 lg:px-4 lg:py-2'
   }
 }
 
