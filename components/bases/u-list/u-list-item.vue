@@ -42,7 +42,7 @@ const router = useRouter()
 const props = withDefaults(defineProps<IUListItem>(), {
   as: "div",
   activeClass: 'bg-gray-50 text-primary-600',
-  hoverClass: 'hover:text-primary-600 hover:bg-gray-50',
+  hoverClass: 'hover:bg-gray-100 hover:text-gray-900',
   collapse: false,
   dense: true
 });

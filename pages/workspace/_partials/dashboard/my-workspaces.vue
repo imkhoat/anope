@@ -8,7 +8,7 @@
         </template>
         <u-list :items="items">
             <template #item="{ item }">
-                <u-list-item v-bind="item" hover-class="hover:bg-gray-100 hover:text-gray-900" class="whitespace-nowrap">
+                <u-list-item v-bind="item" class="whitespace-nowrap">
                     <template #icon="{ icon }">
                         <u-avatar size="sm" :icon="icon" class="ring-4 ring-gray-50">
                         </u-avatar>
