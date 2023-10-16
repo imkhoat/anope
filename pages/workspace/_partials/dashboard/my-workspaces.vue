@@ -25,7 +25,7 @@ const cardUI = {
     shadow: ''
 }
 
-const items = reactive<>([{
+const items = ref([{
     title: 'Workspace Mabouse',
     description: 'Create by MiguelBui',
     icon: 'i-heroicons-briefcase',
