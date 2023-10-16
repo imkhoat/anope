@@ -4,7 +4,9 @@ import UListItem from "@/components/bases/u-list/u-list-item.vue";
 defineProps<{
     minimum: boolean
 }>()
-
+const emits = defineEmits<{
+    (event: 'click'): () => void
+}>()
 const items = [
     [{
         label: 'All admin setting',
@@ -32,6 +34,6 @@ const items = [
 </script>
 <template>
     <u-dropdown :items="items" :popper="{ placement: 'right-end' }">
-        <u-list-item :collapse="minimum" title="Setting" icon="i-heroicons-cog-8-tooth"></u-list-item>
+        <u-list-item :collapse="minimum" title="Setting" icon="i-heroicons-cog-8-tooth" @click="emits('click')"></u-list-item>
     </u-dropdown>
 </template>
