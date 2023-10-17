@@ -1,10 +1,11 @@
 <template>
     <u-card :ui="cardUI" class="w-full h-full">
         <template #header>
-            <div class="flex flex-row justify-between items-center">
-                <h6 class="font-semibold">My workspaces</h6>
-                <u-button size="xs" color="gray" variant="ghost">View all</u-button>
-            </div>
+            <u-card-header title="My workspaces" description="Click to view all your workspace">
+                <template #action>
+                    <u-button size="2xs" color="gray" variant="soft">View all</u-button>
+                </template>
+            </u-card-header>
         </template>
         <u-list :items="items">
             <template #item="{ item }">
@@ -21,6 +22,7 @@
 <script lang="ts" setup>
 import UList from '@/components/bases/u-list/u-list.vue';
 import UListItem from '@/components/bases/u-list/u-list-item.vue';
+import UCardHeader from '@/components/bases/u-card/u-card-header.vue';
 const cardUI = {
     shadow: ''
 }

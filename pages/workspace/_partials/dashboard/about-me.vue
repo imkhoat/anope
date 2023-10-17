@@ -1,38 +1,34 @@
 <template>
     <u-card :ui="cardUI"
         class="w-full h-full line relative after:brightness-100 after:w-full after:h-full after:absolute after:top-0 after:left-0 after:z-[1] after:opacity-20">
-        <div class="relative z-[2] top-0 left-0 h-full w-full flex flex-col justify-start items-stretch gap-y-3">
+        <template #header>
             <u-list-item>
-                <div class="flex flex-row justify-start items-stretch gap-x-2">
-                    <u-avatar size="lg" src="https://avatars.githubusercontent.com/u/739984?v=4"
+                <div class="flex flex-row justify-start items-center gap-x-2">
+                    <u-avatar size="md" src="https://avatars.githubusercontent.com/u/739984?v=4"
                         class="ring-2 ring-gray-100"></u-avatar>
-                    <div class="flex flex-col justify-start items-start">
-                        <strong class="text-sm">Bahasmas</strong>
-                        <span class="text-xs">Bloodstock Manager</span>
-                    </div>
+                    <u-card-header title="Bahasmas" description="Bloodstock Manager" class="flex-grow">
+                        <template #action>
+                            <u-button size="2xs" color="gray" variant="soft" icon="i-heroicons-adjustments-horizontal">
+                            </u-button>
+                        </template>
+                    </u-card-header>
                 </div>
             </u-list-item>
-            <!-- <div class="flex flex-row justify-start items-start gap-x-1 flex-grow">
-                <u-button variant="soft" square :ui="{ rounded: 'rounded-full' }" color="sky" icon="i-heroicons-chart-bar"></u-button>
-                <u-button variant="soft" square :ui="{ rounded: 'rounded-full' }" color="rose" icon="i-heroicons-bookmark-square"></u-button>
-                <u-button variant="soft" square :ui="{ rounded: 'rounded-full' }" color="emerald" icon="i-heroicons-at-symbol"></u-button>
-                <u-button variant="soft" square :ui="{ rounded: 'rounded-full' }" color="amber" icon="i-heroicons-phone"></u-button>
-            </div> -->
-            <div class="flex flex-col justify-start items-stretch border rounded-md divide-y bg-white">
-                <div v-for="(info, index) in infos" :key="index + 'about_info'" class="flex flex-col justify-start items-start text-sm leading-0 p-2 py-1">
+        </template>
+        <div class="relative z-[2] top-0 left-0 h-full w-full flex flex-col justify-start items-stretch gap-y-3">
+            <div class="flex flex-col justify-start items-stretch border rounded-lg divide-y bg-white">
+                <div v-for="(info, index) in infos" :key="index + 'about_info'"
+                    class="flex flex-col justify-start items-start text-sm leading-0 p-2 py-1">
                     <span class="opacity-50 text-xs">{{ info.title }}</span>
                     <span class="text-right">{{ info.description }}</span>
                 </div>
-            </div>
-
-            <div class="flex flex-row justify-end items-end">
-                <u-button color="gray" variant="soft" icon="i-heroicons-adjustments-horizontal">
-                </u-button>
             </div>
         </div>
     </u-card>
 </template>
 <script lang="ts" setup>
+import UCardHeader from '@/components/bases/u-card/u-card-header.vue';
+
 const cardUI = {
     shadow: '',
 }
