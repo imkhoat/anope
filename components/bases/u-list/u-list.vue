@@ -1,7 +1,7 @@
 <template>
   <div class="u-list" :class="listItemClass">
-    <div v-if="subTitle" class="text-xs font-semibold leading-6 text-gray-400">{{ subTitle }}</div>
-    <div class="mt-2 space-y-1 flex flex-col justify-start items-stretch">
+    <div v-if="subTitle" class="text-xs font-semibold leading-6 text-gray-400 mb-2">{{ subTitle }}</div>
+    <div class="space-y-1 flex flex-col justify-start items-stretch">
       <div v-for="(item, index) in items" :key="index + '__u-list-item'" @click="onSelectListItem(item?.value)">
         <slot name="item" :item="item">
           <u-list-item v-bind="item" :collapse="collapse" :is-active="item?.value === activeItem"></u-list-item>
