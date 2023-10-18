@@ -58,7 +58,7 @@ const denseClass = computed(() => {
 })
 
 const denseIconClass = computed(() => {
-  return props.dense ? 'w-4 h-4' : 'w-6 h-6'
+  return props.dense ? 'w-6 h-6' : 'w-8 h-8'
 })
 
 const collapseClass = computed(() => {

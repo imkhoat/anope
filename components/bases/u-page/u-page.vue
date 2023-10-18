@@ -24,8 +24,8 @@
 <script lang="ts" setup>
 
 defineProps<{
-    pageTitle: string,
-    pageDescription: string,
-    pageIcon: string,
+    pageTitle?: string,
+    pageDescription?: string,
+    pageIcon?: string,
 }>()
 </script>
