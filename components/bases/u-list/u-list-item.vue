@@ -7,12 +7,12 @@
   >
     <div class="ml-0 shrink-0 flex justify-center items-center">
       <slot name="icon" :icon="icon">
-        <u-icon v-if="icon" :name="icon" class="h-6 w-6" />
+        <u-icon v-if="icon" :name="icon" :class="denseIconClass" />
       </slot>
     </div>
-    <div v-if="!collapse" class="flex flex-col justify-center items-start flex-grow">
+    <div v-if="!collapse" class="flex flex-col justify-center items-start flex-grow truncate">
       <slot>
-        <span>
+        <span class="truncate">
           {{ title }}
         </span>
         <p class="font-normal text-xs opacity-70">{{ description }}</p>
@@ -55,6 +55,10 @@ const stateClass = computed(() => {
 
 const denseClass = computed(() => {
   return props.dense ? 'min-h-[40px] min-w-[40px]' : 'min-h-[56px] min-w-[56px]'
+})
+
+const denseIconClass = computed(() => {
+  return props.dense ? 'w-4 h-4' : 'w-6 h-6'
 })
 
 const collapseClass = computed(() => {

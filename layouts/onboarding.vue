@@ -19,3 +19,8 @@ const containerUI = {
     constrained: ''
 }
 </script>
+<style>
+.onboarding-layout {
+    font-family: 'AR One Sans', sans-serif;
+}
+</style>

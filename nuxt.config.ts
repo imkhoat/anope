@@ -16,6 +16,7 @@ export default defineNuxtConfig({
                 }
             }
             removePagesMatching(/\_partials/, pages)
+            removePagesMatching(/\_composables/, pages)
         }
     },
     colorMode: {
