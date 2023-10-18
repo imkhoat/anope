@@ -8,7 +8,8 @@
             <template #item="{ item }">
                 <u-list-item v-bind="item" class="overflow-hidden">
                     <template #icon="{ icon }">
-                        <u-avatar size="xs" :icon="icon" class="ring-2 ring-gray-50">
+                        <u-avatar size="xs" class="ring-2 ring-gray-50">
+                            <u-icon size="md" :name="icon"></u-icon>
                         </u-avatar>
                     </template>
                 </u-list-item>

@@ -3,7 +3,7 @@
         <the-default-sidebar></the-default-sidebar>
         <div class="flex-grow flex flex-col justify-start items-stretch max-h-screen">
             <the-default-header></the-default-header>
-            <div class="flex-grow overflow-y-auto bg-white">
+            <div class="flex-grow overflow-y-auto bg-gray-50">
                 <u-container :ui="containerUI" class="min-w-full min-h-full">
                     <div class="w-full h-full">
                         <slot />
@@ -26,7 +26,7 @@ const containerUI = {
 }
 </script>
 <style>
-.default-layout {
+.default-layouts {
   font-family: 'AR One Sans', sans-serif;
 }
 </style>
