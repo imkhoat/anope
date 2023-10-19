@@ -2,8 +2,8 @@
     <u-page page-title="Users Management" page-description="Invite or remove workspace user">
         <template #header-action>
             <div class="flex flex-row justify-end items-center gap-1">
+                <u-button size="lg" icon="i-heroicons-user-plus" @click="onOpenInviteNewUser">Invite new users</u-button>
                 <u-button color="gray" variant="soft" size="lg" icon="i-heroicons-arrow-path"></u-button>
-                <u-button size="lg" icon="i-heroicons-user-plus">Invite new users</u-button>
             </div>
         </template>
         <div class="grid grid-cols-12 gap-4 h-fit">
@@ -29,6 +29,7 @@
     </u-page>
 </template>
 <script lang="ts" setup>
+import { useCrudModal } from '#imports';
 import UPage from '@/components/bases/u-page/u-page.vue';
 import UDatatable from '@/components/bases/u-datatable/u-datatable.vue';
 import SummaryCard from '@/pages/workspace/_partials/settings/summary-card.vue'
@@ -55,4 +56,10 @@ const summaryData = ref({
         icon: 'i-heroicons-cloud'
     }
 })
+
+const {open} = useCrudModal()
+
+function onOpenInviteNewUser(){
+    open({})
+}
 </script>
