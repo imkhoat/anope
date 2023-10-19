@@ -10,20 +10,22 @@
                     </div>
                 </u-container>
             </div>
-            <!-- <the-default-footer></the-default-footer> -->
         </div>
+        <u-modal-curd v-model="crudModal.open" v-bind="crudModal.options" @no="close"></u-modal-curd>
     </div>
 </template>
 <script lang="ts" setup>
+import { useCrudModal } from '#imports';
 import TheDefaultHeader from '@/layouts/_partials/the-default-header.vue';
-import TheDefaultFooter from '@/layouts/_partials/the-default-footer.vue';
 import TheDefaultSidebar from '@/layouts/_partials/the-default-sidebar.vue';
-
+import UModalCurd from '@/components/bases/u-modal/u-modal-curd.vue';
 const containerUI = {
     base: '',
     padding: "p-2 sm:p-4 lg:p-4",
     constrained: ''
 }
+
+const {crudModal, close} = useCrudModal()
 </script>
 <style>
 .default-layouts {
