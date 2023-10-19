@@ -5,12 +5,16 @@ const columns = [{
   label: '#',
   sortable: true
 }, {
-  key: 'title',
-  label: 'Title',
+  key: 'name',
+  label: 'Name',
+  sortable: true
+},{
+  key: 'email',
+  label: 'Email',
   sortable: true
 }, {
   key: 'completed',
-  label: 'Status',
+  label: 'Active',
   sortable: true
 }, {
   key: 'actions',
@@ -88,7 +92,7 @@ const { data: todos, pending } = await useLazyAsyncData('todos', () => $fetch<{
   id: number
   title: string
   completed: string
-}[]>(`https://jsonplaceholder.typicode.com/todos${searchStatus.value}`, {
+}[]>(`https://jsonplaceholder.typicode.com/users${searchStatus.value}`, {
   query: {
     q: search.value,
     '_page': page.value,

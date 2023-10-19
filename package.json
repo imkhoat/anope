@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxtjs/google-fonts": "^3.0.2",
     "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/google-fonts": "^3.0.2",
     "@nuxtjs/storybook": "7.0.0",
     "@storybook-vue/nuxt": "0.1.4",
     "@storybook/addon-essentials": "7.4.4",
@@ -35,11 +35,12 @@
     "storybook": "7.4.4"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.8.1",
     "@nuxt/image": "^1.0.0-rc.3",
+    "@nuxt/ui": "^2.8.1",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@pinia/nuxt": "^0.4.11",
     "pinia": "^2.1.6",
-    "tailwind-merge": "^1.14.0"
+    "tailwind-merge": "^1.14.0",
+    "v-calendar": "^2.4.2"
   }
 }

@@ -1,7 +1,7 @@
 <template>
-    <div class="u-page w-full h-full p-4 flex flex-col justify-start items-stretch gap-y-8">
+    <div class="u-page w-full h-full p-4 flex flex-col justify-start items-stretch gap-y-12">
         <slot name="header">
-            <div class="u-page__header flex flex-row justify-between items-start">
+            <div class="u-page__header flex flex-row flex-wrap justify-between items-center gap-4">
                 <slot name="header-title">
                     <div class="flex flex-row justify-start items-center gap-x-3">
                         <u-avatar v-if="pageIcon" size="md" class="bg-neutral-300 border-8 border-neutral-200 ring-8 ring-neutral-100">
