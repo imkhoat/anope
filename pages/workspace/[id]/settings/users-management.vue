@@ -2,13 +2,12 @@
     <u-page page-title="Users Management" page-description="Invite or remove workspace user">
         <template #header-action>
             <div class="flex flex-row justify-end items-center gap-1">
-                <u-button size="lg" icon="i-heroicons-user-plus" @click="onOpenInviteNewUser">Invite new users</u-button>
-                <u-button color="gray" variant="soft" size="lg" icon="i-heroicons-arrow-path"></u-button>
+                <u-button icon="i-heroicons-user-plus" @click="onOpenInviteNewUser">Invite new users</u-button>
+                <u-button color="gray" variant="soft" icon="i-heroicons-arrow-path"></u-button>
             </div>
         </template>
         <div class="grid grid-cols-12 gap-4 h-fit">
-            <div
-                class="col-span-12 md:col-span-12 lg:col-span-10 row-span-1 grid grid-cols-12 gap-4">
+            <div class="col-span-12 md:col-span-12 lg:col-span-10 row-span-1 grid grid-cols-12 gap-4">
                 <div class="col-span-12 sm:col-span-6 lg:col-span-3 row-span-1">
                     <summary-card v-bind="summaryData.totalUsers"></summary-card>
                 </div>
@@ -29,7 +28,7 @@
     </u-page>
 </template>
 <script lang="ts" setup>
-import { useCrudModal } from '#imports';
+import { useConfirmModal } from '#imports';
 import UPage from '@/components/bases/u-page/u-page.vue';
 import UDatatable from '@/components/bases/u-datatable/u-datatable.vue';
 import SummaryCard from '@/pages/workspace/_partials/settings/summary-card.vue'
@@ -57,9 +56,12 @@ const summaryData = ref({
     }
 })
 
-const {open} = useCrudModal()
+const { showDeleteModal } = useConfirmModal()
 
-function onOpenInviteNewUser(){
-    open({})
+function onOpenInviteNewUser() {
+    showDeleteModal({
+        title: 'Remove users',
+        description: 'You remove Pascal of users, Are you sure?'
+    })
 }
 </script>

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { DropdownItem } from '@nuxt/ui/dist/runtime/types/dropdown';
 
-const toast = useToast()
 const { locale, locales, t } = useI18n()
 
 const localeOptions = computed<DropdownItem[][]>(() => {
@@ -16,11 +15,6 @@ const localeOptions = computed<DropdownItem[][]>(() => {
             label: item.name,
             click: () => {
                 locale.value = item.code
-                toast.add({
-                    title: t('general.text.Success'),
-                    description: t('general.text.You have changed language to'),
-                    icon: 'i-heroicons-check-badge'
-                })
             },
             avatar,
             icon: locale.value === item.code ? 'i-heroicons-check-circle-20-solid' : null
@@ -33,7 +27,7 @@ const localeOptions = computed<DropdownItem[][]>(() => {
     <u-dropdown :items="localeOptions" :popper="{ placement: 'bottom-start' }">
         <u-button size="lg" square color="gray" variant="soft" icon="i-heroicons-globe-alt" />
         <template #item="{ item }">
-            <u-avatar :src="item.avatar.src" size="2xs"/>
+            <u-avatar :src="item.avatar.src" size="2xs" />
             <span class="truncate">{{ item.label }}</span>
             <u-icon :name="item.icon" class="flex-shrink-0 h-4 w-4 text-primary-400 dark:text-primary-500 ms-auto" />
         </template>

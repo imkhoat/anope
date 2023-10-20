@@ -1,5 +1,8 @@
+import { NuxtPage } from "nuxt/schema";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    devtools: true,
     hooks: {
         'pages:extend'(pages) {
             function removePagesMatching(pattern: RegExp, pages: NuxtPage[] = []) {
