@@ -56,10 +56,10 @@ const summaryData = ref({
     }
 })
 
-const { showDeleteModal } = useConfirmModal()
+const { showDeleteModal, showConfirmModal } = useConfirmModal()
 
 function onOpenInviteNewUser() {
-    showDeleteModal({
+    showConfirmModal({
         title: 'Remove users',
         description: 'You remove Pascal of users, Are you sure?'
     })

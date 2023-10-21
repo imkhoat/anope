@@ -11,11 +11,11 @@
                 </u-container>
             </div>
         </div>
-        <u-modal-curd v-model="crudModal.open" v-bind="crudModal.options" @no="close"></u-modal-curd>
+        <u-modal-curd v-model="confirm.open" v-bind="confirm.options" @no="hide"></u-modal-curd>
     </div>
 </template>
 <script lang="ts" setup>
-import { useCrudModal } from '#imports';
+import { useConfirmModal } from '#imports';
 import TheDefaultHeader from '@/layouts/_partials/the-default-header.vue';
 import TheDefaultSidebar from '@/layouts/_partials/the-default-sidebar.vue';
 import UModalCurd from '@/components/bases/u-modal/u-modal-curd.vue';
@@ -25,7 +25,7 @@ const containerUI = {
     constrained: ''
 }
 
-const {crudModal, close} = useCrudModal()
+const {confirm, hide} = useConfirmModal()
 </script>
 <style>
 .default-layouts {

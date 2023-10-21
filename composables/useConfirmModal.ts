@@ -1,14 +1,14 @@
 import { storeToRefs } from "pinia";
 import { useApplicationStore } from "@/store/application";
-import { UCardCrudProps } from '@/components/bases/u-card/u-card-crud.vue'
+import { UModalCurdProps } from "@/components/bases/u-modal/u-modal-curd.vue";
 
 export function useConfirmModal() {
-    const { openCrudModal, closeCrudModal, configCrudModal } = useApplicationStore()
-    const { crudModal } = storeToRefs(useApplicationStore())
+    const { confirm } = storeToRefs(useApplicationStore())
+    const { openconfirm, closeconfirm, configconfirm } = useApplicationStore()
 
-    function open(options: Partial<UCardCrudProps>) {
-        configCrudModal(options as any)
-        openCrudModal()
+    function open(options: Partial<UModalCurdProps>) {
+        configconfirm(options as any)
+        openconfirm()
     }
     
     function show(options: {
@@ -17,7 +17,7 @@ export function useConfirmModal() {
         onConfirm?: () => void,
         onCancel?: () => void,
     }) {
-        const modalOptions: UCardCrudProps = {
+        const modalOptions = {
             contentIcon: 'i-heroicons-trash',
             contentIconColor: 'primary',
             contentTitle: options.title,
@@ -36,18 +36,18 @@ export function useConfirmModal() {
             }
         }
 
-        configCrudModal(modalOptions as any)
-        openCrudModal()
+        configconfirm(modalOptions as any)
+        openconfirm()
     }
 
-    function showUpdateModal(options: {
+    function showConfirmModal(options: {
         title?: string,
         description?: string,
         onConfirm?: () => void,
         onCancel?: () => void,
     }) {
-        const modalOptions: UCardCrudProps = {
-            contentIcon: 'i-heroicons-trash',
+        const modalOptions = {
+            contentIcon: 'i-heroicons-shield-exclamation',
             contentIconColor: 'primary',
             contentTitle: options.title,
             contentDescription: options.description,
@@ -65,8 +65,8 @@ export function useConfirmModal() {
             }
         }
 
-        configCrudModal(modalOptions as any)
-        openCrudModal()
+        configconfirm(modalOptions as any)
+        openconfirm()
     }
 
     function showDeleteModal(options: {
@@ -75,7 +75,8 @@ export function useConfirmModal() {
         onConfirm?: () => void,
         onCancel?: () => void,
     }) {
-        const modalOptions: UCardCrudProps = {
+        const modalOptions = {
+            preventClose: true,
             contentIcon: 'i-heroicons-trash',
             contentIconColor: 'rose',
             contentTitle: options.title,
@@ -94,14 +95,14 @@ export function useConfirmModal() {
             }
         }
 
-        configCrudModal(modalOptions as any)
-        openCrudModal()
+        configconfirm(modalOptions as any)
+        openconfirm()
     }
     
 
     function hide() {
-        closeCrudModal()
+        closeconfirm()
     }
 
-    return { open, hide, show, showUpdateModal, showDeleteModal, crudModal }
+    return { open, hide, show, showConfirmModal, showDeleteModal, confirm }
 }
