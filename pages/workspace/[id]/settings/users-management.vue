@@ -3,7 +3,6 @@
         <template #header-action>
             <div class="flex flex-row justify-end items-center gap-1">
                 <u-button icon="i-heroicons-user-plus" @click="onOpenInviteNewUser">Invite new users</u-button>
-                <u-button color="gray" variant="soft" icon="i-heroicons-arrow-path"></u-button>
             </div>
         </template>
         <div class="grid grid-cols-12 gap-4 h-fit">

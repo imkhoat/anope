@@ -23,9 +23,9 @@
 <script lang="ts" setup>
 import UList from "@/components/bases/u-list/u-list.vue";
 import UListItem from "@/components/bases/u-list/u-list-item.vue";
-import { IUList } from "@/types/components/u-list"
+import type { List } from "@/types/components/u-list"
 
-interface MenuItem extends IUList{
+interface MenuItem extends List{
     title?: string;
     to?: string;
     icon?: string;

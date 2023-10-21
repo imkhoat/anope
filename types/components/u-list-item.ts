@@ -1,4 +1,4 @@
-export interface IUListItem {
+export interface ListItem {
     as?: string,
     to?: string | object,
     dense?: boolean,

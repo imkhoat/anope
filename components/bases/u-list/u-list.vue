@@ -12,11 +12,11 @@
 </template>
 <script lang="ts" setup>
 import { twJoin } from 'tailwind-merge'
-import { IUList } from "@/types/components/u-list";
+import type { List } from "@/types/components/u-list";
 import UListItem from "@/components/bases/u-list/u-list-item.vue";
 
 // props & emits
-const props = withDefaults(defineProps<IUList>(), {
+const props = withDefaults(defineProps<List>(), {
   as: "div",
 });
 const emits = defineEmits<{
