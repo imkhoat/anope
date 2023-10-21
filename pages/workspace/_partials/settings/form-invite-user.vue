@@ -10,7 +10,7 @@
             </template>
             <template #actions-data="{ row }">
                 <div class="flex flex-row justify-end items-center">
-                    <u-button size="xs" variant="ghost" color="rose" icon="i-heroicons-trash"></u-button>
+                    <u-button size="xs" variant="ghost" color="rose" icon="i-heroicons-trash" @click="onRemoveUser(row)"></u-button>
                 </div>
             </template>
         </u-table>
@@ -23,21 +23,21 @@
                 padding: 'px-4 py-4 sm:p-4'
             }
         }">
-            <u-form :state="state" :schema="schema" @submit="onAddUser" class="flex flex-col justify-start items-stretch gap-2">
-                <div class="flex flex-col md:flex-row justify-start items-start gap-2">
-                    <u-form-group name="email" description="Email address" class="flex-grow">
+            <u-form ref="form" :state="state" :schema="schema">
+                <div class="flex flex-col justify-start items-stretch md:items-start md:flex-row  gap-2">
+                    <u-form-group required name="email" description="Email address" class="flex-grow">
                         <u-input v-model="state.email" type="email" placeholder="abc@example.com"></u-input>
                     </u-form-group>
-                    <u-form-group name="name" description="Full name" class="flex-grow">
+                    <u-form-group required name="name" description="Full name" class="flex-grow">
                         <u-input v-model="state.name" type="text" placeholder="Nick Pascal"></u-input>
                     </u-form-group>
-                    <u-form-group name="type" description="User Type" class="flex-grow">
+                    <u-form-group required name="type" description="User Type" class="flex-grow">
                         <u-select-menu v-model="state.type" placeholder="Member" :options="userTypeOptions"></u-select-menu>
                     </u-form-group>
-                    <u-form-group name="role" description="Roles" class="flex-grow">
+                    <u-form-group required name="role" description="Roles" class="flex-grow">
                         <u-select-menu v-model="state.role" placeholder="Admin" :options="roleOptions"></u-select-menu>
                     </u-form-group>
-                    <u-button variant="outline" type="submit" class="md:mt-5">Add</u-button>
+                    <u-button class="self-end md:self-auto md:mt-5" @click="onAddUser">Add</u-button>
                 </div>
             </u-form>
         </u-card>
@@ -45,7 +45,6 @@
 </template>
 <script lang="ts" setup>
 import { z } from 'zod'
-import type { FormSubmitEvent } from '@nuxt/ui/dist/runtime/types'
 import { workspaceSettingsUsersManagementInjectionKey } from '@/utils/keys';
 
 type Schema = z.output<typeof schema>
@@ -82,16 +81,18 @@ const state = ref<{
 })
 
 const schema = z.object({
-  email: z.string().email('Invalid email'),
-  name: z.string(),
-  type: z.string(),
-  role: z.string()
+    email: z.string(),
+    name: z.string(),
+    type: z.string(),
+    role: z.string()
 }).required({
     name: true,
     email: true,
     role: true,
     type: true
 })
+
+const form = ref()
 
 const { inviteEmails } = inject<{ [key: string]: object | string | (() => void) | any }>(workspaceSettingsUsersManagementInjectionKey, {})
 
@@ -104,18 +105,31 @@ const roleOptions = computed(() => {
         'Super Admin']
 })
 
-function onAddUser(event: FormSubmitEvent<Schema>) {
-    inviteEmails.value.push({
-        email: state.value.email,
-        name: state.value.name,
-        type: state.value.type,
-        role: state.value.role
-    })
-    state.value = {
-        email: undefined,
-        name: undefined,
-        type: 'Employee',
-        role: 'Admin'
+async function onAddUser() {
+    try {
+        const valid = await form.value.validate()
+        if (valid) {
+            inviteEmails.value.push({
+                index: inviteEmails.value?.length,
+                email: state.value.email,
+                name: state.value.name,
+                type: state.value.type,
+                role: state.value.role
+            })
+            state.value = {
+                email: undefined,
+                name: undefined,
+                type: 'Employee',
+                role: 'Admin'
+            }
+        }
+    } catch (error) {
+        console.log(error)
     }
+}
+
+async function onRemoveUser(row){
+    const itemIndex = inviteEmails.value.findIndex(item => item.index == row.index)
+    inviteEmails.value.splice(itemIndex, 1)
 }
 </script>

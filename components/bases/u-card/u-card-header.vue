@@ -1,9 +1,9 @@
 <template>
     <div class="u-card-header flex flex-row justify-between items-start">
         <div class="flex flex-row justify-start items-center gap-x-3">
-            <u-avatar v-if="icon" size="lg" class="ring-8 ring-gray-50">
-                <u-avatar v-if="icon" size="md" class="ring-8 ring-gray-100 bg-gray-200">
-                    <u-icon size="xl" :name="icon" class="text-neutral-500"></u-icon>
+            <u-avatar v-if="icon" size="md" class="ring-[0.75rem] ring-gray-50">
+                <u-avatar v-if="icon" size="sm" class="ring-[0.5rem] ring-gray-100 bg-gray-200">
+                    <u-icon :name="icon" class="text-neutral-500 h-4 w-4"></u-icon>
                 </u-avatar>
             </u-avatar>
             <div v-if="title || description" class="flex flex-col justify-start items-start gap-y-1">
