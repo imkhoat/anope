@@ -9,8 +9,8 @@
 </template>
 <script lang="ts" setup>
 const props = withDefaults(defineProps<{
-    icon: string,
-    color: string
+    icon?: string,
+    color?: string
 }>(), {
     color: 'gray'
 })
@@ -19,7 +19,7 @@ const iconClass = computed(() => {
     return {
         firstRing: `ring-1 ring-gray-50 bg-transparent -mx-5 md:mx-0`,
         secondRing: `ring-1 ring-gray-100 bg-transparent`,
-        thirdRing: `bg-${props.color}-50`,
+        thirdRing: `ring-1 ring-gray-200 bg-transparent`,
         icon: `text-${props.color}-500`
     }
 
