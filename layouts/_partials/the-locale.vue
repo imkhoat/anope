@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { DropdownItem } from '@nuxt/ui/dist/runtime/types/dropdown';
+import type { DropdownItem } from '@nuxt/ui/dist/runtime/types';
 
 const { locale, locales, t } = useI18n()
 

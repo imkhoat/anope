@@ -27,7 +27,7 @@
 import UCardHeader from '@/components/bases/u-card/u-card-header.vue';
 import UWavesAvatar from '@/components/bases/u-avatar/u-waves-avatar.vue';
 
-export interface UCardCrudProps {
+export interface CardCrud {
     headerTitle?: string,
     headerDescription?: string,
     headerIcon?: string,
@@ -49,7 +49,7 @@ export interface UCardCrudProps {
     },
 }
 
-const props = withDefaults(defineProps<UCardCrudProps>(), {
+const props = withDefaults(defineProps<CardCrud>(), {
     contentIconColor: 'gray',
     yes: () => {
         return {

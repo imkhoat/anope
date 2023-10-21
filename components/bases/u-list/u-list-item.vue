@@ -33,13 +33,13 @@
 </template>
 <script lang="ts" setup>
 import { twJoin } from 'tailwind-merge'
-import { IUListItem } from "@/types/components/u-list-item";
+import type { ListItem } from "@/types/components/u-list-item";
 
 // composables
 const router = useRouter()
 
 // props & emits
-const props = withDefaults(defineProps<IUListItem>(), {
+const props = withDefaults(defineProps<ListItem>(), {
   as: "div",
   activeClass: 'bg-gray-50 text-primary-600',
   hoverClass: 'hover:bg-gray-100 hover:text-gray-900',

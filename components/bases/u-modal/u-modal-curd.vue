@@ -7,15 +7,16 @@
     </u-modal>
 </template>
 <script lang="ts" setup>
-import UCardCrud, { UCardCrudProps } from '@/components/bases/u-card/u-card-crud.vue'
+import UCardCrud from '@/components/bases/u-card/u-card-crud.vue'
+import type { CardCrud } from '@/components/bases/u-card/u-card-crud.vue'
 
-export interface UModalCurdProps extends UCardCrudProps {
+export interface ModalCrud extends CardCrud {
     modelValue: boolean,
     preventClose?: boolean
 }
 
 // props & emits
-const props = defineProps<UModalCurdProps>()
+const props = defineProps<ModalCrud>()
 const emits = defineEmits<{
     (event: 'no'): () => void
     (event: 'yes'): () => void,

@@ -1,12 +1,12 @@
 import { storeToRefs } from "pinia";
 import { useApplicationStore } from "@/store/application";
-import { UModalCurdProps } from "@/components/bases/u-modal/u-modal-curd.vue";
+import { ModalCrud } from "@/components/bases/u-modal/u-modal-curd.vue";
 
 export function useConfirmModal() {
     const { confirm } = storeToRefs(useApplicationStore())
     const { openconfirm, closeconfirm, configconfirm } = useApplicationStore()
 
-    function open(options: Partial<UModalCurdProps>) {
+    function open(options: Partial<ModalCrud>) {
         configconfirm(options as any)
         openconfirm()
     }
