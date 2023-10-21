@@ -16,9 +16,9 @@
         </slot>
         <template #footer>
             <div class="flex flex-row justify-end items-center gap-x-1">
-                <u-button :variant="no.variant" :color="no.color" class="min-w-[60px] items-center justify-center" @click="onNoClick">{{
+                <u-button :variant="no?.variant" :color="no.color" class="min-w-[60px] items-center justify-center" @click="onNoClick">{{
                     no?.title }}</u-button>
-                <u-button :variant="yes.variant" :color="yes.color" class="min-w-[60px] items-center justify-center" @click="onYesClick">{{ yes?.title }}</u-button>
+                <u-button :variant="yes?.variant" :color="yes.color" class="min-w-[60px] items-center justify-center" @click="onYesClick">{{ yes?.title }}</u-button>
             </div>
         </template>
     </u-card>

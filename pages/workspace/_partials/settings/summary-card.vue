@@ -5,13 +5,14 @@
                 <span v-if="description" class="text-sm text-gray-600">{{ description }}</span>
                 <strong v-if="title" class="text-xl font-bold">{{ title }}</strong>
             </div>
-            <u-avatar v-if="icon" size="sm" class="ring-8 ring-gray-50 text-gray-400">
-                <u-icon :name="icon" class="w-5 h-5"></u-icon>
-            </u-avatar>
+            <div class="-ml-4 md:-mr-4 md:-mt-4">
+                <u-waves-avatar v-if="icon" :icon="icon"></u-waves-avatar>
+            </div>
         </div>
     </u-card>
 </template>
 <script lang="ts" setup>
+import UWavesAvatar from '@/components/bases/u-avatar/u-waves-avatar.vue';
 const cardUI = {
     shadow: ''
 }
@@ -19,6 +20,6 @@ const cardUI = {
 defineProps<{
     title?: string,
     description?: string,
-    icon?: string
+    icon?: string,
 }>()
 </script>

@@ -1,46 +1,21 @@
 import { storeToRefs } from "pinia";
 import { useApplicationStore } from "@/store/application";
-import { ModalCrud } from "@/components/bases/u-modal/u-modal-curd.vue";
+import type { ModalCrud } from "@/components/bases/u-modal/u-modal-crud.vue";
 
-export function useConfirmModal() {
-    const { confirm } = storeToRefs(useApplicationStore())
-    const { openconfirm, closeconfirm, configconfirm } = useApplicationStore()
+interface Modal extends Partial<ModalCrud> {
+    key?: string
+}
 
-    function open(options: Partial<ModalCrud>) {
-        configconfirm(options as any)
-        openconfirm()
-    }
+export function useModal() {
+    const { modal, modalKey } = storeToRefs(useApplicationStore())
+    const { openModal, closeModal, configModal } = useApplicationStore()
     
-    function show(options: {
-        title?: string,
-        description?: string,
-        onConfirm?: () => void,
-        onCancel?: () => void,
-    }) {
-        const modalOptions = {
-            contentIcon: 'i-heroicons-trash',
-            contentIconColor: 'primary',
-            contentTitle: options.title,
-            contentDescription: options.description,
-            yes: {
-                action: options.onConfirm,
-                title: 'Confirm',
-                color: 'primary',
-                variant: 'solid'
-            },
-            no: {
-                action: options.onCancel,
-                title: 'Cancel',
-                color: 'gray',
-                variant: 'outline'
-            }
-        }
-
-        configconfirm(modalOptions as any)
-        openconfirm()
+    function show(options:  Modal) {
+        configModal(options as any)
+        openModal()
     }
 
-    function showConfirmModal(options: {
+    function showConfirmDialog(options: {
         title?: string,
         description?: string,
         onConfirm?: () => void,
@@ -65,11 +40,11 @@ export function useConfirmModal() {
             }
         }
 
-        configconfirm(modalOptions as any)
-        openconfirm()
+        configModal(modalOptions as any)
+        openModal()
     }
 
-    function showDeleteModal(options: {
+    function showDeleteDialog(options: {
         title?: string,
         description?: string,
         onConfirm?: () => void,
@@ -95,14 +70,15 @@ export function useConfirmModal() {
             }
         }
 
-        configconfirm(modalOptions as any)
-        openconfirm()
+        configModal(modalOptions as any)
+        openModal()
     }
     
 
     function hide() {
-        closeconfirm()
+        closeModal()
+        configModal({})
     }
 
-    return { open, hide, show, showConfirmModal, showDeleteModal, confirm }
+    return { hide, show, showConfirmDialog, showDeleteDialog, modal, modalKey }
 }

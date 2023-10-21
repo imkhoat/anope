@@ -8,10 +8,12 @@
     </u-avatar>
 </template>
 <script lang="ts" setup>
-const props = defineProps<{
+const props = withDefaults(defineProps<{
     icon: string,
     color: string
-}>()
+}>(), {
+    color: 'gray'
+})
 
 const iconClass = computed(() => {
     return {
