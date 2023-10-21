@@ -2,7 +2,7 @@
     <u-page page-title="Users Management" page-description="Invite or remove workspace user">
         <template #header-action>
             <div class="flex flex-row justify-end items-center gap-1">
-                <u-button icon="i-heroicons-user-plus" @click="onOpenInviteNewUser">Invite new users</u-button>
+                <u-button size="md" icon="i-heroicons-user-plus" @click="onOpenInviteNewUserModal">Invite new users</u-button>
             </div>
         </template>
         <div class="grid grid-cols-12 gap-4 h-fit">
@@ -24,13 +24,20 @@
                 <u-datatable></u-datatable>
             </div>
         </div>
+        <template #modal>
+            <form-invite-user v-if="modalKey === MODAL_KEY.INVITE_USER"></form-invite-user>
+        </template>
     </u-page>
 </template>
 <script lang="ts" setup>
-import { useConfirmModal } from '#imports';
+import { useModal } from '#imports';
 import UPage from '@/components/bases/u-page/u-page.vue';
 import UDatatable from '@/components/bases/u-datatable/u-datatable.vue';
+import { workspaceSettingsUsersManagementInjectionKey } from '@/utils/keys';
 import SummaryCard from '@/pages/workspace/_partials/settings/summary-card.vue'
+import { useUserManagement } from '@/pages/workspace/_composables/useUserManagement';
+import FormInviteUser from '@/pages/workspace/_partials/settings/form-invite-user.vue'
+
 
 const summaryData = ref({
     totalUsers: {
@@ -55,12 +62,32 @@ const summaryData = ref({
     }
 })
 
-const { showDeleteModal, showConfirmModal } = useConfirmModal()
+const { show, modalKey } = useModal()
+const { MODAL_KEY, handleSendInvite, inviteEmails } = useUserManagement()
 
-function onOpenInviteNewUser() {
-    showConfirmModal({
-        title: 'Remove users',
-        description: 'You remove Pascal of users, Are you sure?'
+function onOpenInviteNewUserModal() {
+    show({
+        preventClose: true,
+        headerTitle: 'Invite new user',
+        headerDescription: 'Click plus button to add new user',
+        headerIcon: 'i-heroicons-envelope-open',
+        key: MODAL_KEY.INVITE_USER,
+        width: 'sm:max-w-2xl',
+        yes: {
+            label: 'Send Invite',
+            icon: 'i-heroicons-envelope',
+            action: handleSendInvite
+        },
+        no: {
+            label: 'Cancel',
+            variant: 'outline',
+            color: 'gray'
+        }
     })
 }
+
+provide(workspaceSettingsUsersManagementInjectionKey, {
+    handleSendInvite,
+    inviteEmails
+})
 </script>

@@ -25,3 +25,7 @@ export const authForgotPasswordInjectionKey = Symbol() as InjectionKey<{
   state?: object;
   form?: object | undefined;
 }>;
+
+export const workspaceSettingsUsersManagementInjectionKey = Symbol() as InjectionKey<{
+  [key: string]: string | object | any
+}>;

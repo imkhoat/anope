@@ -1,4 +1,4 @@
-import { NuxtPage } from "nuxt/schema";
+import type { NuxtPage } from "nuxt/schema";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -10,7 +10,7 @@ export default defineNuxtConfig({
             function removePagesMatching(pattern: RegExp, pages: NuxtPage[] = []) {
                 const pagesToRemove = []
                 for (const page of pages) {
-                    if (pattern.test(page.file)) {
+                    if (pattern.test(page.file || '')) {
                         pagesToRemove.push(page)
                     } else {
                         removePagesMatching(pattern, page.children)

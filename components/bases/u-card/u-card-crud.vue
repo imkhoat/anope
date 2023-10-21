@@ -16,9 +16,10 @@
         </slot>
         <template #footer>
             <div class="flex flex-row justify-end items-center gap-x-1">
-                <u-button :variant="no.variant" :color="no.color" class="min-w-[60px] items-center justify-center" @click="onNoClick">{{
-                    no?.title }}</u-button>
-                <u-button :variant="yes.variant" :color="yes.color" class="min-w-[60px] items-center justify-center" @click="onYesClick">{{ yes?.title }}</u-button>
+                <u-button :loading="loading.yes" size="md" v-bind="no" class="min-w-[70px] items-center justify-center"
+                    @click="onNoClick"></u-button>
+                <u-button :loading="loading.yes" size="md" v-bind="yes" class="min-w-[70px] items-center justify-center"
+                    @click="onYesClick"></u-button>
             </div>
         </template>
     </u-card>
@@ -36,16 +37,13 @@ export interface CardCrud {
     contentIcon?: string,
     contentIconColor?: string,
     yes?: {
+        [key: string]: string | (() => void) | null | undefined,
         action?: (() => void) | null,
-        title?: string,
-        color?: string,
-        variant?: string
+
     },
     no?: {
+        [key: string]: string | (() => void) | null | undefined,
         action?: (() => void) | null,
-        title?: string,
-        color?: string,
-        variant?: string
     },
 }
 
@@ -53,7 +51,7 @@ const props = withDefaults(defineProps<CardCrud>(), {
     contentIconColor: 'gray',
     yes: () => {
         return {
-            title: 'Save',
+            label: 'Save',
             action: null,
             color: 'primary',
             variant: 'solid'
@@ -61,7 +59,7 @@ const props = withDefaults(defineProps<CardCrud>(), {
     },
     no: () => {
         return {
-            title: 'Cancel',
+            label: 'Cancel',
             action: null,
             color: 'gray',
             variant: 'outline'
@@ -73,20 +71,42 @@ const emits = defineEmits<{
     (event: 'no'): () => void
 }>()
 
+const loading = reactive({
+    yes: false,
+    no: false,
+})
+
 
 // computed
-function onYesClick() {
-    emits('yes')
-    if (props?.yes?.action) {
-        props?.yes?.action()
+async function onYesClick() {
+    try {
+        emits('yes')
+        if (props?.yes?.action instanceof Promise) {
+            loading.yes = true
+        }
+        if (props?.yes?.action) {
+            await props?.yes?.action()
+        }
+    } catch (error) {
+
+    } finally {
+        loading.yes = false
     }
 }
 
-function onNoClick() {
-    emits('no')
-    if (props?.no?.action) {
-        props?.no?.action()
+async function onNoClick() {
+    try {
+        emits('no')
+        if (props?.no?.action instanceof Promise) {
+            loading.no = true
+        }
+        if (props?.no?.action) {
+            await props?.no?.action()
+        }
+    } catch (error) {
+
+    } finally {
+        loading.no = false
     }
 }
-
 </script>

@@ -1,29 +1,40 @@
 import { defineStore } from 'pinia'
 
 export const useApplicationStore = defineStore('application', {
-  state: () => ({
+  state: ():{
+    sidebar: boolean,
+    modal:{
+      open: boolean,
+      options: {[key: string] : string | boolean | object}
+    }
+  } => ({
     sidebar: false,
-    confirm: {
+    modal: {
       open: false,
       options: {}
     }
   }),
+  getters: {
+    modalKey: (state) => {
+      return state.modal?.options?.key
+    }
+  },
   actions: {
     toggleSidebar() {
       // `this` is the store instance
       this.sidebar = !this.sidebar
     },
-    toggleconfirm() {
-      this.confirm.open = !this.confirm.open
+    toggleModal() {
+      this.modal.open = !this.modal.open
     },
-    closeconfirm() {
-      this.confirm.open = false
+    closeModal() {
+      this.modal.open = false
     },
-    openconfirm() {
-      this.confirm.open = true
+    openModal() {
+      this.modal.open = true
     },
-    configconfirm(options: { [key: string]: string | boolean | object }) {
-      this.confirm.options = options
+    configModal(options: { [key: string]: string | boolean | object }) {
+      this.modal.options = options
     }
   },
 })
