@@ -28,13 +28,13 @@ export function useModal() {
             contentDescription: options.description,
             yes: {
                 action: options.onConfirm,
-                title: 'Confirm',
+                label: 'Confirm',
                 color: 'primary',
                 variant: 'solid'
             },
             no: {
                 action: options.onCancel,
-                title: 'Cancel',
+                label: 'Cancel',
                 color: 'gray',
                 variant: 'outline'
             }
@@ -58,13 +58,13 @@ export function useModal() {
             contentDescription: options.description,
             yes: {
                 action: options.onConfirm,
-                title: 'Confirm',
+                label: 'Confirm',
                 color: 'rose',
                 variant: 'solid'
             },
             no: {
                 action: options.onCancel,
-                title: 'Cancel',
+                label: 'Cancel',
                 color: 'gray',
                 variant: 'outline'
             }

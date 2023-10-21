@@ -2,7 +2,7 @@
     <u-page page-title="Users Management" page-description="Invite or remove workspace user">
         <template #header-action>
             <div class="flex flex-row justify-end items-center gap-1">
-                <u-button icon="i-heroicons-user-plus" @click="onOpenInviteNewUser">Invite new users</u-button>
+                <u-button size="md" icon="i-heroicons-user-plus" @click="onOpenInviteNewUserModal">Invite new users</u-button>
             </div>
         </template>
         <div class="grid grid-cols-12 gap-4 h-fit">
@@ -65,13 +65,24 @@ const summaryData = ref({
 const { show, modalKey } = useModal()
 const { MODAL_KEY, handleSendInvite, inviteEmails } = useUserManagement()
 
-function onOpenInviteNewUser() {
+function onOpenInviteNewUserModal() {
     show({
+        preventClose: true,
         headerTitle: 'Invite new user',
         headerDescription: 'Click plus button to add new user',
         headerIcon: 'i-heroicons-envelope-open',
         key: MODAL_KEY.INVITE_USER,
-        width: 'sm:max-w-2xl'
+        width: 'sm:max-w-2xl',
+        yes: {
+            label: 'Send Invite',
+            icon: 'i-heroicons-envelope',
+            action: handleSendInvite
+        },
+        no: {
+            label: 'Cancel',
+            variant: 'outline',
+            color: 'gray'
+        }
     })
 }
 

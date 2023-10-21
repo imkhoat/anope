@@ -23,27 +23,31 @@
                 padding: 'px-4 py-4 sm:p-4'
             }
         }">
-            <u-form :state="state" class="flex flex-col justify-start items-stretch gap-2">
-                <div class="flex flex-col md:flex-row justify-start items-stretch gap-2">
-                    <u-form-group description="Email address" class="flex-grow">
+            <u-form :state="state" :schema="schema" @submit="onAddUser" class="flex flex-col justify-start items-stretch gap-2">
+                <div class="flex flex-col md:flex-row justify-start items-start gap-2">
+                    <u-form-group name="email" description="Email address" class="flex-grow">
                         <u-input v-model="state.email" type="email" placeholder="abc@example.com"></u-input>
                     </u-form-group>
-                    <u-form-group description="Full name" class="flex-grow">
+                    <u-form-group name="name" description="Full name" class="flex-grow">
                         <u-input v-model="state.name" type="text" placeholder="Nick Pascal"></u-input>
                     </u-form-group>
-                    <u-form-group description="User Type" class="flex-grow">
+                    <u-form-group name="type" description="User Type" class="flex-grow">
                         <u-select-menu v-model="state.type" placeholder="Member" :options="userTypeOptions"></u-select-menu>
                     </u-form-group>
-                    <u-form-group description="Roles" class="flex-grow">
+                    <u-form-group name="role" description="Roles" class="flex-grow">
                         <u-select-menu v-model="state.role" placeholder="Admin" :options="roleOptions"></u-select-menu>
                     </u-form-group>
-                    <u-button variant="soft" class="self-end" @click="onAddUser">Add</u-button>
+                    <u-button variant="outline" type="submit" class="md:mt-5">Add</u-button>
                 </div>
             </u-form>
         </u-card>
     </div>
 </template>
 <script lang="ts" setup>
+import { z } from 'zod'
+import type { FormSubmitEvent } from '@nuxt/ui/dist/runtime/types'
+type Schema = z.output<typeof schema>
+
 
 const columns = [{
     key: 'email',
@@ -71,8 +75,20 @@ const state = ref<{
 }>({
     email: undefined,
     name: undefined,
-    type: undefined,
-    role: undefined
+    type: 'Guest',
+    role: 'Admin'
+})
+
+const schema = z.object({
+  email: z.string().email('Invalid email'),
+  name: z.string(),
+  type: z.string(),
+  role: z.string()
+}).required({
+    name: true,
+    email: true,
+    role: true,
+    type: true
 })
 
 const { inviteEmails } = inject<{ [key: string]: object | string | (() => void) | any }>(workspaceSettingsUsersManagementInjectionKey, {})
@@ -86,7 +102,7 @@ const roleOptions = computed(() => {
         'Super Admin']
 })
 
-function onAddUser() {
+function onAddUser(event: FormSubmitEvent<Schema>) {
     inviteEmails.value.push({
         email: state.value.email,
         name: state.value.name,
