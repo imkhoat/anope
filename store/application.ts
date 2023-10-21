@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useApplicationStore = defineStore('application', {
   state: () => ({
     sidebar: false,
-    crudModal: {
+    confirm: {
       open: false,
       options: {}
     }
@@ -13,17 +13,17 @@ export const useApplicationStore = defineStore('application', {
       // `this` is the store instance
       this.sidebar = !this.sidebar
     },
-    toggleCrudModal() {
-      this.crudModal.open = !this.crudModal.open
+    toggleconfirm() {
+      this.confirm.open = !this.confirm.open
     },
-    closeCrudModal() {
-      this.crudModal.open = false
+    closeconfirm() {
+      this.confirm.open = false
     },
-    openCrudModal() {
-      this.crudModal.open = true
+    openconfirm() {
+      this.confirm.open = true
     },
-    configCrudModal(options: { [key: string]: string | boolean | object }) {
-      this.crudModal.options = options
+    configconfirm(options: { [key: string]: string | boolean | object }) {
+      this.confirm.options = options
     }
   },
 })
