@@ -1,5 +1,5 @@
 <template>
-    <u-page page-title="Users Management" page-description="Invite or remove workspace user">
+    <u-page page-title="Users Management" page-description="A list of all users in your account including their name, title, email and role">
         <template #header-action>
             <div class="flex flex-row justify-end items-center gap-1">
                 <u-button size="md" icon="i-heroicons-user-plus" @click="onOpenInviteNewUserModal">Invite new users</u-button>

@@ -16,7 +16,8 @@ const menus = ref([
         title: 'Business Information',
         items: [{
             title: 'My Business Overview',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }]
     },
@@ -24,19 +25,23 @@ const menus = ref([
         title: 'User management',
         items: [{
             title: 'Team and Groups',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }, {
             title: 'User Management',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }, {
             title: 'User Types and Reference Data',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }, {
             title: 'Role and Permissions',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }]
     },
@@ -44,14 +49,16 @@ const menus = ref([
         title: 'Financial',
         items: [{
             title: 'Payment Settings',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }]
     }, {
         title: 'Alert and Notification',
         items: [{
             title: 'My Business Overview',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }]
     },
@@ -59,27 +66,33 @@ const menus = ref([
         title: 'Default and Reference data',
         items: [{
             title: 'Local setting',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }, {
             title: 'Horses Reference Data',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }, {
             title: 'Contact Reference Data',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }, {
             title: 'Location Reference Data',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }, {
             title: 'Users Reference Data',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }, {
             title: 'Activity, Treatment and Proceduce Reference Data',
-            icon: 'i-heroicons-arrow-top-right-on-square',
+            class: '!font-normal',
+            icon: 'i-heroicons-arrow-top-right-on-square-20-solid',
             value: 'WORKSPACE_01'
         }]
     }

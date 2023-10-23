@@ -42,7 +42,8 @@
         "text": {
             "Success": "Thành công",
             "Language changed": "Đã thay đổi ngôn ngữ",
-            "You have changed language to": "Bạn đã thay đổi ngôn ngữ thành"
+            "You have changed language to": "Bạn đã thay đổi ngôn ngữ thành",
+            "Incorrect format": "Không đúng định dạng"
         }
     },
     "onboarding": {

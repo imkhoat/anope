@@ -21,12 +21,14 @@ const workspaceId = computed(() => {
 const items = [
     [{
         label: 'All admin setting',
+        class: 'font-normal',
         icon: 'i-heroicons-cog-8-tooth-20-solid',
         click: () => {
             router.push(localePath({ name: 'workspace-id-settings', params: { id: workspaceId.value } }))
         }
     }], [{
         label: 'Business information',
+        class: 'font-normal',
         icon: 'i-heroicons-briefcase-20-solid',
         shortcuts: ['2'],
         click: () => {
@@ -34,6 +36,7 @@ const items = [
         }
     }, {
         label: 'User management',
+        class: 'font-normal',
         icon: 'i-heroicons-users-20-solid',
         shortcuts: ['2'],
         click: () => {
@@ -41,6 +44,7 @@ const items = [
         }
     }, {
         label: 'Reference data and default',
+        class: 'font-normal',
         icon: 'i-heroicons-shield-check-20-solid',
         shortcuts: ['3'],
         click: () => {
@@ -48,6 +52,7 @@ const items = [
         }
     }], [{
         label: 'Logout',
+        class: 'font-normal',
         icon: 'i-heroicons-arrow-left-circle-20-solid',
         click: () => {
             logout()

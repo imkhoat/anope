@@ -1,10 +1,5 @@
 <template>
-  <component
-    :is="as"
-    class="cursor-pointer text-gray-700 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold "
-    :class="uListItemClass"
-    @click="onClickListItem"
-  >
+  <component :is="as" :class="uListItemClass" @click="onClickListItem">
     <div class="ml-0 shrink-0 flex justify-center items-center">
       <slot name="icon" :icon="icon">
         <u-icon v-if="icon" :name="icon" :class="denseIconClass" />
@@ -20,13 +15,7 @@
     </div>
     <div v-if="!collapse" class="ml-auto shrink-0 flex justify-end items-center">
       <slot name="action">
-        <u-badge
-          v-if="badge"
-          color="primary"
-          variant="solid"
-          size="xs"
-          :label="badge"
-        />
+        <u-badge v-if="badge" color="primary" variant="solid" size="xs" :label="badge" />
       </slot>
     </div>
   </component>
@@ -43,6 +32,7 @@ const props = withDefaults(defineProps<ListItem>(), {
   as: "div",
   activeClass: 'bg-gray-50 text-primary-600',
   hoverClass: 'hover:bg-gray-100 hover:text-gray-900',
+  class: '',
   collapse: false,
   dense: true
 });
@@ -62,11 +52,12 @@ const denseIconClass = computed(() => {
 })
 
 const collapseClass = computed(() => {
-  return props.collapse ? 'w-fit': 'w-full'
+  return props.collapse ? 'w-fit' : 'w-full'
 })
 
 const uListItemClass = computed(() => {
-  return twJoin(stateClass.value, collapseClass.value, denseClass.value, props.hoverClass)
+  const defaultClass = 'cursor-pointer text-gray-700 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
+  return twJoin(defaultClass, props.class, stateClass.value, collapseClass.value, denseClass.value, props.hoverClass)
 })
 
 // methods
