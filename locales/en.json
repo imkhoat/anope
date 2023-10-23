@@ -42,7 +42,8 @@
         "text": {
             "Success": "Success",
             "Language changed": "Language changed",
-            "You have changed language to": "You have changed language to English"
+            "You have changed language to": "You have changed language to English",
+            "Incorrect format": "Incorrect format"
         }
     },
     "onboarding": {

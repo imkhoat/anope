@@ -10,7 +10,8 @@
             </template>
             <template #actions-data="{ row }">
                 <div class="flex flex-row justify-end items-center">
-                    <u-button size="xs" variant="ghost" color="rose" icon="i-heroicons-trash" @click="onRemoveUser(row)"></u-button>
+                    <u-button size="xs" variant="ghost" color="rose" icon="i-heroicons-trash"
+                        @click="onRemoveUser(row)"></u-button>
                 </div>
             </template>
         </u-table>
@@ -49,6 +50,7 @@ import { workspaceSettingsUsersManagementInjectionKey } from '@/utils/keys';
 
 type Schema = z.output<typeof schema>
 
+const {t} = useI18n()
 
 const columns = [{
     key: 'email',
@@ -81,7 +83,7 @@ const state = ref<{
 })
 
 const schema = z.object({
-    email: z.string(),
+    email: z.string().email(t('general.text.Incorrect format')),
     name: z.string(),
     type: z.string(),
     role: z.string()
@@ -128,7 +130,7 @@ async function onAddUser() {
     }
 }
 
-async function onRemoveUser(row){
+async function onRemoveUser(row) {
     const itemIndex = inviteEmails.value.findIndex(item => item.index == row.index)
     inviteEmails.value.splice(itemIndex, 1)
 }
