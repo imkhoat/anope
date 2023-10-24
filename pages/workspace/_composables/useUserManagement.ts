@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+import type { User } from '@/types/model/user'
 import { useModal } from '@/composables/useModal'
 
 export function useUserManagement() {
@@ -22,5 +23,9 @@ export function useUserManagement() {
         })
     }
 
-    return { MODAL_KEY, inviteEmails, handleSendInvite }
+    function handleRemoveUser(user: User) {
+        console.log(user)
+    }
+
+    return { MODAL_KEY, inviteEmails, handleSendInvite, handleRemoveUser }
 }

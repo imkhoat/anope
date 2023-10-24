@@ -37,7 +37,9 @@
             "Password": "Mật khẩu",
             "Confirm password": "Xác nhận mật khẩu",
             "Workspace": "Không gian làm việc",
-            "New password": "Mật khẩu mới"
+            "New password": "Mật khẩu mới",
+            "Date Time Format": "Date Time Format",
+            "Measurement": "Measurement"
         },
         "text": {
             "Success": "Thành công",

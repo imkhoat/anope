@@ -8,7 +8,7 @@
             <template #item="{ item }">
                 <u-list-item v-bind="item" class="overflow-hidden">
                     <template #icon="{ icon }">
-                        <u-avatar size="xs" class="ring-2 ring-gray-50">
+                        <u-avatar v-if="icon" size="xs" class="ring-2 ring-gray-50">
                             <u-icon size="md" :name="icon"></u-icon>
                         </u-avatar>
                     </template>
@@ -25,7 +25,7 @@ const cardUI = {
     shadow: ''
 }
 
-defineProps<{
+defineProps<Partial<{
     title: string,
     description: string,
     items: {
@@ -34,5 +34,5 @@ defineProps<{
         icon: string,
         value: string
     }[]
-}>()
+}>>()
 </script>
