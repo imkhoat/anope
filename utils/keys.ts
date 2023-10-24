@@ -29,3 +29,7 @@ export const authForgotPasswordInjectionKey = Symbol() as InjectionKey<{
 export const workspaceSettingsUsersManagementInjectionKey = Symbol() as InjectionKey<{
   [key: string]: string | object | any
 }>;
+
+export const workspaceSettingsReferenceDataInjectionKey= Symbol() as InjectionKey<{
+  [key: string]: string | object | any
+}>;

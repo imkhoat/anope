@@ -37,7 +37,9 @@
             "Password": "Password",
             "Confirm password": "Confirm password",
             "Workspace": "Workspace",
-            "New password": "New password"
+            "New password": "New password",
+            "Date Time Format": "Date Time Format",
+            "Measurement": "Measurement"
         },
         "text": {
             "Success": "Success",

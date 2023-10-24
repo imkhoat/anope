@@ -43,9 +43,9 @@
           <!-- <the-support-card :minimum="collapse" v-if="!collapse"></the-support-card> -->
         </div>
       </u-card>
-      <u-button variant="soft"
+      <!-- <u-button variant="soft"
         :icon="collapse ? 'i-heroicons-chevron-right-20-solid' : 'i-heroicons-chevron-left-20-solid'"
-        class="absolute bottom-2 -right-4" @click="onToggleCollapse"></u-button>
+        class="absolute bottom-2 -right-4" @click="onToggleCollapse"></u-button> -->
     </div>
   </div>
 </template>
@@ -60,7 +60,7 @@ import TheSettingMenu from '@/layouts/_partials/the-setting-menu.vue';
 
 const { sidebar } = storeToRefs(useApplicationStore())
 const { toggleSidebar } = useApplicationStore()
-const collapse = ref(false)
+const collapse = ref(true)
 
 function onToggleCollapse() {
   collapse.value = !collapse.value

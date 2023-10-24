@@ -3,7 +3,7 @@ import type { NuxtPage } from "nuxt/schema";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: {
-        enable: true
+        enable: false
     },
     hooks: {
         'pages:extend'(pages) {
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
             },
         },
     },
-    modules: ['@pinia/nuxt', "@nuxt/ui", '@nuxtjs/i18n', "@nuxtjs/storybook", '@nuxt/image', '@pinia/nuxt', '@nuxtjs/google-fonts'],
+    modules: ['@pinia/nuxt', "@nuxt/ui", '@nuxtjs/i18n', "@nuxtjs/storybook", '@nuxt/image', '@pinia/nuxt', '@nuxtjs/google-fonts', '@vueuse/nuxt'],
     i18n: {
         locales: [
             { code: "vi", name: 'Tiếng Viêt', iso: "vi-VN", file: "vi.json" },
