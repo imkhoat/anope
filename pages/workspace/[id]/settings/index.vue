@@ -1,7 +1,7 @@
 <template>
     <u-page page-title="Setting" page-description="Choose between categories">
         <div class="grid grid-cols-12 gap-4 h-fit">
-            <div v-for="(menu, index) in menus" :key="index + '__setting-pages'" class="col-span-12 lg:col-span-3">
+            <div v-for="(menu, index) in menus" :key="index + '__setting-pages'" class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
                 <setting-menu :title="menu.title" :items="menu.items"></setting-menu>
             </div>
         </div>
