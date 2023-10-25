@@ -77,7 +77,6 @@ export function useModal() {
 
     function hide() {
         closeModal()
-        configModal({})
     }
 
     return { hide, show, showConfirmDialog, showDeleteDialog, modal, modalKey }

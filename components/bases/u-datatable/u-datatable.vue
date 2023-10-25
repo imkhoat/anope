@@ -1,35 +1,32 @@
 <script lang="ts" setup>
+// Props
+const props = defineProps<{
+  columns: {
+    key: string,
+    label?: string,
+    sortable?: boolean | undefined,
+    class?: string | undefined,
+    direction?: "desc" | "asc" | undefined,
+    [key: string]: any
+  }[] | undefined,
+  rows: {
+    [key: string]: string | boolean | object | undefined | null
+  }[],
+  loading: boolean
+}>()
 // Columns
-const columns = [{
-  key: 'id',
-  label: '#',
-  sortable: true
-}, {
-  key: 'name',
-  label: 'Name',
-  sortable: true
-}, {
-  key: 'email',
-  label: 'Email',
-  sortable: true
-}, {
-  key: 'completed',
-  label: 'Active',
-  sortable: true
-}, {
-  key: 'actions',
-  label: 'Actions',
-  class: 'text-right',
-  sortable: false
-}]
+const selectedColumns = ref(props.columns)
+const columnsTable = computed(() => props.columns?.filter((column) => selectedColumns.value?.includes(column)))
 
-const selectedColumns = ref(columns)
-const columnsTable = computed(() => columns.filter((column) => selectedColumns.value.includes(column)))
-
+// Data
+const tableRows = computed(() => {
+  return props.rows??[]
+})
 // Selected Rows
-const selectedRows = ref([])
+const selectedRows = ref<any[]>([])
 
-function select(row) {
+
+function select(row: any) {
   const index = selectedRows.value.findIndex((item) => item.id === row.id)
   if (index === -1) {
     selectedRows.value.push(row)
@@ -63,18 +60,7 @@ const todoStatus = [{
 }]
 
 const search = ref('')
-const selectedStatus = ref([])
-const searchStatus = computed(() => {
-  if (selectedStatus.value?.length === 0) {
-    return ''
-  }
-
-  if (selectedStatus?.value?.length > 1) {
-    return `?completed=${selectedStatus.value[0].value}&completed=${selectedStatus.value[1].value}`
-  }
-
-  return `?completed=${selectedStatus.value[0].value}`
-})
+const selectedStatus = ref<any[]>([])
 
 const resetFilters = () => {
   search.value = ''
@@ -82,27 +68,20 @@ const resetFilters = () => {
 }
 
 // Pagination
-const page = ref(1)
-const pageCount = ref(10)
-const pageTotal = ref(200) // This value should be dynamic coming from the API
+const page = defineModel('page', {
+  type: Number,
+  default: 0
+})
+const pageCount = defineModel('pageCount',{
+  type: Number,
+  default: 10
+})
+const pageTotal = defineModel('pageTotal', {
+  type: Number,
+  default: 100
+}) // This value should be dynamic coming from the API
 const pageFrom = computed(() => (page.value - 1) * pageCount.value + 1)
 const pageTo = computed(() => Math.min(page.value * pageCount.value, pageTotal.value))
-
-// Data
-const { data: todos, pending } = await useLazyAsyncData('todos', () => $fetch<{
-  id: number
-  title: string
-  completed: string
-}[]>(`https://jsonplaceholder.typicode.com/users${searchStatus.value}`, {
-  query: {
-    q: search.value,
-    '_page': page.value,
-    '_limit': pageCount.value
-  }
-}), {
-  default: () => [],
-  watch: [page, search, searchStatus, pageCount]
-})
 </script>
 
 <template>
@@ -150,20 +129,10 @@ const { data: todos, pending } = await useLazyAsyncData('todos', () => $fetch<{
     </div>
 
     <!-- Table -->
-    <u-table v-model="selectedRows" :rows="todos" :columns="columnsTable" :loading="pending"
+    <u-table v-model="selectedRows" :rows="tableRows" :columns="columnsTable" :loading="loading"
       sort-asc-icon="i-heroicons-arrow-up" sort-desc-icon="i-heroicons-arrow-down" class="w-full"
       :ui="{ td: { base: 'max-w-[0] truncate' } }" @select="select">
-      <template #completed-data="{ row }">
-        <u-badge size="xs" :label="row.completed ? 'Completed' : 'In Progress'"
-          :color="row.completed ? 'primary' : 'orange'" variant="soft" />
-      </template>
-
-      <template #actions-data="{ row }">
-        <div class="flex flex-row justify-end items-center">
-          <u-button size="xs" variant="ghost" color="primary" icon="i-heroicons-pencil-square-20-solid"></u-button>
-          <u-button size="xs" variant="ghost" color="rose" icon="i-heroicons-trash"></u-button>
-        </div>
-      </template>
+      <template v-for="(_, name) in $slots" v-slot:[name]="slotData"><slot :name="name" v-bind="slotData" /></template>
     </u-table>
 
     <!-- Number of rows & Pagination -->
