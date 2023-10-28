@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-center items-stretch gap-16 w-full h-full">
+    <div class="flex flex-col justify-center items-stretch gap-16 w-full h-fit">
         <div class="flex flex-col justify-center items-stretch text-center gap-2">
             <h6 class="text-3xl font-semibold">{{ $t(`onboarding.profile.My Profile`) }}</h6>
             <p class="text-sm opacity-60"> {{ $t(`onboarding.profile.The information we collect as part of your profile`) }}</p>

@@ -14,7 +14,7 @@
 </template>
 <script lang="ts" setup>
 import { twJoin } from 'tailwind-merge'
-import { UStep } from "@/types/components/u-step";
+import type { UStep } from "@/types/components/u-step";
 import UStepItem from "@/components/bases/u-step/u-step-item.vue";
 
 // props & emits

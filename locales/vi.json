@@ -1,36 +1,37 @@
 {
     "general": {
         "button": {
-            "Save and Next Step": "Lưu và tiếp theo",
+            "Save and Next Step": "Lưu và Bước tiếp theo",
             "Back": "Quay lại",
             "Add more email": "Thêm email khác",
-            "Add more phone": "Thêm điện thoại khác",
+            "Add more phone": "Thêm số điện thoại khác",
             "Login": "Đăng nhập",
             "Register": "Đăng ký",
-            "Reset": "Đặt lại",
-            "Send": "Gửi"
+            "Reset": "Làm mới",
+            "Send": "Gửi",
+            "Send Invite": "Gửi lời mời"
         },
         "form": {
-            "Fullname": "Họ và tên",
+            "Fullname": "Tên đầy đủ",
             "Email address": "Địa chỉ email",
             "Firstname": "Tên",
             "Lastname": "Họ",
-            "Job title": "Chức danh công việc",
-            "About": "Giới thiệu bản thân",
+            "Job title": "Chức danh",
+            "About": "Giới thiệu",
             "Country": "Quốc gia",
             "Address": "Địa chỉ",
-            "Street address": "Địa chỉ đường phố",
+            "Street address": "Địa chỉ đường",
             "Tower City": "Tòa nhà/Thành phố",
-            "State Provide": "Tiểu bang/Vùng",
-            "ZIP Postal code": "Mã bưu điện",
+            "State Provide": "Tỉnh/Thành phố",
+            "ZIP Postal code": "Mã bưu điện/Mã vùng",
             "Phone": "Số điện thoại",
-            "Second email": "Email thứ hai",
-            "ABN NZBN": "ABN/NZBN",
+            "Second email": "Email phụ",
+            "ABN NZBN": "ABN / NZBN",
             "Company name": "Tên công ty",
-            "Register business Address": "Địa chỉ kinh doanh đã đăng ký",
+            "Register business Address": "Địa chỉ đăng ký kinh doanh",
             "Postal Address": "Địa chỉ bưu điện",
             "Company website": "Trang web công ty",
-            "Currency": "Đơn vị tiền tệ",
+            "Currency": "Tiền tệ",
             "Datetime format": "Định dạng ngày giờ",
             "This present format base on datetime format": "Định dạng hiện tại dựa trên định dạng ngày giờ",
             "Email": "Email",
@@ -38,14 +39,14 @@
             "Confirm password": "Xác nhận mật khẩu",
             "Workspace": "Không gian làm việc",
             "New password": "Mật khẩu mới",
-            "Date Time Format": "Date Time Format",
-            "Measurement": "Measurement"
+            "Date Time Format": "Định dạng ngày giờ",
+            "Measurement": "Đơn vị đo lường"
         },
         "text": {
             "Success": "Thành công",
-            "Language changed": "Đã thay đổi ngôn ngữ",
-            "You have changed language to": "Bạn đã thay đổi ngôn ngữ thành",
-            "Incorrect format": "Không đúng định dạng"
+            "Language changed": "Ngôn ngữ đã được thay đổi",
+            "You have changed language to": "Bạn đã thay đổi ngôn ngữ sang Tiếng Việt",
+            "Incorrect format": "Định dạng không chính xác"
         }
     },
     "onboarding": {
@@ -53,21 +54,24 @@
             "Update your profile": "Cập nhật hồ sơ của bạn",
             "Enter your business information": "Nhập thông tin doanh nghiệp của bạn",
             "Enter your property information": "Nhập thông tin tài sản của bạn",
-            "Setup your hourses": "Thiết lập giờ làm việc của bạn",
+            "Setup your hourses": "Thiết lập giờ của bạn",
             "Intergrate your Account System": "Tích hợp hệ thống tài khoản của bạn",
             "Setup your Product and Service": "Thiết lập sản phẩm và dịch vụ của bạn",
             "Setup your Supplier": "Thiết lập nhà cung cấp của bạn",
-            "Setup your Contacts/Customers": "Thiết lập danh bạ/khách hàng của bạn",
+            "Setup your Contacts Customers": "Thiết lập khách hàng liên hệ của bạn",
             "Invite Users": "Mời người dùng",
-            "Completed": "Đã hoàn thành"
+            "Completed": "Hoàn thành"
         },
         "profile": {
             "My Profile": "Hồ sơ của tôi",
-            "The information we collect as part of your profile": "Thông tin chúng tôi thu thập như một phần của hồ sơ của bạn rất quan trọng đối với Anope, nền tảng, thông báo nhiệm vụ khách quan và đăng nhập tự động",
-            "business": {
-                "My Business Information": "Thông tin kinh doanh của tôi",
-                "The information we collect about your business": "Thông tin chúng tôi thu thập về doanh nghiệp của bạn để tạo điều kiện đăng ký tự động"
-            }
+            "The information we collect as part of your profile": "Thông tin chúng tôi thu thập như một phần hồ sơ của bạn"
+        },
+        "business": {
+            "My Business Information": "Thông tin doanh nghiệp của tôi",
+            "The information we collect about your business": "Thông tin chúng tôi thu thập về doanh nghiệp của bạn"
+        },
+        "invite": {
+            "Invite Users": "Mời người dùng"
         }
     }
 }

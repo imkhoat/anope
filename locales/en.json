@@ -8,7 +8,8 @@
             "Login": "Login",
             "Register": "Register",
             "Reset": "Reset",
-            "Send": "Send"
+            "Send": "Send",
+            "Send Invite": "Send Invite"
         },
         "form": {
             "Fullname": "Fullname",
@@ -68,6 +69,9 @@
         "business": {
             "My Business Information": "My Business Information",
             "The information we collect about your business" : "The information we collect about your business to facilitate automated lodgerment"
+        },
+        "invite": {
+            "Invite Users": "Invite Users"
         }
     }
 }
