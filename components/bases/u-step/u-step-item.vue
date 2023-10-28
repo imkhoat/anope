@@ -29,7 +29,7 @@
 </template>
 <script lang="ts" setup>
 import { twJoin } from 'tailwind-merge'
-import { UStepItem } from "@/types/components/u-step-item";
+import type { UStepItem } from "@/types/components/u-step-item";
 
 // composables
 const router = useRouter()

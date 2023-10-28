@@ -3,6 +3,7 @@
         <div class="left-side col-span-9 px-16 pt-16">
             <step-update-profile v-if="activeStep === 'STEP-01'"></step-update-profile>
             <step-enter-business-information v-else-if="activeStep === 'STEP-02'"></step-enter-business-information>
+            <step-invite-user v-else-if="activeStep === 'STEP-09'"></step-invite-user>
         </div>
         <div class="right-side min-h-full bg-white col-span-3 -my-4 -mr-4 flex flex-col justify-between items-stretch">
             <onboarding-stepper />
@@ -13,12 +14,12 @@
 <script lang="ts" setup>
 import { provide } from 'vue'
 import { onboardingInjectionKey } from '@/utils/keys'
-import { UStepItem } from '@/types/components/u-step-item';
+import type { UStepItem } from '@/types/components/u-step-item';
 import SupportCard from '@/pages/workspace/_partials/onboarding/support-card.vue';
+import stepInviteUser from '@/pages/workspace/_partials/onboarding/step-invite-user.vue';
 import OnboardingStepper from '@/pages/workspace/_partials/onboarding/onboarding-stepper.vue';
 import StepUpdateProfile from '@/pages/workspace/_partials/onboarding/step-update-profile.vue';
 import StepEnterBusinessInformation from '@/pages/workspace/_partials/onboarding/step-enter-business-information.vue';
-
 // type
 type StepValue = 'STEP-01' | 'STEP-02' | 'STEP-03' | 'STEP-04' | 'STEP-05' | 'STEP-06' | 'STEP-07' | 'STEP-08' | 'STEP-09' | 'STEP-10'
 interface Step extends UStepItem {
