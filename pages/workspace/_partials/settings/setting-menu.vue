@@ -30,9 +30,10 @@ defineProps<Partial<{
     description: string,
     items: {
         title: string,
-        description: string,
+        description?: string,
         icon: string,
-        value: string
+        value: string,
+        class?: string
     }[]
 }>>()
 </script>

@@ -3,7 +3,7 @@ import type { NuxtPage } from "nuxt/schema";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: {
-        enable: false
+        enable: true
     },
     hooks: {
         'pages:extend'(pages) {

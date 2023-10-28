@@ -1,25 +1,14 @@
 <template>
     <u-page page-title="Defaut and Reference Data"
-        page-description="Setup and config reference data and system enviroments">
+        page-description="Setup and config reference data and system enviroments"
+        :menus="tabs">
         <div class="flex flex-col justify-start items-stretch divide-y">
-            <div class="w-full md:w-2/3 flex flex-row justify-end items-center py-8">
-                <u-tabs :items="tabs" v-model="selected" class="w-full">
-                    <template #default="{ item, index, selected }">
-                        <div class="flex items-center gap-2 relative truncate">
-                            <UIcon :name="item.icon" class="w-4 h-4 flex-shrink-0" />
-                            <span class="truncate hidden sm:inline-block">{{ index + 1 }}. {{ item.label }}</span>
-                            <span v-if="selected"
-                                class="absolute -right-4 w-2 h-2 rounded-full bg-primary-500 dark:bg-primary-400" />
-                        </div>
-                    </template>
-                </u-tabs>
-            </div>
-            <div class="w-full min-h-screen py-8">
+            <div class="w-full min-h-screen">
                 <div class="grid grid-cols-12 gap-y-8 md:gap-x-16">
                     <u-card-header :title="selectedKey.label" :description="selectedKey.description"
-                        class="col-span-12 md:col-span-4 lg:col-span-3"></u-card-header>
+                        class="col-span-12 md:col-span-6 lg:col-span-5"></u-card-header>
                     <default-and-reference-data-local-setting-form v-if="selectedKey.key === 'local-settings'"
-                        class="col-span-12 md:col-span-5"></default-and-reference-data-local-setting-form>
+                        class="col-span-12 md:col-span-6 lg:col-span-7"></default-and-reference-data-local-setting-form>
                 </div>
             </div>
         </div>
@@ -42,27 +31,32 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const tabs = ref<{
     key: TabKey,
+    to?: string,
     label: string,
     description: string,
     icon?: string
 }[]>([
     {
         key: 'local-settings',
+        to: '#local-settings',
         label: 'Local Settings',
         icon: 'i-heroicons-wrench-screwdriver',
         description: 'Make changes to your account here. Click save when you\'re done.'
     }, {
         key: 'horse-ref-data',
+        to: '#horse-ref-data',
         label: 'Horse Ref Data',
         icon: 'i-heroicons-trophy',
         description: 'Make changes to your account here. Click save when you\'re done.'
     }, {
         key: 'contact-ref-data',
+        to: '#contact-ref-data',
         label: 'Contact Ref Data',
         icon: 'i-heroicons-identification',
         description: 'Make changes to your account here. Click save when you\'re done.'
     }, {
         key: 'localtion-ref-data',
+        to: '#localtion-ref-data',
         label: 'Location Ref Data',
         icon: 'i-heroicons-map-pin',
         description: 'Make changes to your account here. Click save when you\'re done.'
