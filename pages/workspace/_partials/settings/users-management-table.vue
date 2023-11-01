@@ -1,74 +1,106 @@
 <template>
-    <u-datatable :columns="columns" :rows="todos" :loading="pending" v-model:page="filter.page"
-        v-model:pageCount="filter.pageCount">
-        <template #completed-data="{ row }">
-            <u-badge size="xs" :label="row.completed ? 'Completed' : 'In Progress'"
-                :color="row.completed ? 'primary' : 'orange'" variant="soft" />
-        </template>
+  <u-datatable
+    :columns="columns"
+    :rows="todos"
+    :loading="pending"
+    v-model:page="filter.page"
+    v-model:pageCount="filter.pageCount"
+  >
+    <template #completed-data="{ row }">
+      <u-badge
+        size="xs"
+        :label="row.completed ? 'Completed' : 'In Progress'"
+        :color="row.completed ? 'primary' : 'orange'"
+        variant="soft"
+      />
+    </template>
 
-        <template #actions-data="{ row }">
-            <div class="flex flex-row justify-end items-center">
-                <u-button size="xs" variant="ghost" color="primary" icon="i-heroicons-pencil-square-20-solid"></u-button>
-                <u-button size="xs" variant="ghost" color="rose" icon="i-heroicons-trash" @click="onRemoveUse"></u-button>
-            </div>
-        </template>
-    </u-datatable>
+    <template #actions-data="{ row }">
+      <div class="flex flex-row justify-end items-center">
+        <u-button
+          size="xs"
+          variant="ghost"
+          color="primary"
+          icon="i-heroicons-pencil-square-20-solid"
+        ></u-button>
+        <u-button
+          size="xs"
+          variant="ghost"
+          color="rose"
+          icon="i-heroicons-trash"
+          @click="onRemoveUse"
+        ></u-button>
+      </div>
+    </template>
+  </u-datatable>
 </template>
 <script lang="ts" setup>
-import UDatatable from '@/components/bases/u-datatable/u-datatable.vue';
+import UDatatable from "@/components/bases/u-datatable/u-datatable.vue";
 
-const columns = [{
-    key: 'id',
-    label: '#',
-    sortable: true
-}, {
-    key: 'name',
-    label: 'Name',
-    sortable: true
-}, {
-    key: 'email',
-    label: 'Email',
-    sortable: true
-}, {
-    key: 'completed',
-    label: 'Active',
-    sortable: true
-}, {
-    key: 'actions',
-    label: 'Actions',
-    class: 'text-right',
-    sortable: false
-}]
+const columns = [
+  {
+    key: "id",
+    label: "#",
+    sortable: true,
+  },
+  {
+    key: "name",
+    label: "Name",
+    sortable: true,
+  },
+  {
+    key: "email",
+    label: "Email",
+    sortable: true,
+  },
+  {
+    key: "completed",
+    label: "Active",
+    sortable: true,
+  },
+  {
+    key: "actions",
+    label: "Actions",
+    class: "text-right",
+    sortable: false,
+  },
+];
 
 const filter = reactive({
-    search: '',
-    page: 0,
-    pageCount: 10,
-})
+  search: "",
+  page: 0,
+  pageCount: 10,
+});
 
 // Data
-const { data: todos, pending } = await useLazyAsyncData('todos', () => $fetch<{
-    id: number
-    title: string
-    completed: string
-}[]>(`https://jsonplaceholder.typicode.com/users`, {
-    query: {
+const { data: todos, pending } = await useLazyAsyncData(
+  "todos",
+  () =>
+    $fetch<
+      {
+        id: number;
+        title: string;
+        completed: string;
+      }[]
+    >(`https://jsonplaceholder.typicode.com/users`, {
+      query: {
         q: filter.search,
-        '_page': filter.page,
-        '_limit': filter.pageCount
-    }
-}), {
+        _page: filter.page,
+        _limit: filter.pageCount,
+      },
+    }),
+  {
     default: () => [],
-    watch: [filter]
-})
-
+    watch: [filter],
+  },
+);
 
 // Remove user
-const { showDeleteDialog, modalKey } = useModal()
-function onRemoveUse(){
-    showDeleteDialog({
-        title: 'Remove user',
-        description: 'We are going to remove user out of workspace, Are you sure?'
-    })
+const { showDeleteDialog, modalKey } = useModal();
+function onRemoveUse() {
+  showDeleteDialog({
+    title: "Remove user",
+    description: "We are going to remove user out of workspace, Are you sure?",
+  });
 }
 </script>

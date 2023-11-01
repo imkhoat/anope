@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia'
 
 export const useApplicationStore = defineStore('application', {
-  state: ():{
+  state: (): {
     sidebar: boolean,
-    modal:{
+    modal: {
       open: boolean,
-      options: {[key: string] : string | boolean | object}
+      options: { [key: string]: string | boolean | object }
     }
   } => ({
     sidebar: false,
@@ -36,5 +36,5 @@ export const useApplicationStore = defineStore('application', {
     configModal(options: { [key: string]: string | boolean | object }) {
       this.modal.options = options
     }
-  },
+  }
 })
