@@ -2,7 +2,9 @@
     <u-avatar size="2xl" :class="iconClass.firstRing">
         <u-avatar size="lg" :class="iconClass.secondRing">
             <u-avatar size="sm" :ui="avatarUI">
-                <u-icon size="md" :name="icon" :class="iconClass.icon"></u-icon>
+                <slot>
+                    <u-icon size="md" :name="icon" :class="iconClass.icon"></u-icon>
+                </slot>
             </u-avatar>
         </u-avatar>
     </u-avatar>
