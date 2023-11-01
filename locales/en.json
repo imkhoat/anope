@@ -46,7 +46,8 @@
             "Success": "Success",
             "Language changed": "Language changed",
             "You have changed language to": "You have changed language to English",
-            "Incorrect format": "Incorrect format"
+            "Incorrect format": "Incorrect format",
+            "Item not found": "Item not found!"
         }
     },
     "onboarding": {
