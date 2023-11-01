@@ -5,13 +5,13 @@ export default defineAppConfig({
       gray: 'cool',
       rose: 'rose',
       card: {
-        rounded: "rounded-xl",
+        rounded: 'rounded-xl'
       },
       table: {
         default: {
           emptyState: {
-            icon: "i-heroicons-archive-box",
-            label: "No items found."
+            icon: 'i-heroicons-archive-box',
+            label: 'No items found.'
           }
         }
       }

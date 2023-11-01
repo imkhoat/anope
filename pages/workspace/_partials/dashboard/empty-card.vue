@@ -1,9 +1,9 @@
 <template>
-    <u-card :ui="cardUI" class="w-full h-full">
-    </u-card>
+  <u-card :ui="cardUI" class="w-full h-full" />
 </template>
+
 <script lang="ts" setup>
 const cardUI = {
-    shadow: '',
+  shadow: ''
 }
 </script>

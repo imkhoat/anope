@@ -29,10 +29,11 @@ const items = [
   }]
 ]
 </script>
+
 <template>
   <u-dropdown :items="items" :popper="{ placement: 'bottom-start' }">
     <u-button color="white" variant="soft">
-        <u-avatar src="https://avatars.githubusercontent.com/u/739984?v=4" alt="Avatar" />
+      <u-avatar src="https://avatars.githubusercontent.com/u/739984?v=4" alt="Avatar" />
     </u-button>
   </u-dropdown>
 </template>

@@ -1,31 +1,40 @@
 <template>
   <div class="u-step" :class="stepItemClass">
-    <div v-if="subTitle" class="text-xs font-semibold leading-6 text-gray-400">{{ subTitle }}</div>
+    <div v-if="subTitle" class="text-xs font-semibold leading-6 text-gray-400">
+      {{ subTitle }}
+    </div>
     <div class="mt-2 space-y-1 flex flex-col justify-start items-stretch">
       <div v-for="(item, index) in items" :key="index + '__u-step-item'" @click="onSelectStepItem(item?.value)">
         <slot name="item" :item="item">
-          <u-step-item v-bind="item" :collapse="collapse" :passed="currentStepIndex > index"
-            :current="currentStepIndex == index" :last="items && index === (items?.length - 1)" :step="index + 1"
-            :is-active="item?.value === currentStep"></u-step-item>
+          <u-step-item
+            v-bind="item"
+            :collapse="collapse"
+            :passed="currentStepIndex > index"
+            :current="currentStepIndex == index"
+            :last="items && index === (items?.length - 1)"
+            :step="index + 1"
+            :is-active="item?.value === currentStep"
+          />
         </slot>
       </div>
     </div>
   </div>
 </template>
+
 <script lang="ts" setup>
 import { twJoin } from 'tailwind-merge'
-import type { UStep } from "@/types/components/u-step";
-import UStepItem from "@/components/bases/u-step/u-step-item.vue";
+import type { UStep } from '@/types/components/u-step'
+import UStepItem from '@/components/bases/u-step/u-step-item.vue'
 
 // props & emits
 const props = withDefaults(defineProps<UStep>(), {
-  as: "div",
-});
+  as: 'div'
+})
 const emits = defineEmits<{
-  (event: "update:modelValue", item: string | object | undefined): () => void,
+  (event: 'update:modelValue', item: string | object | undefined): () => void,
   (event: 'next'): () => void,
   (event: 'prev'): () => void
-}>();
+}>()
 
 // computed
 const currentStep = defineModel()
@@ -51,7 +60,7 @@ const stepItemClass = computed(() => {
 
 // methods
 function onSelectStepItem(item: string | object | undefined) {
-  if (!!item) {
+  if (item) {
     currentStep.value = item
   }
 }

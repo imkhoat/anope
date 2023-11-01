@@ -1,3 +1,3 @@
 <template>
-    <div class="workspace-settings-page"></div>
+  <div class="workspace-settings-page" />
 </template>

@@ -31,12 +31,21 @@ const attrs = [{
   dates: new Date()
 }]
 </script>
+
 <template>
   <u-popover :popper="{ placement: 'bottom-start' }">
     <u-button icon="i-heroicons-calendar-days-20-solid" :label="label" />
-    <template #panel="{ close }">
-      <VCalendarDatePicker v-model="date" transparent borderless :attributes="attrs" :is-dark="isDark"
-        title-position="left" trim-weeks :first-day-of-week="2" />
+    <template #panel>
+      <VCalendarDatePicker
+        v-model="date"
+        transparent
+        borderless
+        :attributes="attrs"
+        :is-dark="isDark"
+        title-position="left"
+        trim-weeks
+        :first-day-of-week="2"
+      />
     </template>
   </u-popover>
 </template>

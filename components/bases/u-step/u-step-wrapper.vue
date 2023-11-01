@@ -1,12 +1,11 @@
 <template>
-    <component :is="as">
-        
-    </component>
+  <component :is="as" />
 </template>
+
 <script lang="ts" setup>
 withDefaults(defineProps<{
-    as: string
+  as: string
 }>(), {
-    as: 'div'
+  as: 'div'
 })
 </script>

@@ -11,20 +11,21 @@
         <strong v-if="title" class="text-xl font-bold">{{ title }}</strong>
       </div>
       <div class="-ml-4 md:-mr-4 md:-mt-4">
-        <u-waves-avatar v-if="icon" :icon="icon"></u-waves-avatar>
+        <u-waves-avatar v-if="icon" :icon="icon" />
       </div>
     </div>
   </u-card>
 </template>
+
 <script lang="ts" setup>
-import UWavesAvatar from "@/components/bases/u-avatar/u-waves-avatar.vue";
+import UWavesAvatar from '@/components/bases/u-avatar/u-waves-avatar.vue'
 const cardUI = {
-  shadow: "",
-};
+  shadow: ''
+}
 
 defineProps<{
   title?: string;
   description?: string;
   icon?: string;
-}>();
+}>()
 </script>
