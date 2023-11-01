@@ -10,7 +10,9 @@
         <span class="truncate">
           {{ title }}
         </span>
-        <p class="font-normal text-xs opacity-70">{{ description }}</p>
+        <p class="font-normal text-xs opacity-70">
+          {{ description }}
+        </p>
       </slot>
     </div>
     <div v-if="!collapse" class="ml-auto shrink-0 flex justify-end items-center">
@@ -20,22 +22,23 @@
     </div>
   </component>
 </template>
+
 <script lang="ts" setup>
 import { twJoin } from 'tailwind-merge'
-import type { ListItem } from "@/types/components/u-list-item";
+import type { ListItem } from '@/types/components/u-list-item'
 
 // composables
 const router = useRouter()
 
 // props & emits
 const props = withDefaults(defineProps<ListItem>(), {
-  as: "div",
+  as: 'div',
   activeClass: 'bg-gray-50 text-primary-600',
   hoverClass: 'hover:bg-gray-100 hover:text-gray-900',
   class: '',
   collapse: false,
   dense: true
-});
+})
 
 
 // computed

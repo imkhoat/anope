@@ -1,8 +1,11 @@
 <template>
-  <component :is="as"
+  <component
+    :is="as"
     class="cursor-pointer relative text-gray-700 group rounded-md text-sm leading-6 font-semibold"
-    :class="uStepItemClass" @click="onClickStepItem">
-    <div v-if="!last" class="absolute h-full w-[2px] top-5 left-5 -translate-x-1/2" :class="tickClass"></div>
+    :class="uStepItemClass"
+    @click="onClickStepItem"
+  >
+    <div v-if="!last" class="absolute h-full w-[2px] top-5 left-5 -translate-x-1/2" :class="tickClass" />
     <div class="flex gap-x-3 p-2 py-4">
       <div class="ml-auto shrink-0 flex justify-start items-start">
         <slot name="icon">
@@ -16,7 +19,9 @@
           <span>
             {{ title }}
           </span>
-          <p class="font-normal text-xs opacity-70">{{ description }}</p>
+          <p class="font-normal text-xs opacity-70">
+            {{ description }}
+          </p>
         </slot>
       </div>
       <div v-if="!collapse" class="ml-auto shrink-0 flex justify-end items-center">
@@ -27,22 +32,23 @@
     </div>
   </component>
 </template>
+
 <script lang="ts" setup>
 import { twJoin } from 'tailwind-merge'
-import type { UStepItem } from "@/types/components/u-step-item";
+import type { UStepItem } from '@/types/components/u-step-item'
 
 // composables
 const router = useRouter()
 
 // props & emits
 const props = withDefaults(defineProps<UStepItem>(), {
-  as: "div",
+  as: 'div',
   collapse: false,
   dense: true,
   passedIcon: 'i-heroicons-check-20-solid',
   currentIcon: 'i-heroicons-map-pin-20-solid',
   last: false
-});
+})
 
 
 // computed

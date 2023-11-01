@@ -8,7 +8,7 @@ export function useUserManagement() {
 
     const MODAL_KEY = {
         INVITE_USER: 'INVITE_USER',
-        REMOVE_USER: 'REMOVE_USER',
+        REMOVE_USER: 'REMOVE_USER'
     }
 
     const inviteEmails = ref([])

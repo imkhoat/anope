@@ -1,15 +1,16 @@
 <template>
-    <div class="login-page">
-        <form-login></form-login>
-    </div>
+  <div class="login-page">
+    <form-login />
+  </div>
 </template>
+
 <script lang="ts" setup>
 import { authLoginInjectionKey } from '@/utils/keys'
 import FormLogin from '@/pages/auth/_partials/form-login.vue'
 
 //layout config
 definePageMeta({
-    layout: 'auth'
+  layout: 'auth'
 })
 
 // data
@@ -19,6 +20,6 @@ const state = ref({
 })
 
 provide(authLoginInjectionKey, {
-    state
+  state
 })
 </script>

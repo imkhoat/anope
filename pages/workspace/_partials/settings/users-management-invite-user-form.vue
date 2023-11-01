@@ -9,10 +9,14 @@
       }"
     >
       <template #type-data="{ row }">
-        <u-badge variant="soft" color="amber">{{ row.type }}</u-badge>
+        <u-badge variant="soft" color="amber">
+          {{ row.type }}
+        </u-badge>
       </template>
       <template #role-data="{ row }">
-        <u-badge variant="soft" color="amber">{{ row.role }}</u-badge>
+        <u-badge variant="soft" color="amber">
+          {{ row.role }}
+        </u-badge>
       </template>
       <template #actions-data="{ row }">
         <div class="flex flex-row justify-end items-center">
@@ -22,7 +26,7 @@
             color="rose"
             icon="i-heroicons-trash"
             @click="onRemoveUser(row)"
-          ></u-button>
+          />
         </div>
       </template>
     </u-table>
@@ -51,7 +55,7 @@
               v-model="state.email"
               type="email"
               placeholder="abc@example.com"
-            ></u-input>
+            />
           </u-form-group>
           <u-form-group
             required
@@ -63,7 +67,7 @@
               v-model="state.name"
               type="text"
               placeholder="Nick Pascal"
-            ></u-input>
+            />
           </u-form-group>
           <u-form-group
             required
@@ -75,7 +79,7 @@
               v-model="state.type"
               placeholder="Member"
               :options="userTypeOptions"
-            ></u-select-menu>
+            />
           </u-form-group>
           <u-form-group
             required
@@ -87,47 +91,49 @@
               v-model="state.role"
               placeholder="Admin"
               :options="roleOptions"
-            ></u-select-menu>
+            />
           </u-form-group>
-          <u-button class="self-end md:self-auto md:mt-5" @click="onAddUser"
-            >Add</u-button
+          <u-button
+            class="self-end md:self-auto md:mt-5"
+            @click="onAddUser"
           >
+            Add
+          </u-button>
         </div>
       </u-form>
     </u-card>
   </div>
 </template>
+
 <script lang="ts" setup>
-import { z } from "zod";
-import { workspaceSettingsUsersManagementInjectionKey } from "@/utils/keys";
+import { z } from 'zod'
+import { workspaceSettingsUsersManagementInjectionKey } from '@/utils/keys'
 
-type Schema = z.output<typeof schema>;
-
-const { t } = useI18n();
+const { t } = useI18n()
 
 const columns = [
   {
-    key: "email",
-    label: "Email",
+    key: 'email',
+    label: 'Email'
   },
   {
-    key: "name",
-    label: "Name",
+    key: 'name',
+    label: 'Name'
   },
   {
-    key: "type",
-    label: "User Type",
+    key: 'type',
+    label: 'User Type'
   },
   {
-    key: "role",
-    label: "Role",
+    key: 'role',
+    label: 'Role'
   },
   {
-    key: "actions",
-    label: "Action",
-    class: "text-right",
-  },
-];
+    key: 'actions',
+    label: 'Action',
+    class: 'text-right'
+  }
+]
 
 const state = ref<{
   email: string | undefined;
@@ -137,64 +143,64 @@ const state = ref<{
 }>({
   email: undefined,
   name: undefined,
-  type: "Guest",
-  role: "Admin",
-});
+  type: 'Guest',
+  role: 'Admin'
+})
 
 const schema = z
   .object({
-    email: z.string().email(t("general.text.Incorrect format")),
+    email: z.string().email(t('general.text.Incorrect format')),
     name: z.string(),
     type: z.string(),
-    role: z.string(),
+    role: z.string()
   })
   .required({
     name: true,
     email: true,
     role: true,
-    type: true,
-  });
+    type: true
+  })
 
-const form = ref();
+const form = ref()
 
 const { inviteEmails } = inject<{
   [key: string]: object | string | (() => void) | any;
-}>(workspaceSettingsUsersManagementInjectionKey, {});
+}>(workspaceSettingsUsersManagementInjectionKey, {})
 
 const userTypeOptions = computed(() => {
-  return ["Employee", "Guest"];
-});
+  return ['Employee', 'Guest']
+})
 const roleOptions = computed(() => {
-  return ["Admin", "Super Admin"];
-});
+  return ['Admin', 'Super Admin']
+})
 
 async function onAddUser() {
   try {
-    const valid = await form.value.validate();
+    const valid = await form.value.validate()
     if (valid) {
       inviteEmails.value.push({
         index: inviteEmails.value?.length,
         email: state.value.email,
         name: state.value.name,
         type: state.value.type,
-        role: state.value.role,
-      });
+        role: state.value.role
+      })
       state.value = {
         email: undefined,
         name: undefined,
-        type: "Employee",
-        role: "Admin",
-      };
+        type: 'Employee',
+        role: 'Admin'
+      }
     }
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
 }
 
 async function onRemoveUser(row) {
   const itemIndex = inviteEmails.value.findIndex(
-    (item) => item.index == row.index,
-  );
-  inviteEmails.value.splice(itemIndex, 1);
+    (item) => item.index == row.index
+  )
+  inviteEmails.value.splice(itemIndex, 1)
 }
 </script>

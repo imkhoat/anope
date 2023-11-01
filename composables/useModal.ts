@@ -1,6 +1,6 @@
-import { storeToRefs } from "pinia";
-import { useApplicationStore } from "@/store/application";
-import type { ModalCrud } from "@/components/bases/u-modal/u-modal-crud.vue";
+import { storeToRefs } from 'pinia'
+import { useApplicationStore } from '@/store/application'
+import type { ModalCrud } from '@/components/bases/u-modal/u-modal-crud.vue'
 
 interface Modal extends Partial<ModalCrud> {
     key?: string

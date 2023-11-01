@@ -6,7 +6,7 @@ const props = defineProps<{
     label?: string,
     sortable?: boolean | undefined,
     class?: string | undefined,
-    direction?: "desc" | "asc" | undefined,
+    direction?: 'desc' | 'asc' | undefined,
     [key: string]: any
   }[] | undefined,
   rows: {
@@ -20,7 +20,7 @@ const columnsTable = computed(() => props.columns?.filter((column) => selectedCo
 
 // Data
 const tableRows = computed(() => {
-  return props.rows??[]
+  return props.rows ?? []
 })
 // Selected Rows
 const selectedRows = ref<any[]>([])
@@ -72,7 +72,7 @@ const page = defineModel('page', {
   type: Number,
   default: 0
 })
-const pageCount = defineModel('pageCount',{
+const pageCount = defineModel('pageCount', {
   type: Number,
   default: 10
 })
@@ -85,14 +85,17 @@ const pageTo = computed(() => Math.min(page.value * pageCount.value, pageTotal.v
 </script>
 
 <template>
-  <u-card class="w-full" :ui="{
-    base: '',
-    shadow: '',
-    divide: 'divide-y divide-gray-200 dark:divide-gray-700',
-    header: { padding: 'px-4 py-5' },
-    body: { padding: '', base: 'divide-y divide-gray-200 dark:divide-gray-700' },
-    footer: { padding: 'p-4' }
-  }">
+  <u-card
+    class="w-full"
+    :ui="{
+      base: '',
+      shadow: '',
+      divide: 'divide-y divide-gray-200 dark:divide-gray-700',
+      header: { padding: 'px-4 py-5' },
+      body: { padding: '', base: 'divide-y divide-gray-200 dark:divide-gray-700' },
+      footer: { padding: 'p-4' }
+    }"
+  >
     <!-- Filters -->
     <div class="flex items-center justify-between gap-3 px-4 py-3">
       <u-input v-model="search" icon="i-heroicons-magnifying-glass-20-solid" placeholder="Search..." />
@@ -121,18 +124,33 @@ const pageTo = computed(() => Math.min(page.value * pageCount.value, pageTotal.v
           </u-button>
         </u-select-menu>
 
-        <u-button icon="i-heroicons-funnel" color="gray" size="xs"
-          :disabled="search === '' && selectedStatus.length === 0" @click="resetFilters">
+        <u-button
+          icon="i-heroicons-funnel"
+          color="gray"
+          size="xs"
+          :disabled="search === '' && selectedStatus.length === 0"
+          @click="resetFilters"
+        >
           Reset
         </u-button>
       </div>
     </div>
 
     <!-- Table -->
-    <u-table v-model="selectedRows" :rows="tableRows" :columns="columnsTable" :loading="loading"
-      sort-asc-icon="i-heroicons-arrow-up" sort-desc-icon="i-heroicons-arrow-down" class="w-full"
-      :ui="{ td: { base: 'max-w-[0] truncate' } }" @select="select">
-      <template v-for="(_, name) in $slots" v-slot:[name]="slotData"><slot :name="name" v-bind="slotData" /></template>
+    <u-table
+      v-model="selectedRows"
+      :rows="tableRows"
+      :columns="columnsTable"
+      :loading="loading"
+      sort-asc-icon="i-heroicons-arrow-up"
+      sort-desc-icon="i-heroicons-arrow-down"
+      class="w-full"
+      :ui="{ td: { base: 'max-w-[0] truncate' } }"
+      @select="select"
+    >
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
     </u-table>
 
     <!-- Number of rows & Pagination -->
