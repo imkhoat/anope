@@ -10,12 +10,13 @@
     "postinstall": "nuxt prepare",
     "storybook": "storybook dev --port 6006",
     "build-storybook": "storybook build",
-    "lint": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
-    "lint:fix": "yarn lint --fix"
+    "lint": "eslint .",
+    "typecheck": "nuxi typecheck",
+    "test": "pnpm lint && pnpm typecheck"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxt/eslint-config": "^0.2.0",
     "@nuxtjs/google-fonts": "^3.0.2",
     "@nuxtjs/storybook": "7.0.0",
     "@storybook-vue/nuxt": "0.1.4",

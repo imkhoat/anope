@@ -1,15 +1,15 @@
 // Button.stories.ts
 
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryObj } from '@storybook/vue3'
 
-import UListItem from '@/components/bases/u-list/u-list-item.vue';
+import UListItem from '@/components/bases/u-list/u-list-item.vue'
 
 const meta: Meta<typeof UListItem> = {
-  component: UListItem,
-};
+  component: UListItem
+}
 
-export default meta;
-type Story = StoryObj<typeof UListItem>;
+export default meta
+type Story = StoryObj<typeof UListItem>
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
@@ -20,12 +20,12 @@ export const Primary: Story = {
   render: (args) => ({
     components: { UListItem },
     setup() {
-      return { args };
+      return { args }
     },
-    template: '<UListItem :title="args.title" :description="args.description"/>',
+    template: '<UListItem :title="args.title" :description="args.description"/>'
   }),
   args: {
     title: 'Miguel',
-    description: 'This is description',
-  },
-};
+    description: 'This is description'
+  }
+}

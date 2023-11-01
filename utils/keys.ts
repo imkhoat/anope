@@ -1,35 +1,35 @@
-import type { InjectionKey } from "vue";
+import type { InjectionKey } from 'vue'
 
 export const onboardingInjectionKey = Symbol() as InjectionKey<{
-  form: object | undefined;
+  form: object | undefined,
   activeStep: object | string | undefined,
   steps: object[] | undefined
-}>;
+}>
 
 export const authRegisterInjectionKey = Symbol() as InjectionKey<{
   state?: object;
-  form?: object | undefined;
-}>;
+  form?: object | undefined,
+}>
 
 export const authLoginInjectionKey = Symbol() as InjectionKey<{
   state?: object;
-  form?: object | undefined;
-}>;
+  form?: object | undefined,
+}>
 
 export const authResetPasswordInjectionKey = Symbol() as InjectionKey<{
-  state?: object;
-  form?: object | undefined;
-}>;
+  state?: object,
+  form?: object | undefined,
+}>
 
 export const authForgotPasswordInjectionKey = Symbol() as InjectionKey<{
-  state?: object;
-  form?: object | undefined;
-}>;
+  state?: object,
+  form?: object | undefined,
+}>
 
 export const workspaceSettingsUsersManagementInjectionKey = Symbol() as InjectionKey<{
   [key: string]: string | object | any
-}>;
+}>
 
-export const workspaceSettingsReferenceDataInjectionKey= Symbol() as InjectionKey<{
+export const workspaceSettingsReferenceDataInjectionKey = Symbol() as InjectionKey<{
   [key: string]: string | object | any
-}>;
+}>
