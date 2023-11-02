@@ -1,7 +1,7 @@
 <template>
   <u-button
     v-if="!state"
-    class="fixed bottom-2 left-2 md:bottom-2 md:left-16 z-50 rounded-full ring-4 ring-gray-50 border border-gray-500"
+    class="fixed bottom-2 left-2 md:bottom-2 md:left-16 z-50 rounded-full ring-1 ring-gray-50"
     size="sm"
     color="white"
     icon="i-heroicons-arrows-pointing-out"
