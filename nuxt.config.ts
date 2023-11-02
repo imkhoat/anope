@@ -22,7 +22,7 @@ export default defineNuxtConfig({
             }
         }
     },
-    modules: ['@pinia/nuxt', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/storybook', '@nuxt/image', '@pinia/nuxt', '@nuxtjs/google-fonts', '@vueuse/nuxt'],
+    modules: ['@pinia/nuxt', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/storybook', '@nuxt/image', '@pinia/nuxt', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@nuxt/image'],
     i18n: {
         locales: [
             { code: 'vi', name: 'Tiếng Viêt', iso: 'vi-VN', file: 'vi.json' },

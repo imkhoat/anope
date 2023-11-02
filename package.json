@@ -39,7 +39,7 @@
     "storybook": "7.4.4"
   },
   "dependencies": {
-    "@nuxt/image": "^1.0.0-rc.3",
+    "@nuxt/image": "^1.0.0",
     "@nuxt/ui": "^2.8.1",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@pinia/nuxt": "^0.4.11",
