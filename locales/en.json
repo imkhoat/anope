@@ -1,78 +1,107 @@
 {
-    "general": {
-        "button": {
-            "Save and Next Step": "Save and Next Step",
-            "Back": "Back",
-            "Add more email": "Add more email",
-            "Add more phone": "Add more phone",
-            "Login": "Login",
-            "Register": "Register",
-            "Reset": "Reset",
-            "Send": "Send",
-            "Send Invite": "Send Invite"
-        },
-        "form": {
-            "Fullname": "Fullname",
-            "Email address": "Email address",
-            "Firstname": "Firstname",
-            "Lastname": "Lastname",
-            "Job title": "Job title",
-            "About": "About",
-            "Country": "Country",
-            "Address": "Address",
-            "Street address": "Street address",
-            "Tower City": "Tower/City",
-            "State Provide": "State/Provide",
-            "ZIP Postal code": "ZIP/Postal code",
-            "Phone": "Phone",
-            "Second email": "Second email",
-            "ABN NZBN": "ABN / NZBN",
-            "Company name": "Company name",
-            "Register business Address": "Register business Address",
-            "Postal Address": "Postal Address",
-            "Company website": "Company website",
-            "Currency": "Currency",
-            "Datetime format": "Datetime format",
-            "This present format base on datetime format": "This present format base on datetime format",
-            "Email": "Email",
-            "Password": "Password",
-            "Confirm password": "Confirm password",
-            "Workspace": "Workspace",
-            "New password": "New password",
-            "Date Time Format": "Date Time Format",
-            "Measurement": "Measurement"
-        },
-        "text": {
-            "Success": "Success",
-            "Language changed": "Language changed",
-            "You have changed language to": "You have changed language to English",
-            "Incorrect format": "Incorrect format",
-            "Item not found": "Item not found!"
-        }
+  "general": {
+    "button": {
+      "Save and Next Step": "Save and Next Step",
+      "Back": "Back",
+      "Add more email": "Add more email",
+      "Add more phone": "Add more phone",
+      "Login": "Login",
+      "Register": "Register",
+      "Reset": "Reset",
+      "Send": "Send",
+      "Send Invite": "Send Invite",
+      "Confirm and Save": "Confirm and Save",
+      "Next Step": "Next Step",
+      "Cancel": "Cancel"
     },
-    "onboarding": {
-        "steps": {
-            "Update your profile": "Update your profile",
-            "Enter your business information": "Enter your business information",
-            "Enter your property information": "Enter your property information",
-            "Setup your hourses": "Setup your hourses",
-            "Intergrate your Account System": "Intergrate your Account System",
-            "Setup your Product and Service": "Setup your Product and Service",
-            "Setup your Supplier": "Setup your Supplier",
-            "Setup your Contacts Customers": "Setup your Contacts/Customers",
-            "Invite Users": "Invite Users",
-            "Completed": "Completed"
-        },
-        "profile": {
-            "My Profile": "My Profile",
-            "The information we collect as part of your profile": "The information we collect as part of your profile is critical of Anope, platform, imparticula task notification and automatic logment"
-        },
-        "business": {
-            "My Business Information": "My Business Information",
-            "The information we collect about your business" : "The information we collect about your business to facilitate automated lodgerment"
-        },
-        "invite": {
-            "Invite Users": "Invite Users"
-        }
+    "form": {
+      "Fullname": "Fullname",
+      "Email address": "Email address",
+      "Firstname": "Firstname",
+      "Lastname": "Lastname",
+      "Job title": "Job title",
+      "About": "About",
+      "Country": "Country",
+      "Address": "Address",
+      "Street address": "Street address",
+      "Tower City": "Tower/City",
+      "State Provide": "State/Provide",
+      "ZIP Postal code": "ZIP/Postal code",
+      "Phone": "Phone",
+      "Second email": "Second email",
+      "ABN NZBN": "ABN / NZBN",
+      "Company name": "Company name",
+      "Register business Address": "Register business Address",
+      "Postal Address": "Postal Address",
+      "Company website": "Company website",
+      "Currency": "Currency",
+      "Datetime format": "Datetime format",
+      "This present format base on datetime format": "This present format base on datetime format",
+      "Email": "Email",
+      "Password": "Password",
+      "Confirm password": "Confirm password",
+      "Workspace": "Workspace",
+      "New password": "New password",
+      "Date Time Format": "Date Time Format",
+      "Measurement": "Measurement",
+      "Workspace Name": "Workspace Name",
+      "Taxt purposes": "Taxt purposes"
+    },
+    "text": {
+      "Success": "Success",
+      "Language changed": "Language changed",
+      "You have changed language to": "You have changed language to English",
+      "Incorrect format": "Incorrect format",
+      "Item not found": "Item not found!"
     }
+  },
+  "onboarding": {
+    "steps": {
+      "Update your profile": "Update your profile",
+      "Enter your business information": "Enter your business information",
+      "Enter your property information": "Enter your property information",
+      "Setup your hourses": "Setup your hourses",
+      "Intergrate your Account System": "Intergrate your Account System",
+      "Setup your Product and Service": "Setup your Product and Service",
+      "Setup your Supplier": "Setup your Supplier",
+      "Setup your Contacts Customers": "Setup your Contacts/Customers",
+      "Invite Users": "Invite Users",
+      "Completed": "Completed"
+    },
+    "profile": {
+      "My Profile": "My Profile",
+      "The information we collect as part of your profile": "The information we collect as part of your profile is critical of Anope, platform, imparticula task notification and automatic logment"
+    },
+    "business": {
+      "My Business Information": "My Business Information",
+      "The information we collect about your business": "The information we collect about your business to facilitate automated lodgerment"
+    },
+    "invite": {
+      "Invite Users": "Invite Users"
+    }
+  },
+  "signup": {
+    "steps": {
+      "Create workspace": "Create workspace",
+      "Choose country": "Choose country",
+      "Select tax options": "Select tax options",
+      "Completed": "Completed"
+    },
+    "trialSetup": {
+      "Trial Setup": "Trial Setup",
+      "What name do you want to give this workspace": "What name do you want to give this workspace?"
+    },
+    "chooseCountry": {
+      "Join Epona": "Join Epona",
+      "What country are you located in": "What country are you located in?"
+    },
+    "taxSelect": {
+      "Join Epona": "Join Epona",
+      "What are you classified as for tax purposes": "What are you classified as for tax purposes?"
+    },
+    "completedStep": {
+      "Recheck" : "Recheck",
+      "Please review there informations and save": "Please review there informations and save"
+    }
+  }
 }
