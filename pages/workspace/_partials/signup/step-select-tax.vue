@@ -2,27 +2,26 @@
   <div class="flex flex-col justify-center items-stretch gap-16 w-full h-fit">
     <div class="flex flex-col justify-center items-center text-center gap-2">
       <h6 class="text-3xl font-semibold">
-        {{ $t(`signup.trialSetup.Trial Setup`) }}
+        {{ $t(`signup.taxSelect.Join Epona`) }}
       </h6>
       <p class="text-sm opacity-60">
         {{
           $t(
-            `signup.trialSetup.What name do you want to give this workspace`,
+            `signup.taxSelect.What are you classified as for tax purposes`,
           )
         }}
       </p>
     </div>
     <u-card class="flex-grow" :ui="uiCard">
-      <u-form :state="form" class="flex flex-col justify-center items-center w-96 mx-auto">
-        <u-input
-          v-model="form.profileEmail"
-          size="md"
-          class="col-span-12 w-full"
-          placeholder="New workspace name"
-        />
+      <u-form :state="form" class="flex flex-col justify-start items-stretch gap-y-2 w-96 mx-auto">
+        <u-radio v-model="form.taxt" :ui="uiRadio" value="BUSINESS" label="Registered Business" help="You can get full tax information" />
+        <u-radio v-model="form.taxt" :ui="uiRadio" value="HOBBYIST" label="Hobbyist" help="No taxt export" />
       </u-form>
       <template #footer>
         <div class="flex flex-row justify-end items-center gap-x-2">
+          <u-button size="md" color="gray" variant="soft" class="px-6">
+            {{ $t(`general.button.Back`) }}
+          </u-button>
           <u-button size="md">
             {{ $t(`general.button.Next Step`) }}
           </u-button>
@@ -53,5 +52,9 @@ const uiCard = {
     background: '',
     padding: 'px-8 py-5 sm:px-16 sm:py-6'
   }
+}
+
+const uiRadio = {
+  'wrapper': 'relative flex items-start border border-gray-200 hover:border-primary hover:ring-1 hover:ring-primary active:border-primary p-4 rounded-xl'
 }
 </script>

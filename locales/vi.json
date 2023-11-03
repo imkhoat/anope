@@ -1,77 +1,107 @@
 {
-    "general": {
-        "button": {
-            "Save and Next Step": "Lưu và Bước tiếp theo",
-            "Back": "Quay lại",
-            "Add more email": "Thêm email khác",
-            "Add more phone": "Thêm số điện thoại khác",
-            "Login": "Đăng nhập",
-            "Register": "Đăng ký",
-            "Reset": "Làm mới",
-            "Send": "Gửi",
-            "Send Invite": "Gửi lời mời"
-        },
-        "form": {
-            "Fullname": "Tên đầy đủ",
-            "Email address": "Địa chỉ email",
-            "Firstname": "Tên",
-            "Lastname": "Họ",
-            "Job title": "Chức danh",
-            "About": "Giới thiệu",
-            "Country": "Quốc gia",
-            "Address": "Địa chỉ",
-            "Street address": "Địa chỉ đường",
-            "Tower City": "Tòa nhà/Thành phố",
-            "State Provide": "Tỉnh/Thành phố",
-            "ZIP Postal code": "Mã bưu điện/Mã vùng",
-            "Phone": "Số điện thoại",
-            "Second email": "Email phụ",
-            "ABN NZBN": "ABN / NZBN",
-            "Company name": "Tên công ty",
-            "Register business Address": "Địa chỉ đăng ký kinh doanh",
-            "Postal Address": "Địa chỉ bưu điện",
-            "Company website": "Trang web công ty",
-            "Currency": "Tiền tệ",
-            "Datetime format": "Định dạng ngày giờ",
-            "This present format base on datetime format": "Định dạng hiện tại dựa trên định dạng ngày giờ",
-            "Email": "Email",
-            "Password": "Mật khẩu",
-            "Confirm password": "Xác nhận mật khẩu",
-            "Workspace": "Không gian làm việc",
-            "New password": "Mật khẩu mới",
-            "Date Time Format": "Định dạng ngày giờ",
-            "Measurement": "Đơn vị đo lường"
-        },
-        "text": {
-            "Success": "Thành công",
-            "Language changed": "Ngôn ngữ đã được thay đổi",
-            "You have changed language to": "Bạn đã thay đổi ngôn ngữ sang Tiếng Việt",
-            "Incorrect format": "Định dạng không chính xác"
-        }
+  "general": {
+    "button": {
+      "Save and Next Step": "Save and Next Step",
+      "Back": "Back",
+      "Add more email": "Add more email",
+      "Add more phone": "Add more phone",
+      "Login": "Login",
+      "Register": "Register",
+      "Reset": "Reset",
+      "Send": "Send",
+      "Send Invite": "Send Invite",
+      "Confirm and Save": "Confirm and Save",
+      "Next Step": "Next Step",
+      "Cancel": "Cancel"
     },
-    "onboarding": {
-        "steps": {
-            "Update your profile": "Cập nhật hồ sơ của bạn",
-            "Enter your business information": "Nhập thông tin doanh nghiệp của bạn",
-            "Enter your property information": "Nhập thông tin tài sản của bạn",
-            "Setup your hourses": "Thiết lập giờ của bạn",
-            "Intergrate your Account System": "Tích hợp hệ thống tài khoản của bạn",
-            "Setup your Product and Service": "Thiết lập sản phẩm và dịch vụ của bạn",
-            "Setup your Supplier": "Thiết lập nhà cung cấp của bạn",
-            "Setup your Contacts Customers": "Thiết lập khách hàng liên hệ của bạn",
-            "Invite Users": "Mời người dùng",
-            "Completed": "Hoàn thành"
-        },
-        "profile": {
-            "My Profile": "Hồ sơ của tôi",
-            "The information we collect as part of your profile": "Thông tin chúng tôi thu thập như một phần hồ sơ của bạn"
-        },
-        "business": {
-            "My Business Information": "Thông tin doanh nghiệp của tôi",
-            "The information we collect about your business": "Thông tin chúng tôi thu thập về doanh nghiệp của bạn"
-        },
-        "invite": {
-            "Invite Users": "Mời người dùng"
-        }
+    "form": {
+      "Fullname": "Fullname",
+      "Email address": "Email address",
+      "Firstname": "Firstname",
+      "Lastname": "Lastname",
+      "Job title": "Job title",
+      "About": "About",
+      "Country": "Country",
+      "Address": "Address",
+      "Street address": "Street address",
+      "Tower City": "Tower/City",
+      "State Provide": "State/Provide",
+      "ZIP Postal code": "ZIP/Postal code",
+      "Phone": "Phone",
+      "Second email": "Second email",
+      "ABN NZBN": "ABN / NZBN",
+      "Company name": "Company name",
+      "Register business Address": "Register business Address",
+      "Postal Address": "Postal Address",
+      "Company website": "Company website",
+      "Currency": "Currency",
+      "Datetime format": "Datetime format",
+      "This present format base on datetime format": "This present format base on datetime format",
+      "Email": "Email",
+      "Password": "Password",
+      "Confirm password": "Confirm password",
+      "Workspace": "Workspace",
+      "New password": "New password",
+      "Date Time Format": "Date Time Format",
+      "Measurement": "Measurement",
+      "Workspace Name": "Workspace Name",
+      "Taxt purposes": "Taxt purposes"
+    },
+    "text": {
+      "Success": "Success",
+      "Language changed": "Language changed",
+      "You have changed language to": "You have changed language to English",
+      "Incorrect format": "Incorrect format",
+      "Item not found": "Item not found!"
     }
+  },
+  "onboarding": {
+    "steps": {
+      "Update your profile": "Update your profile",
+      "Enter your business information": "Enter your business information",
+      "Enter your property information": "Enter your property information",
+      "Setup your hourses": "Setup your hourses",
+      "Intergrate your Account System": "Intergrate your Account System",
+      "Setup your Product and Service": "Setup your Product and Service",
+      "Setup your Supplier": "Setup your Supplier",
+      "Setup your Contacts Customers": "Setup your Contacts/Customers",
+      "Invite Users": "Invite Users",
+      "Completed": "Completed"
+    },
+    "profile": {
+      "My Profile": "My Profile",
+      "The information we collect as part of your profile": "The information we collect as part of your profile is critical of Anope, platform, imparticula task notification and automatic logment"
+    },
+    "business": {
+      "My Business Information": "My Business Information",
+      "The information we collect about your business": "The information we collect about your business to facilitate automated lodgerment"
+    },
+    "invite": {
+      "Invite Users": "Invite Users"
+    }
+  },
+  "signup": {
+    "steps": {
+      "Create workspace": "Create workspace",
+      "Choose country": "Choose country",
+      "Select tax options": "Select tax options",
+      "Completed": "Completed"
+    },
+    "trialSetup": {
+      "Trial Setup": "Trial Setup",
+      "What name do you want to give this workspace": "What name do you want to give this workspace?"
+    },
+    "chooseCountry": {
+      "Join Epona": "Join Epona",
+      "What country are you located in": "What country are you located in?"
+    },
+    "taxSelect": {
+      "Join Epona": "Join Epona",
+      "What are you classified as for tax purposes": "What are you classified as for tax purposes?"
+    },
+    "completedStep": {
+      "Recheck" : "Recheck",
+      "Please review there informations and save": "Please review there informations and save"
+    }
+  }
 }

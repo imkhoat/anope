@@ -2,27 +2,30 @@
   <div class="flex flex-col justify-center items-stretch gap-16 w-full h-fit">
     <div class="flex flex-col justify-center items-center text-center gap-2">
       <h6 class="text-3xl font-semibold">
-        {{ $t(`signup.trialSetup.Trial Setup`) }}
+        {{ $t(`signup.chooseCountry.Join Epona`) }}
       </h6>
       <p class="text-sm opacity-60">
         {{
           $t(
-            `signup.trialSetup.What name do you want to give this workspace`,
+            `signup.chooseCountry.What country are you located in`,
           )
         }}
       </p>
     </div>
     <u-card class="flex-grow" :ui="uiCard">
       <u-form :state="form" class="flex flex-col justify-center items-center w-96 mx-auto">
-        <u-input
+        <u-select-menu
           v-model="form.profileEmail"
           size="md"
-          class="col-span-12 w-full"
-          placeholder="New workspace name"
+          class="col-span-12 w-full relative"
+          placeholder="Australia or NewZealand"
         />
       </u-form>
       <template #footer>
         <div class="flex flex-row justify-end items-center gap-x-2">
+          <u-button size="md" color="gray" variant="soft" class="px-6">
+            {{ $t(`general.button.Back`) }}
+          </u-button>
           <u-button size="md">
             {{ $t(`general.button.Next Step`) }}
           </u-button>
