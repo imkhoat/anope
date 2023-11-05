@@ -32,10 +32,10 @@
       </u-form>
       <template #footer>
         <div class="flex flex-row justify-end items-center gap-x-2">
-          <u-button size="md" color="gray" variant="soft" class="px-6">
+          <u-button size="md" color="gray" variant="soft" class="px-6" @click="onClickBack">
             {{ $t(`general.button.Back`) }}
           </u-button>
-          <u-button size="md">
+          <u-button size="md" @click="onClickNext">
             {{ $t(`general.button.Next Step`) }}
           </u-button>
         </div>
@@ -70,5 +70,18 @@ const uiCard = {
 const uiRadio = {
   wrapper:
     'relative flex flex-row items-start border border-gray-200 hover:border-primary hover:ring-1 hover:ring-primary active:border-primary p-4 rounded-xl'
+}
+
+// emit event
+const emits = defineEmits<{
+  (event: 'next'): () => void,
+  (event: 'back'): () => void
+}>()
+
+function onClickNext() {
+  emits('next')
+}
+function onClickBack() {
+  emits('back')
 }
 </script>

@@ -53,10 +53,10 @@
       </u-form>
       <template #footer>
         <div class="flex flex-row justify-end items-center gap-x-2">
-          <u-button size="md" color="gray" variant="soft" class="px-6">
+          <u-button size="md" color="gray" variant="soft" class="px-6" @click="onClickCancel">
             {{ $t(`general.button.Cancel`) }}
           </u-button>
-          <u-button size="md">
+          <u-button size="md" @click="onClickNext">
             {{ $t(`general.button.Confirm and Save`) }}
           </u-button>
         </div>
@@ -91,5 +91,18 @@ const uiCard = {
 const uiRadio = {
   wrapper:
     'relative flex flex-row items-start border border-gray-200 p-4 rounded-xl'
+}
+
+// emit event
+const emits = defineEmits<{
+  (event: 'next'): () => void,
+  (event: 'cancel'): () => void
+}>()
+
+function onClickNext() {
+  emits('next')
+}
+function onClickCancel() {
+  emits('cancel')
 }
 </script>

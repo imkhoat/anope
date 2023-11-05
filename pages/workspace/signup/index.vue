@@ -2,10 +2,10 @@
   <div class="onboarding-page w-full h-full grid grid-cols-12 gap-2">
     <div class="left-side col-span-12 lg:col-span-9 px-16 pt-16">
       <signup-stepper orientation="vertical" class="lg:hidden mx-auto" />
-      <step-input-name v-if="activeStep === 'STEP-01'" />
-      <step-choose-country v-else-if="activeStep === 'STEP-02'" />
-      <step-select-tax v-else-if="activeStep === 'STEP-03'" />
-      <step-confirm-and-save v-else-if="activeStep === 'STEP-04'" />
+      <step-input-name v-if="activeStep === 'STEP-01'" @next="onNext('STEP-02')" />
+      <step-select-country v-else-if="activeStep === 'STEP-02'" @next="onNext('STEP-03')" @back="onBack('STEP-01')" />
+      <step-select-tax v-else-if="activeStep === 'STEP-03'" @next="onNext('STEP-04')" @back="onBack('STEP-02')" />
+      <step-confirm-and-save v-else-if="activeStep === 'STEP-04'" @next="onCompleted" @cancel="onCancel" />
     </div>
     <div
       class="right-side min-h-full bg-white hidden lg:col-span-3 -my-4 -mr-4 lg:flex flex-col justify-between items-stretch"
@@ -21,10 +21,10 @@ import { provide } from 'vue'
 import { onboardingInjectionKey } from '@/utils/keys'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import SupportCard from '@/pages/workspace/_partials/onboarding/support-card.vue'
-import stepSelectTax from '@/pages/workspace/_partials/signup/step-select-tax.vue'
+import StepSelectTax from '@/pages/workspace/_partials/signup/step-select-tax.vue'
 import SignupStepper from '@/pages/workspace/_partials/signup/signup-stepper.vue'
 import StepInputName from '@/pages/workspace/_partials/signup/step-input-name.vue'
-import StepChooseCountry from '@/pages/workspace/_partials/signup/step-choose-country.vue'
+import StepSelectCountry from '@/pages/workspace/_partials/signup/step-select-country.vue'
 import StepConfirmAndSave from '@/pages/workspace/_partials/signup/step-confirm-and-save.vue'
 
 // type
@@ -135,6 +135,22 @@ const steps = computed(() => {
 })
 const activeStep = ref<StepValue>('STEP-01')
 
+// change step
+function onNext(step: StepValue) {
+  activeStep.value = step
+}
+
+function onBack(step: StepValue) {
+  activeStep.value = step
+}
+
+function onCompleted() {
+  console.log('Completed')
+}
+
+function onCancel() {
+  console.log('Cancel')
+}
 //watch
 watchEffect(() => {
   activeStep.value =
