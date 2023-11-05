@@ -1,15 +1,16 @@
 <template>
   <div class="onboarding-page w-full h-full grid grid-cols-12 gap-2">
-    <div class="left-side col-span-9 px-16 pt-16">
+    <div class="left-side col-span-12 lg:col-span-9 px-16 pt-16">
+      <signup-stepper orientation="vertical" class="lg:hidden mx-auto" />
       <step-input-name v-if="activeStep === 'STEP-01'" />
       <step-choose-country v-else-if="activeStep === 'STEP-02'" />
       <step-select-tax v-else-if="activeStep === 'STEP-03'" />
       <step-confirm-and-save v-else-if="activeStep === 'STEP-04'" />
     </div>
     <div
-      class="right-side min-h-full bg-white col-span-3 -my-4 -mr-4 flex flex-col justify-between items-stretch"
+      class="right-side min-h-full bg-white hidden lg:col-span-3 -my-4 -mr-4 lg:flex flex-col justify-between items-stretch"
     >
-      <signup-stepper />
+      <signup-stepper orientation="horizontal" />
       <support-card />
     </div>
   </div>
@@ -18,24 +19,16 @@
 <script lang="ts" setup>
 import { provide } from 'vue'
 import { onboardingInjectionKey } from '@/utils/keys'
-import type { UStepItem } from '@/types/components/u-step-item'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import SupportCard from '@/pages/workspace/_partials/onboarding/support-card.vue'
 import stepSelectTax from '@/pages/workspace/_partials/signup/step-select-tax.vue'
 import SignupStepper from '@/pages/workspace/_partials/signup/signup-stepper.vue'
 import StepInputName from '@/pages/workspace/_partials/signup/step-input-name.vue'
 import StepChooseCountry from '@/pages/workspace/_partials/signup/step-choose-country.vue'
 import StepConfirmAndSave from '@/pages/workspace/_partials/signup/step-confirm-and-save.vue'
+
 // type
-type StepValue =
-  | 'STEP-01'
-  | 'STEP-02'
-  | 'STEP-03'
-  | 'STEP-04';
-interface Step extends UStepItem {
-  title: string;
-  description: string;
-  to: string | object;
-}
+type StepValue = 'STEP-01' | 'STEP-02' | 'STEP-03' | 'STEP-04';
 
 // layout
 definePageMeta({
@@ -82,36 +75,64 @@ const form = reactive({
   businessCurrency: 'AUD'
 })
 
-const steps = reactive<Partial<Step>[]>([
-  {
-    title: t('signup.steps.Create workspace'),
-    description: t(
-      'onboarding.profile.The information we collect as part of your profile'
-    ),
-    to: '?step=step-01',
-    value: 'STEP-01'
-  },
-  {
-    title: t('signup.steps.Choose country'),
-    description: t(
-      'onboarding.business.The information we collect about your business'
-    ),
-    to: '?step=step-02',
-    value: 'STEP-02'
-  },
-  {
-    title: t('signup.steps.Select tax options'),
-    description: 'Fill you profile information to access potential data',
-    to: '?step=step-03',
-    value: 'STEP-03'
-  },
-  {
-    title: t('signup.steps.Completed'),
-    description: 'Fill you profile information to access potential data',
-    to: '?step=step-04',
-    value: 'STEP-04'
-  }
-])
+// Steps
+const breakpoints = useBreakpoints(breakpointsTailwind)
+
+const steps = computed(() => {
+  return breakpoints.greaterOrEqual('lg').value
+    ? [
+      {
+        title: t('signup.steps.Create workspace'),
+        description: t(
+          'onboarding.profile.The information we collect as part of your profile'
+        ),
+        to: '?step=step-01',
+        value: 'STEP-01'
+      },
+      {
+        title: t('signup.steps.Choose country'),
+        description: t(
+          'onboarding.business.The information we collect about your business'
+        ),
+        to: '?step=step-02',
+        value: 'STEP-02'
+      },
+      {
+        title: t('signup.steps.Select tax options'),
+        description: 'Fill you profile information to access potential data',
+        to: '?step=step-03',
+        value: 'STEP-03'
+      },
+      {
+        title: t('signup.steps.Completed'),
+        description: 'Fill you profile information to access potential data',
+        to: '?step=step-04',
+        value: 'STEP-04'
+      }
+    ]
+    : [
+      {
+        title: t('signup.steps.Create workspace'),
+        to: '?step=step-01',
+        value: 'STEP-01'
+      },
+      {
+        title: t('signup.steps.Choose country'),
+        to: '?step=step-02',
+        value: 'STEP-02'
+      },
+      {
+        title: t('signup.steps.Select tax options'),
+        to: '?step=step-03',
+        value: 'STEP-03'
+      },
+      {
+        title: t('signup.steps.Completed'),
+        to: '?step=step-04',
+        value: 'STEP-04'
+      }
+    ]
+})
 const activeStep = ref<StepValue>('STEP-01')
 
 //watch

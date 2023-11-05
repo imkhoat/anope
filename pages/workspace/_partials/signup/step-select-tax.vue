@@ -5,17 +5,30 @@
         {{ $t(`signup.taxSelect.Join Epona`) }}
       </h6>
       <p class="text-sm opacity-60">
-        {{
-          $t(
-            `signup.taxSelect.What are you classified as for tax purposes`,
-          )
-        }}
+        {{ $t(`signup.taxSelect.What are you classified as for tax purposes`) }}
       </p>
     </div>
     <u-card class="flex-grow" :ui="uiCard">
-      <u-form :state="form" class="flex flex-col justify-start items-stretch gap-y-2 w-96 mx-auto">
-        <u-radio v-model="form.taxt" :ui="uiRadio" value="BUSINESS" label="Registered Business" help="You can get full tax information" />
-        <u-radio v-model="form.taxt" :ui="uiRadio" value="HOBBYIST" label="Hobbyist" help="No taxt export" />
+      <u-form
+        :state="form"
+        class="flex flex-col justify-start items-stretch gap-y-2 w-96 mx-auto"
+      >
+        <u-radio v-model="form.taxt" :ui="uiRadio" value="BUSINESS">
+          <template #label>
+            <div class="flex flex-col justify-start items-start">
+              <strong>Registered Business</strong>
+              <span class="text-sm text-gray-500">You can get full tax information</span>
+            </div>
+          </template>
+        </u-radio>
+        <u-radio v-model="form.taxt" :ui="uiRadio" value="HOBBYIST">
+          <template #label>
+            <div class="flex flex-col justify-start items-start">
+              <strong>Hobbyist</strong>
+              <span class="text-sm text-gray-500">No taxt export</span>
+            </div>
+          </template>
+        </u-radio>
       </u-form>
       <template #footer>
         <div class="flex flex-row justify-end items-center gap-x-2">
@@ -55,6 +68,7 @@ const uiCard = {
 }
 
 const uiRadio = {
-  'wrapper': 'relative flex items-start border border-gray-200 hover:border-primary hover:ring-1 hover:ring-primary active:border-primary p-4 rounded-xl'
+  wrapper:
+    'relative flex flex-row items-start border border-gray-200 hover:border-primary hover:ring-1 hover:ring-primary active:border-primary p-4 rounded-xl'
 }
 </script>

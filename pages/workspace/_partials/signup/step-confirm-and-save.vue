@@ -11,7 +11,10 @@
       </p>
     </div>
     <u-card class="flex-grow" :ui="uiCard">
-      <u-form :state="form" class="flex flex-col justify-start items-stretch gap-y-4 w-fit mx-auto">
+      <u-form
+        :state="form"
+        class="flex flex-col justify-start items-stretch gap-y-4 w-fit mx-auto"
+      >
         <u-form-group :label="$t(`general.form.Workspace Name`)">
           <u-input
             v-model="form.profileEmail"
@@ -33,7 +36,19 @@
           />
         </u-form-group>
         <u-form-group :label="$t(`general.form.Taxt purposes`)">
-          <u-radio v-model="form.taxt" readonly disabled label="Registered Business" help="You can get full tax information" />
+          <u-radio
+            v-model="form.taxt"
+            readonly
+            disabled
+            :ui="uiRadio"
+          >
+            <template #label>
+              <div class="flex flex-col justify-start items-start">
+                <strong>Registered Business</strong>
+                <span class="text-sm text-gray-500">You can get full tax information</span>
+              </div>
+            </template>
+          </u-radio>
         </u-form-group>
       </u-form>
       <template #footer>
@@ -71,5 +86,10 @@ const uiCard = {
     background: '',
     padding: 'px-8 py-5 sm:px-16 sm:py-6'
   }
+}
+
+const uiRadio = {
+  wrapper:
+    'relative flex flex-row items-start border border-gray-200 p-4 rounded-xl'
 }
 </script>
