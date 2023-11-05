@@ -1,6 +1,13 @@
 <template>
   <u-card :ui="cardUI">
-    <u-step v-model="activeStep" :items="steps" @next="emits('next')" @prev="emits('prev')" />
+    <u-step
+      v-model="activeStep"
+      :orientation="orientation"
+      :items="steps"
+      class="!w-fit"
+      @next="emits('next')"
+      @prev="emits('prev')"
+    />
   </u-card>
 </template>
 
@@ -17,10 +24,15 @@ const { activeStep, steps } = inject<{
 
 //setup
 const cardUI = {
+  base: 'w-fit',
+  background: 'bg-transparent',
   ring: '',
   shadow: ''
 }
 // props & emits
+defineProps<{
+  orientation: 'vertical' | 'horizontal'
+}>()
 const emits = defineEmits<{
   (event: 'next'): () => void,
   (event: 'prev'): () => void
