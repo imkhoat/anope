@@ -48,7 +48,7 @@ const items = [
     icon: 'i-heroicons-shield-check-20-solid',
     shortcuts: ['3'],
     click: () => {
-      router.push(localePath({ ...route, name: 'workspace-id-settings-default-and-reference-data', params: { id: workspaceId.value } }))
+      router.push(localePath({ ...route, name: 'workspace-id-settings-default-and-reference-data-tab', params: { id: workspaceId.value, tab: 'local-settings' } }))
     }
   }], [{
     label: 'Logout',

@@ -3,7 +3,7 @@
     <div v-if="menus && menus?.length > 0" class="u-page__menu p-4 md:p-0 col-span-12" :class="pageMenuClass">
       <u-page-menu v-model="isExpand" :menus="menus" :title="menuTitle" />
     </div>
-    <div class="p-4 col-span-12" :class="pageBodyClass">
+    <div :class="pageBodyClass">
       <div
         class="u-page__body bg-white rounded-2xl w-full h-full flex flex-col justify-start items-stretch gap-y-12"
         :class="pageBodyContentClass"
@@ -15,8 +15,8 @@
           >
             <slot name="header-title">
               <div class="flex flex-row justify-start items-center gap-x-3">
-                <u-waves-avatar :icon="pageIcon">
-                  <u-icon v-if="pageIcon" :name="pageIcon" class="w-5 h-5 bg-gray-500" />
+                <u-waves-avatar v-if="pageIcon" :icon="pageIcon">
+                  <u-icon :name="pageIcon" class="w-5 h-5 bg-gray-500" />
                 </u-waves-avatar>
                 <div
                   v-if="pageTitle || pageDescription"
@@ -63,7 +63,7 @@ const pageClass = computed(() => {
   return props.menus && props.menus?.length > 0 ? '-m-4 bg-gray-50' : 'bg-white'
 })
 const pageBodyClass = computed(() => {
-  return isExpand.value && props.menus && props.menus?.length > 0 ? 'lg:col-span-9' : 'col-span-12'
+  return isExpand.value && props.menus && props.menus?.length > 0 ? 'p-4 col-span-12 lg:col-span-9' : 'col-span-12'
 })
 const pageBodyContentClass = computed(() => {
   return props.menus && props.menus?.length > 0 ? 'p-8' : 'p-4'
