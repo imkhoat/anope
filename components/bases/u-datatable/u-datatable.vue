@@ -100,7 +100,7 @@ const pageTo = computed(() => Math.min(page.value * pageCount.value, pageTotal.v
     <div class="flex items-center justify-between gap-3 px-4 py-3">
       <u-input v-model="search" icon="i-heroicons-magnifying-glass-20-solid" placeholder="Search..." />
 
-      <u-select-menu v-model="selectedStatus" :options="todoStatus" multiple placeholder="Status" class="w-40" />
+      <u-select-menu v-model="selectedStatus" :options="todoStatus" multiple placeholder="Status" class="w-40 relative" />
     </div>
 
     <!-- Header and Action buttons -->
@@ -108,11 +108,11 @@ const pageTo = computed(() => Math.min(page.value * pageCount.value, pageTotal.v
       <div class="flex items-center gap-1.5">
         <span class="text-sm leading-5">Rows per page:</span>
 
-        <u-select v-model="pageCount" :options="[3, 5, 10, 20, 30, 40]" class="me-2 w-20" size="xs" />
+        <u-select v-model="pageCount" :options="[3, 5, 10, 20, 30, 40]" class="me-2 w-20 relative" size="xs" />
       </div>
 
       <div class="flex gap-1.5 items-center">
-        <u-dropdown v-if="selectedRows.length > 1" :items="actions" :ui="{ width: 'w-36' }">
+        <u-dropdown v-if="selectedRows.length > 1" :items="actions" :ui="{ width: 'w-36' }" class="relative">
           <u-button icon="i-heroicons-chevron-down" trailing color="gray" size="xs">
             Mark as
           </u-button>

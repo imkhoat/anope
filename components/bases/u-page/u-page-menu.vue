@@ -48,6 +48,7 @@ const cardUI = {
   base: 'overflow-hidden w-full h-full',
   background: 'bg-gray-50',
   rounded: 'rounded-none',
+  shadow: '',
   ring: '',
   body: {
     padding: '!p-4'
