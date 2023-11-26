@@ -7,6 +7,7 @@
       <u-form-group :label="$t(`general.form.Country`)">
         <u-select-menu
           v-model="localSettingForm.email"
+          :options="['Australia', 'Newzealand']"
           size="lg"
           class="col-span-12"
           placeholder="Australia"
