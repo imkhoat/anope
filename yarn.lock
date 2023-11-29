@@ -8893,6 +8893,16 @@ nuxi@^3.10.0:
   optionalDependencies:
     fsevents "~2.3.3"
 
+nuxt-auth-utils@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/nuxt-auth-utils/-/nuxt-auth-utils-0.0.8.tgz#86db0163d74cac5780f7df0ede14e614ee743447"
+  integrity sha512-yEyT7wPoKovWx+zg8sjhNLJcbg0y6r3FJPWma2FgOZjzduxZ1IN4IwANv9EARHljKHMHvarVafEBBz2Jag1t/Q==
+  dependencies:
+    "@nuxt/kit" "^3.8.2"
+    defu "^6.1.3"
+    ofetch "^1.3.3"
+    ohash "^1.1.3"
+
 nuxt-icon@^0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/nuxt-icon/-/nuxt-icon-0.6.6.tgz#e0033bba4a1a1bab87af37dd09e6266653eb0925"
