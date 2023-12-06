@@ -3,9 +3,10 @@ export default defineAppConfig({
       strategy: 'override',
       primary: 'green',
       gray: 'cool',
-      rose: 'rose',
+      colors: ['rose'],
       card: {
-        rounded: 'rounded-xl'
+        rounded: 'rounded-2xl',
+        shadow: ''
       },
       table: {
         default: {

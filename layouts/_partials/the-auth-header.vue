@@ -9,7 +9,7 @@
           {{
             $t('general.button.Register') }}
         </u-button>
-        <u-button to="/api/auth/auth0" size="lg" class="min-w-[80px] justify-center" variant="soft">
+        <u-button to="/api/hello" size="lg" class="min-w-[80px] justify-center" variant="soft">
           {{ $t('general.button.Login')
           }}
         </u-button>

@@ -1,5 +1,5 @@
 <template>
-  <u-card :ui="cardUI" class="w-full h-full min-h-[120px]">
+  <u-card class="w-full h-full min-h-[120px]">
     <div class="flex flex-row justify-between items-stretch">
       <div
         v-if="description || title"
@@ -19,9 +19,6 @@
 
 <script lang="ts" setup>
 import UWavesAvatar from '@/components/bases/u-avatar/u-waves-avatar.vue'
-const cardUI = {
-  shadow: ''
-}
 
 defineProps<{
   title?: string;
