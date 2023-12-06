@@ -1,5 +1,5 @@
 <template>
-  <u-card :ui="cardUI" class="w-full h-full">
+  <u-card class="w-full h-full">
     <div class="flex flex-row justify-between items-stretch">
       <div class="flex flex-col justify-start items-start gap-y-1">
         <span class="text-xs text-gray-600">My Overdue Tasks</span>
@@ -11,9 +11,3 @@
     </div>
   </u-card>
 </template>
-
-<script lang="ts" setup>
-const cardUI = {
-  shadow: ''
-}
-</script>

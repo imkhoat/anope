@@ -2,14 +2,6 @@ import { removePagesMatching } from './utils/routingGenerate'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  runtimeConfig: {
-    oauth: {
-      auth0: {
-        clientId: '',
-        clientSecret: ''
-      }
-    }
-  },
   devtools: {
     enable: true
   },
@@ -42,6 +34,18 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       'AR+One+Sans': true
+    }
+  },
+  runtimeConfig: {
+    oauth: {
+      auth0: {
+        clientId: '',
+        clientSecret: ''
+      }
+    },
+    session: {
+      name: 'nuxt-session',
+      password: ''
     }
   }
 })

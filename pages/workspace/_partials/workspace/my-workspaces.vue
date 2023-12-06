@@ -1,5 +1,5 @@
 <template>
-  <u-card :ui="cardUI" class="w-full h-full">
+  <u-card class="w-full h-full">
     <template #header>
       <div class="flex flex-row justify-between items-center">
         <h6 class="font-semibold">
@@ -42,10 +42,6 @@
 <script lang="ts" setup>
 import UList from '@/components/bases/u-list/u-list.vue'
 import UListItem from '@/components/bases/u-list/u-list-item.vue'
-
-const cardUI = {
-  shadow: ''
-}
 
 // data
 const items = ref([

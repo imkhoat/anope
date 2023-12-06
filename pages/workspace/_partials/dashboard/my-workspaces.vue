@@ -1,5 +1,5 @@
 <template>
-  <u-card :ui="cardUI" class="w-full h-full">
+  <u-card class="w-full h-full">
     <template #header>
       <u-card-header title="My workspaces" description="Click to view all your workspace">
         <template #action>
@@ -25,9 +25,6 @@
 import UList from '@/components/bases/u-list/u-list.vue'
 import UListItem from '@/components/bases/u-list/u-list-item.vue'
 import UCardHeader from '@/components/bases/u-card/u-card-header.vue'
-const cardUI = {
-  shadow: ''
-}
 
 const items = ref([{
   title: 'Workspace Mabouse',

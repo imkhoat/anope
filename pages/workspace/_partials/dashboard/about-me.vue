@@ -1,6 +1,5 @@
 <template>
   <u-card
-    :ui="cardUI"
     class="w-full h-full line relative after:brightness-100 after:w-full after:h-full after:absolute after:top-0 after:left-0 after:z-[1] after:opacity-20"
   >
     <template #header>
@@ -37,9 +36,6 @@
 <script lang="ts" setup>
 import UCardHeader from '@/components/bases/u-card/u-card-header.vue'
 
-const cardUI = {
-  shadow: ''
-}
 const infos = reactive([
   { title: 'Workspace Role', description: 'Admin' },
   { title: 'Email', description: 'bâhsmas@gmail.com' },
