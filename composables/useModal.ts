@@ -9,7 +9,7 @@ interface Modal extends Partial<ModalCrud> {
 export function useModal() {
     const { modal, modalKey } = storeToRefs(useApplicationStore())
     const { openModal, closeModal, configModal } = useApplicationStore()
-    
+
     function show(options:  Modal) {
         configModal(options as any)
         openModal()
@@ -53,13 +53,13 @@ export function useModal() {
         const modalOptions = {
             preventClose: true,
             contentIcon: 'i-heroicons-trash',
-            contentIconColor: 'rose',
+            contentIconColor: 'error',
             contentTitle: options.title,
             contentDescription: options.description,
             yes: {
                 action: options.onConfirm,
                 label: 'Confirm',
-                color: 'rose',
+                color: 'error',
                 variant: 'solid'
             },
             no: {
@@ -73,7 +73,7 @@ export function useModal() {
         configModal(modalOptions as any)
         openModal()
     }
-    
+
 
     function hide() {
         closeModal()

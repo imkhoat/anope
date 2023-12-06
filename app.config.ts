@@ -3,7 +3,7 @@ export default defineAppConfig({
       strategy: 'override',
       primary: 'green',
       gray: 'cool',
-      colors: ['rose'],
+      colors: ['error', 'warning', 'info', 'success'],
       card: {
         rounded: 'rounded-2xl',
         shadow: ''
@@ -15,6 +15,9 @@ export default defineAppConfig({
             label: 'No items found.'
           }
         }
+      },
+      modal: {
+        rounded: 'rounded-2xl'
       }
     }
   })
