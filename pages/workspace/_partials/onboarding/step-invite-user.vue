@@ -35,7 +35,7 @@
               <u-button
                 size="xs"
                 variant="ghost"
-                color="rose"
+                color="error"
                 icon="i-heroicons-trash"
                 @click="onRemoveUser(row)"
               />
