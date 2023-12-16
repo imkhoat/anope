@@ -39,13 +39,13 @@ export default defineNuxtConfig({
   runtimeConfig: {
     oauth: {
       auth0: {
-        clientId: '',
-        clientSecret: ''
+        clientId: process.env.NUXT_OAUTH_AUTH0_CLIENT_ID,
+        clientSecret: process.env.NUXT_OAUTH_AUTH0_CLIENT_SECRET
+      },
+      github: {
+        clientId: process.env.NUXT_OAUTH_GITHUB_CLIENT_ID,
+        clientSecret: process.env.NUXT_OAUTH_GITHUB_CLIENT_SECRET
       }
-    },
-    session: {
-      name: 'nuxt-session',
-      password: ''
     }
   }
 })

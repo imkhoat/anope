@@ -29,11 +29,15 @@
         <u-button size="lg" block>
           {{ $t(`general.button.Login`) }}
         </u-button>
-        <div class="flex flex-row justify-between items-stretch gap-x-2 text-center">
-          <u-button size="lg" variant="soft" class="flex-grow text-center justify-center">
+        <u-divider label="Or login with" />
+        <div class="flex flex-col justify-start items-stretch gap-y-2 text-center">
+          <u-button size="lg" variant="soft" class="flex-grow text-center justify-center" @click="onLoginWithOauthGithub">
+            Github
+          </u-button>
+          <u-button size="lg" variant="soft" class="flex-grow text-center justify-center" @click="onLoginWithOauthAuth0">
             Google
           </u-button>
-          <u-button size="lg" variant="soft" class="flex-grow text-center justify-center">
+          <u-button disabled size="lg" variant="soft" color="gray" class="flex-grow text-center justify-center">
             Twitter
           </u-button>
         </div>
@@ -48,4 +52,12 @@ import { authLoginInjectionKey } from '@/utils/keys'
 const { state } = inject<{
   state: { [key: string]: string }
 }>(authLoginInjectionKey, { state: {} })
+
+function onLoginWithOauthGithub() {
+  navigateTo('/api/auth/github', { external: true })
+}
+
+function onLoginWithOauthAuth0() {
+  navigateTo('/api/auth/auth0', { external: true })
+}
 </script>

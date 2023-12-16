@@ -14,8 +14,8 @@ export function useUserManagement() {
     const inviteEmails = ref([])
 
     function handleSendInvite() {
-        console.log(inviteEmails.value)
-        return new Promise(() => {
+
+      return new Promise(() => {
             setTimeout(() => {
                 console.log('FUCK')
                 hide()
