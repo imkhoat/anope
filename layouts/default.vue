@@ -17,9 +17,10 @@
 <script lang="ts" setup>
 import TheDefaultHeader from '@/layouts/_partials/the-default-header.vue'
 import TheDefaultSidebar from '@/layouts/_partials/the-default-sidebar.vue'
-definePageMeta({
-  middleware: 'auth'
-})
+
+const { loggedIn, user } = useUserSession()
+console.log('default', user.value, loggedIn.value)
+
 const containerUI = {
   base: '',
   padding: 'p-2 sm:p-4 lg:p-4',
