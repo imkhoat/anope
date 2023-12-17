@@ -19,7 +19,7 @@ export default oauth.auth0EventHandler({
         loggedInAt: Date.now()
       })
 
-      return sendRedirect(event, '/profile')
+      return sendRedirect(event, '/auth/confirm')
 
     } catch (error) {
       console.log(error)

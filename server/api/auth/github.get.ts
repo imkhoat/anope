@@ -3,7 +3,7 @@ export default oauth.githubEventHandler({
     emailRequired: true
   },
   async onSuccess(event, { user: currentUser, tokens }) {
-    console.log('githubEventHandler', currentUser, tokens, event)
+
     await setUserSession(event, {
       user: {
          //@ts-ignore
@@ -17,7 +17,7 @@ export default oauth.githubEventHandler({
     })
     console.log(await getUserSession(event))
 
-    return sendRedirect(event, '/profile')
+    return sendRedirect(event, '/auth/confirm')
   },
   // Optional, will return a json error and 401 status code by default
   onError(event, error) {

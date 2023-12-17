@@ -1,10 +1,10 @@
 <script setup>
 import { useAuthStore } from '@/store/auth'
 
-const { handleLogout } = useAuthStore()
+const { logout } = useAuthStore()
 
 async function onLogout() {
-  await handleLogout()
+  await logout()
 }
 const items = [
   [
