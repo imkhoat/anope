@@ -2,18 +2,17 @@ import { removePagesMatching } from './utils/routingGenerate'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: {
-    enable: true
-  },
   hooks: {
     'pages:extend'(pages) {
       removePagesMatching(/_partials/, pages)
       removePagesMatching(/_composables/, pages)
     }
   },
+
   colorMode: {
     preference: 'light'
   },
+
   vite: {
     vue: {
       script: {
@@ -22,7 +21,9 @@ export default defineNuxtConfig({
       }
     }
   },
+
   modules: ['nuxt-auth-utils', '@pinia/nuxt', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/storybook', '@nuxt/image', '@pinia/nuxt', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@nuxt/image'],
+
   i18n: {
     locales: [
       { code: 'vi', name: 'Tiếng Viêt', iso: 'vi-VN', file: 'vi.json' },
@@ -31,11 +32,13 @@ export default defineNuxtConfig({
     defaultLocale: 'vi',
     langDir: './locales'
   },
+
   googleFonts: {
     families: {
       'AR+One+Sans': true
     }
   },
+
   runtimeConfig: {
     oauth: {
       auth0: {
@@ -46,6 +49,14 @@ export default defineNuxtConfig({
         clientId: process.env.NUXT_OAUTH_GITHUB_CLIENT_ID,
         clientSecret: process.env.NUXT_OAUTH_GITHUB_CLIENT_SECRET
       }
+    },
+    session: {
+      name: 'nuxt-session',
+      password: process.env.NUXT_SESSION_PASSWORD
     }
+  },
+
+  devtools: {
+    enabled: true
   }
 })
