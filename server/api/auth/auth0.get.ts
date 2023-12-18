@@ -2,10 +2,8 @@ export default oauth.auth0EventHandler({
   config: {
     emailRequired: true
   },
-  async onSuccess(event, { user: currentUser, tokens }) {
+  async onSuccess(event, { user: currentUser }) {
     try {
-      console.log('auth0EventHandler', currentUser, tokens)
-
       await setUserSession(event, {
         user: {
           //@ts-ignore
