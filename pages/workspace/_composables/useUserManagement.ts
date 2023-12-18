@@ -17,7 +17,6 @@ export function useUserManagement() {
 
       return new Promise(() => {
             setTimeout(() => {
-                console.log('FUCK')
                 hide()
             }, 5000)
         })

@@ -8,10 +8,13 @@ export default defineNuxtRouteMiddleware(async(to) => {
     await fetch()
   }
 
-  if (!loggedIn?.value && !(to.path.includes('auth/confirm') || to.path.includes('auth/login') || to.path.includes('auth/register'))) {
+  if (!loggedIn?.value && !(to.path.includes('auth/confirm') || to.path.includes('auth/login') || to.path.includes('auth/register') || to.path.includes('auth/'))) {
     return await navigateTo('/auth/login')
   }
-  else if (loggedIn.value && !(to.path.includes('auth/verify-email') || to.path.includes('auth/confirm') || to.path.includes('auth/login') || to.path.includes('auth/register')) && !user.value.emailVerified) {
+  else if (loggedIn.value && !user.value.emailVerified && !to.path.includes('auth/verify-email') ) {
     return await navigateTo('/auth/verify-email')
+  }
+  else if (loggedIn.value && user.value.emailVerified && to.path.includes('auth/')) {
+    return await navigateTo('/profile')
   }
 })

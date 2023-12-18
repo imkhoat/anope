@@ -5,5 +5,5 @@
 </template>
 
 <script lang="ts" setup>
-const { loggedIn, user, session } = useUserSession()
+const { session } = useUserSession()
 </script>
