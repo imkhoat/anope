@@ -35,7 +35,7 @@
             Github
           </u-button>
           <u-button size="lg" variant="soft" class="flex-grow text-center justify-center" @click="onLoginWithOauthAuth0">
-            Google
+            Auth0
           </u-button>
           <u-button disabled size="lg" variant="soft" color="gray" class="flex-grow text-center justify-center">
             Twitter

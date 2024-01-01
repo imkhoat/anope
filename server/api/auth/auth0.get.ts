@@ -14,7 +14,8 @@ export default oauth.auth0EventHandler({
           id: currentUser.sub
 
         },
-        loggedInAt: Date.now()
+        loggedInAt: Date.now(),
+        provider: 'AUTH0'
       })
 
       return sendRedirect(event, '/auth/confirm')

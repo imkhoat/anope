@@ -1,7 +1,7 @@
 export default defineAppConfig({
     ui: {
       strategy: 'override',
-      primary: 'green',
+      primary: 'emerald',
       gray: 'cool',
       colors: ['error', 'warning', 'info', 'success'],
       card: {
