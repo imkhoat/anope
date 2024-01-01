@@ -13,7 +13,8 @@ export default oauth.githubEventHandler({
          //@ts-ignore
          id: currentUser.id
       },
-      loggedInAt: Date.now()
+      loggedInAt: Date.now(),
+      provider: 'GITHUB'
     })
 
     return sendRedirect(event, '/auth/confirm')

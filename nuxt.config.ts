@@ -1,4 +1,4 @@
-import { removePagesMatching } from './utils/routingGenerate'
+import { removePagesMatching } from './utils/rounting-generate'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
