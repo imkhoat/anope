@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['nuxt-auth-utils', '@pinia/nuxt', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/storybook', '@nuxt/image', '@pinia/nuxt', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@nuxt/image'],
+  modules: ['nuxt-auth-utils', '@pinia/nuxt', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/storybook', '@nuxt/image', '@pinia/nuxt', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@nuxt/image', '@nuxt/test-utils/module'],
 
   i18n: {
     locales: [
