@@ -2,7 +2,7 @@
   <div class="the-default-sidebar border-r border-gray-200">
     <!-- MOBILE -->
     <div class="flex lg:hidden">
-      <u-slideover v-model="sidebar" :side="'left'">
+      <u-slideover :model-value="collapse && !isDesktop" :side="'left'">
         <u-card :ui="cardUI">
           <template #header>
             <div class="flex flex-row justify-between items-center">
@@ -11,7 +11,7 @@
                 color="gray"
                 variant="ghost"
                 icon="i-heroicons-x-mark-20-solid"
-                @click="toggleSidebar"
+                @click="toogleCollapseState()"
               />
             </div>
           </template>
@@ -33,10 +33,10 @@
         class="absolute -right-3 top-[5.5rem] rounded-full z-10"
         color="gray"
         size="xs"
-        @click="onToggleCollapse"
+        @click="toogleCollapseState()"
       />
       <the-workspaces :collapse="collapse" />
-      <the-main-menu class="flex-grow" :collapse="collapse" />
+      <the-main-menu class="flex-grow" />
       <the-profile-menu :collapse="collapse" />
     </div>
   </div>
@@ -44,23 +44,25 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
-import { useApplicationStore } from '@/store/application'
-import TheMainMenu from '@/layouts/_partials/v2/the-main-menu.vue'
-import TheWorkspaces from '@/layouts/_partials/v2/the-workspaces.vue'
-import TheProfileMenu from '@/layouts/_partials/v2/the-profile-menu.vue'
+import { useSidebarStore } from '@/store/sidebar'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import TheMainMenu from '@/components/layouts/v2/the-main-menu.vue'
+import TheWorkspaces from '@/components/layouts/v2/the-workspaces.vue'
+import TheProfileMenu from '@/components/layouts/v2/the-profile-menu.vue'
 
-const { sidebar } = storeToRefs(useApplicationStore())
-const { toggleSidebar } = useApplicationStore()
+const { collapse } = storeToRefs(useSidebarStore())
 
-const collapse = ref(false)
+const { toogleCollapseState } = useSidebarStore()
 
 const desktopWidthCollapse = computed(() => {
   return collapse.value ? 'w-20' : 'min-w-64'
 })
 
-function onToggleCollapse() {
-  collapse.value = !collapse.value
-}
+// breakpoint
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const isDesktop = computed(() => {
+  return breakpoints.greaterOrEqual('lg').value
+})
 
 // ui config
 const cardUI = {

@@ -2,7 +2,7 @@
   <u-container :ui="containerUI" class="border-b">
     <div class="the-default-header flex flex-row justify-start items-stretch gap-2">
       <div class="lg:hidden flex justify-start items-center">
-        <u-button color="gray" variant="ghost" icon="i-heroicons-bars-3" size="md" @click="toggleSidebar" />
+        <u-button color="gray" variant="ghost" icon="i-heroicons-bars-3" size="md" @click="toogleCollapseState" />
       </div>
       <div class="flex-grow flex justify-start items-center">
         <the-extra-search class="w-full md:w-1/2 relative" />
@@ -17,16 +17,16 @@
 </template>
 
 <script lang="ts" setup>
-import { useApplicationStore } from '@/store/application'
-import TheLocale from '@/layouts/_partials/the-locale.vue'
-import TheProfile from '@/layouts/_partials/the-profile.vue'
-import TheNotification from '@/layouts/_partials/the-notification.vue'
-import TheExtraSearch from '@/layouts/_partials/the-extra-search.vue'
+import { useSidebarStore } from '@/store/sidebar'
+import TheLocale from '@/components/layouts/the-locale.vue'
+import TheProfile from '@/components/layouts/the-profile.vue'
+import TheNotification from '@/components/layouts/the-notification.vue'
+import TheExtraSearch from '@/components/layouts/the-extra-search.vue'
 const containerUI = {
   base: '',
   padding: 'p-3 sm:px-4 lg:px-4',
   constrained: ''
 }
 
-const { toggleSidebar } = useApplicationStore()
+const { toogleCollapseState } = useSidebarStore()
 </script>

@@ -19,20 +19,14 @@
       </div>
     </template>
     <template #badge>
-      <u-button
-        v-if="!collapse"
-        color="white"
-        size="2xs"
-        variant="ghost"
-        trailing-icon="i-heroicons-chevron-right-20-solid"
-        class="ease-linear duration-300"
-      />
+      <the-setting-menu />
     </template>
   </u-vertical-navigation>
 </template>
 
 <script lang="ts" setup>
-const props = withDefaults(
+import TheSettingMenu from '@/components/layouts/the-setting-menu.vue'
+withDefaults(
   defineProps<{
     collapse: boolean;
   }>(),

@@ -18,7 +18,8 @@
     <template #badge>
       <u-dropdown v-if="!collapse" :items="items" :popper="{ placement: 'bottom-start' }" class=" ease-linear duration-300">
         <u-button
-          color="white"
+          variant="outline"
+          color="gray"
           size="2xs"
           trailing-icon="i-heroicons-chevron-down-20-solid"
         />
@@ -54,43 +55,42 @@ const links = [
 const items = [
   [
     {
-      label: 'Profile',
-      avatar: {
-        src: 'https://avatars.githubusercontent.com/u/739984?v=4'
+      label: 'Signup new workspace',
+      icon: 'i-heroicons-plus',
+      shortcuts: ['N'],
+      click: () => {
+        console.log('Edit')
       }
     }
   ],
   [
     {
-      label: 'Edit',
-      icon: 'i-heroicons-pencil-square-20-solid',
-      shortcuts: ['E'],
+      label: 'Ardex Workspace',
+      icon: 'i-heroicons-briefcase',
       click: () => {
         console.log('Edit')
       }
     },
     {
-      label: 'Duplicate',
-      icon: 'i-heroicons-document-duplicate-20-solid',
-      shortcuts: ['D'],
-      disabled: true
-    }
-  ],
-  [
-    {
-      label: 'Archive',
-      icon: 'i-heroicons-archive-box-20-solid'
+      label: 'Sam Workspace',
+      icon: 'i-heroicons-briefcase',
+      click: () => {
+        console.log('Edit')
+      }
     },
     {
-      label: 'Move',
-      icon: 'i-heroicons-arrow-right-circle-20-solid'
-    }
-  ],
-  [
+      label: 'Miguel Workspace',
+      icon: 'i-heroicons-briefcase',
+      click: () => {
+        console.log('Edit')
+      }
+    },
     {
-      label: 'Delete',
-      icon: 'i-heroicons-trash-20-solid',
-      shortcuts: ['⌘', 'D']
+      label: 'Ardex Workspace 02',
+      icon: 'i-heroicons-briefcase',
+      click: () => {
+        console.log('Edit')
+      }
     }
   ]
 ]

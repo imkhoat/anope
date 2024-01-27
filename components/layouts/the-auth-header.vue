@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import TheLogo from '@/layouts/_partials/the-logo.vue'
+import TheLogo from '@/components/layouts/the-logo.vue'
 
 const containerUI = {
   base: '',
