@@ -55,7 +55,6 @@ export default defineNuxtConfig({
       password: process.env.NUXT_SESSION_PASSWORD
     }
   },
-
   devtools: {
     enabled: true
   }

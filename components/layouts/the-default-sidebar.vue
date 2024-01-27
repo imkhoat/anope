@@ -57,16 +57,16 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
-import TheMenu from '@/layouts/_partials/the-menu.vue'
-import TheLogo from '@/layouts/_partials/the-logo.vue'
+import TheMenu from '@/components/layouts/the-menu.vue'
+import TheLogo from '@/components/layouts/the-logo.vue'
 import { useApplicationStore } from '@/store/application'
 import UListItem from '@/components/bases/u-list/u-list-item.vue'
-import TheSupportCard from '@/layouts/_partials/the-support-card.vue'
-import TheSettingMenu from '@/layouts/_partials/the-setting-menu.vue'
+import TheSupportCard from '@/components/layouts/the-support-card.vue'
+import TheSettingMenu from '@/components/layouts/the-setting-menu.vue'
 
 const { sidebar } = storeToRefs(useApplicationStore())
 const { toggleSidebar } = useApplicationStore()
-const collapse = ref(true)
+const collapse = ref(false)
 
 const cardUI = {
   shadow: '',

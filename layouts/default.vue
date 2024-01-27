@@ -15,8 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-import TheDefaultHeader from '@/layouts/_partials/the-default-header.vue'
-import TheDefaultSidebar from '@/layouts/_partials/the-default-sidebar.vue'
+import TheDefaultHeader from '@/components/layouts/the-default-header.vue'
+import TheDefaultSidebar from '@/components/layouts/v2/the-default-sidebar.vue'
 
 const containerUI = {
   base: '',

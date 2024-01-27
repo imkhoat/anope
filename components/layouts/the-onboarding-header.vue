@@ -13,10 +13,10 @@
 </template>
 
 <script lang="ts" setup>
-import TheLogo from '@/layouts/_partials/the-logo.vue'
-import TheLocale from '@/layouts/_partials/the-locale.vue'
-import TheProfile from '@/layouts/_partials/the-profile.vue'
-import TheNotification from '@/layouts/_partials/the-notification.vue'
+import TheLogo from '@/components/layouts/the-logo.vue'
+import TheLocale from '@/components/layouts/the-locale.vue'
+import TheProfile from '@/components/layouts/the-profile.vue'
+import TheNotification from '@/components/layouts/the-notification.vue'
 
 const containerUI = {
   base: '',

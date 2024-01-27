@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import TheAuthHeader from '@/layouts/_partials/the-auth-header.vue'
+import TheAuthHeader from '@/components/layouts/the-auth-header.vue'
 </script>
 
 <style>
