@@ -41,7 +41,7 @@
     "@vueuse/nuxt": "^10.5.0",
     "eslint": "^8.50.0",
     "happy-dom": "^13.0.6",
-    "nuxt": "^3.9.1",
+    "nuxt": "^3.9.3",
     "nuxt-auth-utils": "^0.0.8",
     "playwright-core": "^1.40.1",
     "prettier": "^3.0.3",
