@@ -66,7 +66,7 @@ import TheSettingMenu from '@/layouts/_partials/the-setting-menu.vue'
 
 const { sidebar } = storeToRefs(useApplicationStore())
 const { toggleSidebar } = useApplicationStore()
-const collapse = ref(true)
+const collapse = ref(false)
 
 const cardUI = {
   shadow: '',

@@ -1,8 +1,8 @@
 <template>
   <u-container :ui="containerUI" class="border-b">
-    <div class="the-default-header flex flex-row justify-start items-stretch">
-      <div class="md:hidden flex justify-start items-center">
-        <u-button color="gray" variant="ghost" icon="i-heroicons-bars-3" @click="toggleSidebar" />
+    <div class="the-default-header flex flex-row justify-start items-stretch gap-2">
+      <div class="lg:hidden flex justify-start items-center">
+        <u-button color="gray" variant="ghost" icon="i-heroicons-bars-3" size="md" @click="toggleSidebar" />
       </div>
       <div class="flex-grow flex justify-start items-center">
         <the-extra-search class="w-full md:w-1/2 relative" />
@@ -24,7 +24,7 @@ import TheNotification from '@/layouts/_partials/the-notification.vue'
 import TheExtraSearch from '@/layouts/_partials/the-extra-search.vue'
 const containerUI = {
   base: '',
-  padding: 'p-2 sm:px-4 lg:px-4',
+  padding: 'p-3 sm:px-4 lg:px-4',
   constrained: ''
 }
 
