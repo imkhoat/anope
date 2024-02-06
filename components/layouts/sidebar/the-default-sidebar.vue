@@ -17,7 +17,7 @@
           </template>
           <the-main-menu class="flex-grow" :collapse="false" />
           <template #footer>
-            <the-profile-menu :collapse="false" />
+            <the-profile :collapse="false" />
           </template>
         </u-card>
       </u-slideover>
@@ -45,10 +45,10 @@
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
 import { useSidebarStore } from '@/store/sidebar'
-import TheProfile from '@/components/layouts/v2/the-profile.vue'
+import TheProfile from '@/components/layouts/sidebar/the-profile.vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import TheMainMenu from '@/components/layouts/v2/the-main-menu.vue'
-import TheWorkspaces from '@/components/layouts/v2/the-workspaces.vue'
+import TheMainMenu from '@/components/layouts/sidebar/the-main-menu.vue'
+import TheWorkspaces from '@/components/layouts/sidebar/the-workspaces.vue'
 
 const { collapse } = storeToRefs(useSidebarStore())
 

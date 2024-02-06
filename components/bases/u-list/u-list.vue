@@ -16,6 +16,7 @@
 <script lang="ts" setup>
 import { twJoin } from 'tailwind-merge'
 import type { List } from '@/types/components/u-list'
+import type { ListItem } from '@/types/components/u-list-item'
 import UListItem from '@/components/bases/u-list/u-list-item.vue'
 
 // props & emits
@@ -23,12 +24,8 @@ const props = withDefaults(defineProps<List>(), {
   as: 'div'
 })
 
-defineEmits<{
-  (event: 'update:modelValue', item: string | object | undefined): () => void;
-}>()
-
 // computed
-const activeItem = defineModel()
+const activeItem = defineModel<ListItem>()
 
 const collapseClass = computed(() => {
   return props.collapse ? 'w-fit' : 'w-full'

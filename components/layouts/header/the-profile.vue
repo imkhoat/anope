@@ -18,7 +18,7 @@ const items = [
   [
     {
       label: 'Workspace miguel',
-      icon: 'i-heroicons-briefcase-20-solid',
+      icon: 'i-heroicons-briefcase',
       shortcuts: ['1'],
       click: () => {
         console.log('Edit')
@@ -26,7 +26,7 @@ const items = [
     },
     {
       label: 'Workspace manipute',
-      icon: 'i-heroicons-briefcase-20-solid',
+      icon: 'i-heroicons-briefcase',
       shortcuts: ['2'],
       disabled: true
     }
@@ -34,17 +34,17 @@ const items = [
   [
     {
       label: 'Setting',
-      icon: 'i-heroicons-cog-8-tooth-20-solid'
+      icon: 'i-heroicons-cog-8-tooth'
     },
     {
       label: 'Security',
-      icon: 'i-heroicons-shield-check-20-solid'
+      icon: 'i-heroicons-shield-check'
     }
   ],
   [
     {
       label: 'Logout',
-      icon: 'i-heroicons-arrow-left-circle-20-solid',
+      icon: 'i-heroicons-arrow-left-circle',
       click: () => {
         onLogout()
       }

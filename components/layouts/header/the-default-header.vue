@@ -19,9 +19,9 @@
 <script lang="ts" setup>
 import { useSidebarStore } from '@/store/sidebar'
 import TheLocale from '@/components/layouts/the-locale.vue'
-import TheProfile from '@/components/layouts/the-profile.vue'
+import TheProfile from '@/components/layouts/header/the-profile.vue'
 import TheNotification from '@/components/layouts/the-notification.vue'
-import TheExtraSearch from '@/components/layouts/the-extra-search.vue'
+import TheExtraSearch from '@/components/layouts/header/the-extra-search.vue'
 const containerUI = {
   base: '',
   padding: 'p-3 sm:px-4 lg:px-4',

@@ -26,7 +26,7 @@
 
 <script lang="ts" setup>
 import TheWorkspaceMenu from './the-workspace-menu.vue'
-const props = withDefaults(
+withDefaults(
   defineProps<{
     collapse: boolean;
   }>(),
