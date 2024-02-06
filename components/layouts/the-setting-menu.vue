@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { useAuthStore } from '@/store/auth'
 
+defineProps<{
+  collapse: boolean
+}>()
 const emits = defineEmits<{
   (event: 'click'): () => void;
 }>()
@@ -91,7 +94,7 @@ const items = [
 </script>
 
 <template>
-  <u-dropdown :items="items" :popper="{ placement: 'right-end' }">
+  <u-dropdown v-if="!collapse" :items="items" :popper="{ placement: 'right-end' }">
     <u-button
       variant="outline"
       size="2xs"
