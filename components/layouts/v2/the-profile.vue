@@ -19,7 +19,7 @@
       </div>
     </template>
     <template #badge>
-      <the-setting-menu />
+      <the-setting-menu :collapse="collapse" />
     </template>
   </u-vertical-navigation>
 </template>

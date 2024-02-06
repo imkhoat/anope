@@ -6,7 +6,10 @@
       </u-avatar>
     </template>
     <template #default="{ link }">
-      <div v-if="!collapse" class="ease-linear duration-300 flex-grow flex flex-col justify-start items-stretch text-left whitespace-nowrap">
+      <div
+        v-if="!collapse"
+        class="ease-linear duration-300 flex-grow flex flex-col justify-start items-stretch text-left whitespace-nowrap"
+      >
         <h1 class="group-hover:text-gray-900 text-gray-900 relative">
           {{ link.label }}
         </h1>
@@ -16,19 +19,13 @@
       </div>
     </template>
     <template #badge>
-      <u-dropdown v-if="!collapse" :items="items" :popper="{ placement: 'bottom-start' }" class=" ease-linear duration-300">
-        <u-button
-          variant="outline"
-          color="gray"
-          size="2xs"
-          trailing-icon="i-heroicons-chevron-down-20-solid"
-        />
-      </u-dropdown>
+      <the-workspace-menu :collapse="collapse" />
     </template>
   </u-vertical-navigation>
 </template>
 
 <script lang="ts" setup>
+import TheWorkspaceMenu from './the-workspace-menu.vue'
 const props = withDefaults(
   defineProps<{
     collapse: boolean;
@@ -49,48 +46,6 @@ const links = [
         alt: ''
       },
       value: 'DASHBOARD'
-    }
-  ]
-]
-const items = [
-  [
-    {
-      label: 'Signup new workspace',
-      icon: 'i-heroicons-plus',
-      shortcuts: ['N'],
-      click: () => {
-        console.log('Edit')
-      }
-    }
-  ],
-  [
-    {
-      label: 'Ardex Workspace',
-      icon: 'i-heroicons-briefcase',
-      click: () => {
-        console.log('Edit')
-      }
-    },
-    {
-      label: 'Sam Workspace',
-      icon: 'i-heroicons-briefcase',
-      click: () => {
-        console.log('Edit')
-      }
-    },
-    {
-      label: 'Miguel Workspace',
-      icon: 'i-heroicons-briefcase',
-      click: () => {
-        console.log('Edit')
-      }
-    },
-    {
-      label: 'Ardex Workspace 02',
-      icon: 'i-heroicons-briefcase',
-      click: () => {
-        console.log('Edit')
-      }
     }
   ]
 ]

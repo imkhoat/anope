@@ -1,14 +1,34 @@
 <template>
   <div class="the-menu">
-    <u-vertical-navigation :links="menus" :ui="mainVerticalUI" />
+    <u-vertical-navigation :links="collapsedMenus" :ui="mainVerticalUI" />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
 import { useSidebarStore } from '@/store/sidebar'
+import type { VerticalNavigationLink } from '@nuxt/ui/dist/runtime/types'
 
+const props = withDefaults(
+  defineProps<{
+    collapse: boolean;
+  }>(),
+  {
+    collapse: false
+  }
+)
 const { menus } = storeToRefs(useSidebarStore())
+
+const collapsedMenus = computed(() => {
+  return props.collapse ? menus.value.map(menu => {
+    return menu.map(item => {
+      return {
+        icon: item.icon,
+        to: item.to
+      }
+    })
+  }) as VerticalNavigationLink[][] : menus.value
+})
 
 // Vertical navigation config
 const mainVerticalUI = {

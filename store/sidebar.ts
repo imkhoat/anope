@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useSidebarStore = defineStore('application', () => {
+export const useSidebarStore = defineStore('sidebar', () => {
   const _menus = ref(
     [
       [
@@ -97,7 +97,7 @@ export const useSidebarStore = defineStore('application', () => {
         {
           label: 'Support',
           to: '/Support',
-          icon: 'i-heroicons-lifeboy',
+          icon: 'i-heroicons-shield-check',
           value: 'REPORTS'
         }
       ]
