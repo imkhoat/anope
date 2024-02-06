@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import TheLogo from '@/components/layouts/the-logo.vue'
 import TheLocale from '@/components/layouts/the-locale.vue'
-import TheProfile from '@/components/layouts/the-profile.vue'
+import TheProfile from '@/components/layouts/header/the-profile.vue'
 import TheNotification from '@/components/layouts/the-notification.vue'
 
 const containerUI = {

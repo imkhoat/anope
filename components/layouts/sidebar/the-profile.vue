@@ -19,13 +19,13 @@
       </div>
     </template>
     <template #badge>
-      <the-setting-menu :collapse="collapse" />
+      <the-profile-menu :collapse="collapse" />
     </template>
   </u-vertical-navigation>
 </template>
 
 <script lang="ts" setup>
-import TheSettingMenu from '@/components/layouts/the-setting-menu.vue'
+import TheProfileMenu from '@/components/layouts/sidebar/the-profile-menu.vue'
 withDefaults(
   defineProps<{
     collapse: boolean;

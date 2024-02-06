@@ -96,7 +96,7 @@ const items = [
 <template>
   <u-dropdown v-if="!collapse" :items="items" :popper="{ placement: 'right-end' }">
     <u-button
-      variant="outline"
+      variant="ghost"
       size="2xs"
       color="gray"
       icon="i-heroicons-cog-8-tooth"

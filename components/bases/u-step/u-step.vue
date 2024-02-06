@@ -6,7 +6,7 @@
     <div :class="stepItemWrapperClass">
       <div v-for="(item, index) in items" :key="index + '__u-step-item'" @click="onSelectStepItem(item?.value)">
         <slot name="item" :item="item">
-          <u-step-item
+          <u-step-item-com
             v-bind="item"
             :collapse="collapse"
             :orientation="orientation"
@@ -25,7 +25,8 @@
 <script lang="ts" setup>
 import { twJoin } from 'tailwind-merge'
 import type { UStep } from '@/types/components/u-step'
-import UStepItem from '@/components/bases/u-step/u-step-item.vue'
+import type { UStepItem } from '@/types/components/u-step-item'
+import UStepItemCom from '@/components/bases/u-step/u-step-item.vue'
 
 // props & emits
 const props = withDefaults(defineProps<UStep>(), {
@@ -33,7 +34,6 @@ const props = withDefaults(defineProps<UStep>(), {
   orientation: 'horizontal'
 })
 const emits = defineEmits<{
-  (event: 'update:modelValue', item: string | object | undefined): () => void,
   (event: 'next'): () => void,
   (event: 'prev'): () => void
 }>()
@@ -42,7 +42,7 @@ const emits = defineEmits<{
 const isHorizontal = computed(() => {
   return props.orientation === 'horizontal'
 })
-const currentStep = defineModel()
+const currentStep = defineModel<UStepItem>()
 
 const currentStepIndex = computed(() => {
   if (!props.items) {
