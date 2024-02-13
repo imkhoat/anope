@@ -42,10 +42,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useModal } from '#imports'
+import { useModal } from '@/composables/useModal'
 import uPageMenu from '@/components/bases/u-page/u-page-menu.vue'
-import UWavesAvatar from '@/components/bases/u-avatar/u-waves-avatar.vue'
 import UModalCrud from '@/components/bases/u-modal/u-modal-crud.vue'
+import UWavesAvatar from '@/components/bases/u-avatar/u-waves-avatar.vue'
 import type { VerticalNavigationLink } from '@nuxt/ui/dist/runtime/types'
 
 const { modal, hide } = useModal()
