@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useModal } from '#imports'
+import { useModal } from '@/composables/useModal'
 import UPage from '@/components/bases/u-page/u-page.vue'
 import { workspaceSettingsUsersManagementInjectionKey } from '@/utils/keys'
 import { useUserManagement } from '@/pages/workspace/_composables/useUserManagement'
