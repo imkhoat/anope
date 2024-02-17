@@ -76,7 +76,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 ## Todo list
 
- - [ ] Update new sidebar system
+ - [x] Update new sidebar system
  - [ ] Work with API (config, mockdata)
  - [ ] Authorization
  - [ ] Error handling
