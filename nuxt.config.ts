@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     preference: 'light'
   },
 
+  components: {
+    dirs: []
+  },
+
   vite: {
     vue: {
       script: {
@@ -23,7 +27,9 @@ export default defineNuxtConfig({
   },
 
   modules: ['nuxt-auth-utils', '@pinia/nuxt', '@nuxt/ui', '@nuxtjs/i18n', '@nuxtjs/storybook', '@nuxt/image', '@pinia/nuxt', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@nuxt/image', '@nuxt/test-utils/module'],
-
+  ui: {
+    icons: ['mdi', 'tabler']
+  },
   i18n: {
     locales: [
       { code: 'vi', name: 'Tiếng Viêt', iso: 'vi-VN', file: 'vi.json' },

@@ -3,7 +3,7 @@
     <u-form :state="state" class="flex flex-col justify-start items-stretch gap-y-8">
       <div class="flex flex-col gap-y-1">
         <u-avatar size="lg" class="bg-primary-100 border-8 border-primary-50">
-          <u-icon size="xl" name="i-heroicons-shield-exclamation-20-solid" class="text-primary-500" />
+          <u-icon name="i-heroicons-shield-exclamation-20-solid" class="text-primary-500 w-6 h-6" />
         </u-avatar>
         <h6 class="font-semibold text-xl leading-0">
           Reset password!

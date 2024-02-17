@@ -2,7 +2,7 @@
   <u-card>
     <div class="flex flex-row justify-between items-stretch">
       <div class="flex flex-col justify-start items-start gap-y-1">
-        <u-waves-avatar size="lg" icon="i-heroicons-briefcase-20-solid" class="relative -top-4 -left-4" color="gray" />
+        <u-waves-avatar size="lg" icon="i-heroicons-briefcase" class="relative -top-4 -left-4" color="gray" />
         <strong class="text-base font-semibold">{{ workspaceName }}</strong>
         <span class="text-sm text-gray-600">Create by miguel_bui <span class="opacity-10">|</span> 19th Dec, 2023</span>
       </div>

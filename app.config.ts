@@ -1,6 +1,5 @@
 export default defineAppConfig({
     ui: {
-      strategy: 'override',
       primary: 'emerald',
       gray: 'cool',
       colors: ['error', 'warning', 'info', 'success'],
@@ -18,6 +17,9 @@ export default defineAppConfig({
       },
       modal: {
         rounded: 'rounded-2xl'
+      },
+      icons: {
+        dynamic: true
       }
     }
   })
