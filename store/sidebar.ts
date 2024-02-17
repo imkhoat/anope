@@ -6,67 +6,67 @@ export const useSidebarStore = defineStore('sidebar', () => {
       [
         {
           label: 'Dashboard',
-          to: '/Dashboard',
+          to: '/dashboard',
           icon: 'i-heroicons-academic-cap',
           badge: '10',
           value: 'DASHBOARD'
         },
         {
           label: 'Calendar',
-          to: '/Team',
+          to: '/calendar',
           icon: 'i-heroicons-calendar-days',
           value: 'TEAM'
         },
         {
           label: 'Horses',
-          to: '/Projects',
+          to: '/horses',
           icon: 'i-heroicons-arrow-path-rounded-square',
           value: 'PROJECTS'
         },
         {
           label: 'Contacts',
-          to: '/Calendar',
+          to: '/contacts',
           icon: 'i-heroicons-inbox-stack',
           value: 'CALENDAR'
         },
         {
           label: 'Locations and Maps',
-          to: '/Documents',
+          to: '/location-and-maps',
           icon: 'i-heroicons-map-pin',
           value: 'DOCUMENTS'
         },
         {
           label: 'Financials',
-          to: '/Reports',
+          to: '/financials',
           icon: 'i-heroicons-credit-card',
           value: 'REPORTS'
         },
         {
           label: 'Communications',
-          to: '/Projects',
+          to: '/communications',
           icon: 'i-heroicons-chat-bubble-left-right',
           childs: [
             {
               label: 'Website redesign',
-              to: '/WebsiteRedesign',
+              to: '/website-redesign',
               icon: 'i-heroicons-home-modern',
               value: 'WEBSITE_REDESIGN'
             },
             {
               label: 'GraphQL API',
-              to: '/GraphQLAPI',
+              to: '/graphql-api',
               icon: 'i-heroicons-gift',
               value: 'GRAPHQL_API'
             },
             {
               label: 'Customer migration guides',
-              to: '/CustomerMigrationGuides',
+              to: '/customer-migration-guides',
               icon: 'i-heroicons-film',
               value: 'CUSTOMERMIGRATION'
             },
             {
               label: 'Profit sharing program',
-              to: '/Profitsharingprogram',
+              to: '/profit-sharing-program',
               icon: 'i-heroicons-envelope-open',
               value: 'PROFITSHARING'
             }
@@ -76,13 +76,13 @@ export const useSidebarStore = defineStore('sidebar', () => {
       [
         {
           label: 'Completition',
-          to: '/Reports',
+          to: '/completition',
           icon: 'i-heroicons-cpu-chip',
           value: 'REPORTS'
         },
         {
           label: 'Training',
-          to: '/Reports',
+          to: '/training',
           icon: 'i-heroicons-bookmark-square',
           value: 'REPORTS'
         }
@@ -96,7 +96,7 @@ export const useSidebarStore = defineStore('sidebar', () => {
         },
         {
           label: 'Support',
-          to: '/Support',
+          to: '/support',
           icon: 'i-heroicons-shield-check',
           value: 'REPORTS'
         }

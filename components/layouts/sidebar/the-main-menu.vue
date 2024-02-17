@@ -20,14 +20,16 @@ const props = withDefaults(
 const { menus } = storeToRefs(useSidebarStore())
 
 const collapsedMenus = computed(() => {
-  return props.collapse ? menus.value.map(menu => {
-    return menu.map(item => {
-      return {
-        icon: item.icon,
-        to: item.to
-      }
-    })
-  }) as VerticalNavigationLink[][] : menus.value
+  return props.collapse
+    ? (menus.value.map((menu) => {
+      return menu.map((item) => {
+        return {
+          icon: item.icon,
+          to: item.to
+        }
+      })
+    }) as VerticalNavigationLink[][])
+    : menus.value
 })
 
 // Vertical navigation config
@@ -39,10 +41,10 @@ const mainVerticalUI = {
   inactive:
     'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:before:bg-gray-50 dark:hover:before:bg-gray-800/50',
   icon: {
-    base: 'flex-shrink-0 w-5 h-5 font-bold ml-2',
+    base: 'flex-shrink-0 w-5 h-5 font-bold ml-2 relative',
     active: 'text-gray-700 dark:text-gray-200',
     inactive:
-      'text-gray-600 dark:text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-200'
+      'text-gray-600 dark:text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-800'
   }
 }
 </script>

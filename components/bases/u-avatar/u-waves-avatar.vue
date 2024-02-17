@@ -3,7 +3,7 @@
     <u-avatar :size="sizeConfig[size].secondRing" :class="iconClass.secondRing">
       <u-avatar :size="sizeConfig[size].thirdRing" :ui="avatarUI">
         <slot>
-          <u-icon v-if="icon" :size="sizeConfig[size].icon" :name="icon" :class="iconClass.icon" />
+          <u-icon v-if="icon" :name="icon" :class="iconClass.icon" />
         </slot>
       </u-avatar>
     </u-avatar>
@@ -30,7 +30,7 @@ const iconClass = computed(() => {
     firstRing: 'ring-1 ring-gray-50 bg-transparent -mx-5 md:mx-0',
     secondRing: 'ring-1 ring-gray-100 bg-transparent',
     thirdRing: 'ring-1 ring-gray-200 bg-transparent',
-    icon: `text-${props.color}-500`
+    icon: `text-${props.color}-500 ${sizeConfig.value[props.size].icon}`
   }
 })
 
@@ -44,38 +44,38 @@ const sizeConfig = computed<{[key in 'xs' | 'sm' | 'md' | 'lg' | 'xl']: {
   firstRing: AvatarSize,
   secondRing: AvatarSize,
   thirdRing: AvatarSize,
-  icon: AvatarSize
+  icon: String
 }}>(() => {
   return {
     xs: {
       firstRing: 'lg',
       secondRing: 'md',
       thirdRing: 'xs',
-      icon: 'md'
+      icon: 'w-6 h-6'
     },
     sm: {
       firstRing: '2xl',
       secondRing: 'lg',
       thirdRing: 'sm',
-      icon: 'md'
+      icon: 'w-6 h-6'
     },
     md: {
       firstRing: '3xl',
       secondRing: 'xl',
       thirdRing: 'md',
-      icon: 'lg'
+      icon: 'w-8 h-8'
     },
     lg: {
       firstRing: '3xl',
       secondRing: '2xl',
       thirdRing: 'lg',
-      icon: 'xl'
+      icon: 'w-8 h-8'
     },
     xl: {
       firstRing: '3xl',
       secondRing: '2xl',
       thirdRing: 'lg',
-      icon: '2xl'
+      icon: 'w-12 h-12'
     }
   }
 })
