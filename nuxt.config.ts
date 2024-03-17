@@ -30,6 +30,10 @@ export default defineNuxtConfig({
   ui: {
     icons: ['mdi', 'tabler']
   },
+  storybook: {
+    url: 'http://localhost:6006',
+    port: 6006
+  },
   i18n: {
     locales: [
       { code: 'vi', name: 'Tiếng Viêt', iso: 'vi-VN', file: 'vi.json' },

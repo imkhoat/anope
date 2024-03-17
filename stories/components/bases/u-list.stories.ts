@@ -2,7 +2,7 @@
 
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import UListItem from '@/components/bases/u-list/u-list-item.vue'
+import UListItem from '~/components/bases/u-list/u-list-item.vue'
 
 const meta: Meta<typeof UListItem> = {
   component: UListItem
