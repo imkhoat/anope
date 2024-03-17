@@ -63,7 +63,7 @@ const sizeConfig = computed<{[key in 'xs' | 'sm' | 'md' | 'lg' | 'xl']: {
       firstRing: '3xl',
       secondRing: 'xl',
       thirdRing: 'md',
-      icon: 'w-8 h-8'
+      icon: 'w-6 h-6'
     },
     lg: {
       firstRing: '3xl',
@@ -75,7 +75,7 @@ const sizeConfig = computed<{[key in 'xs' | 'sm' | 'md' | 'lg' | 'xl']: {
       firstRing: '3xl',
       secondRing: '2xl',
       thirdRing: 'lg',
-      icon: 'w-12 h-12'
+      icon: 'w-10 h-10'
     }
   }
 })
