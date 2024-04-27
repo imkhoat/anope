@@ -1,6 +1,9 @@
 import { defineStore } from 'pinia'
 
 export const useSidebarStore = defineStore('sidebar', () => {
+  const route = useRoute()
+  const localePath = useLocalePath()
+  console.log('useSidebarStore', localePath({ name: 'workspace-id-organisations', params: route.params }))
   const _menus = ref(
     [
       [
@@ -24,8 +27,8 @@ export const useSidebarStore = defineStore('sidebar', () => {
           value: 'PROJECTS'
         },
         {
-          label: 'Contacts',
-          to: '/contacts',
+          label: 'Organisations & Contacts',
+          to: { name: 'workspace-id-organisations', params: route.params },
           icon: 'i-heroicons-inbox-stack',
           value: 'CALENDAR'
         },
