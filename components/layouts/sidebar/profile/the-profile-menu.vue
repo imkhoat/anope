@@ -10,8 +10,8 @@ const emits = defineEmits<{
 
 const route = useRoute()
 const router = useRouter()
-const localePath = useLocalePath()
 const { logout } = useAuthStore()
+const localePath = useLocalePath()
 
 const workspaceId = computed(() => {
   return route.params.id

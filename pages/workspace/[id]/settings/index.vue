@@ -16,6 +16,10 @@
 import UPage from '@/components/bases/u-page/u-page.vue'
 import SettingMenu from '@/pages/workspace/_partials/settings/setting-menu.vue'
 
+definePageMeta({
+  layout: 'workspace'
+})
+
 const menus = ref([
   {
     title: 'Business Information',

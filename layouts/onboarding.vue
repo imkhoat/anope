@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import TheOnboardingHeader from '@/components/layouts/header/the-onboarding-header.vue'
+import TheOnboardingHeader from '@/components/layouts/header/the-header-onboarding.vue'
 
 const containerUI = {
   base: '',

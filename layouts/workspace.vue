@@ -1,6 +1,6 @@
 <template>
   <div class="default-layout font-sans flex flex-row justify-start items-stretch w-screen h-screen max-h-screen">
-    <the-sidebar-default />
+    <the-sidebar-workspace />
     <div class="flex-grow flex flex-col justify-start items-stretch max-h-screen">
       <the-header-default />
       <div class="flex-grow overflow-y-auto bg-white">
@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import TheHeaderDefault from '@/components/layouts/header/the-header-default.vue'
-import TheSidebarDefault from '@/components/layouts/sidebar/the-sidebar-default.vue'
+import TheSidebarWorkspace from '@/components/layouts/sidebar/the-sidebar-workspace.vue'
 
 const containerUI = {
   base: '',

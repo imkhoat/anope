@@ -1,6 +1,6 @@
 <template>
   <div class="auth-layout flex flex-col justify-start items-stretch h-screen w-screen bg-gray-50 max-h-screen">
-    <the-auth-header />
+    <the-header-auth />
     <u-container class="flex justify-center items-start flex-grow w-full">
       <div class="w-full sm:w-96 mt-16">
         <slot />
@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import TheAuthHeader from '@/components/layouts/header/the-auth-header.vue'
+import TheHeaderAuth from '@/components/layouts/header/the-header-auth.vue'
 </script>
 
 <style>
