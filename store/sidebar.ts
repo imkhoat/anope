@@ -1,11 +1,12 @@
+import type { RouteLocationNormalized } from '#vue-router'
 import { defineStore } from 'pinia'
 
 export const useSidebarStore = defineStore('sidebar', () => {
   const route = useRoute()
   const localePath = useLocalePath()
-  console.log('useSidebarStore', localePath({ name: 'workspace-id-organisations', params: route.params }))
-  const _menus = ref(
-    [
+
+  function generateMenus(route: RouteLocationNormalized) {
+    return [
       [
         {
           label: 'Dashboard',
@@ -28,7 +29,7 @@ export const useSidebarStore = defineStore('sidebar', () => {
         },
         {
           label: 'Organisations & Contacts',
-          to: { name: 'workspace-id-organisations', params: route.params },
+          to: localePath({ name: 'workspace-id-organisations', params: { ...route.params } }),
           icon: 'i-heroicons-inbox-stack',
           value: 'CALENDAR'
         },
@@ -105,10 +106,38 @@ export const useSidebarStore = defineStore('sidebar', () => {
         }
       ]
     ]
+  }
+
+  const _defaultMenus = ref(
+    [
+      [
+        {
+          label: 'Home',
+          to: '/',
+          icon: 'i-heroicons-home',
+          value: 'HOME'
+        },
+        {
+          label: 'Add new workspace',
+          to: '/workspace',
+          icon: 'i-heroicons-folder-plus',
+          value: 'WORKSPACE'
+        }
+      ]
+    ]
   )
 
   const menus = computed(() => {
-    return _menus.value.filter(item => {
+    const _menus = generateMenus(route)
+
+    return _menus.filter(item => {
+      // Add authorization logic
+      return true || item
+    })
+  })
+
+  const defaultMenus = computed(() => {
+    return _defaultMenus.value.filter(item => {
       // Add authorization logic
       return true || item
     })
@@ -130,5 +159,5 @@ export const useSidebarStore = defineStore('sidebar', () => {
     }
   }
 
-  return { menus, collapse, toogleCollapseState }
+  return { menus, defaultMenus, collapse, toogleCollapseState }
 })

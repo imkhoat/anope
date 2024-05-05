@@ -15,7 +15,7 @@
               />
             </div>
           </template>
-          <the-main-menu class="flex-grow" :collapse="false" />
+          <the-menu-default class="flex-grow" :collapse="false" />
           <template #footer>
             <the-profile :collapse="false" />
           </template>
@@ -36,7 +36,7 @@
         @click="toogleCollapseState()"
       />
       <the-workspaces :collapse="collapse" />
-      <the-main-menu :collapse="collapse" class="flex-grow" />
+      <the-menu-default :collapse="collapse" class="flex-grow" />
       <the-profile :collapse="collapse" />
     </div>
   </div>
@@ -45,10 +45,10 @@
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
 import { useSidebarStore } from '@/store/sidebar'
-import TheProfile from '@/components/layouts/sidebar/the-profile.vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import TheMainMenu from '@/components/layouts/sidebar/the-main-menu.vue'
-import TheWorkspaces from '@/components/layouts/sidebar/the-workspaces.vue'
+import TheProfile from '@/components/layouts/sidebar/profile/the-profile.vue'
+import TheMenuDefault from '@/components/layouts/sidebar/menu/the-menu-default.vue'
+import TheWorkspaces from '@/components/layouts/sidebar/workspace/the-workspaces.vue'
 
 const { collapse } = storeToRefs(useSidebarStore())
 

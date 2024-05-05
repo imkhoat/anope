@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-import TheProfileMenu from '@/components/layouts/sidebar/the-profile-menu.vue'
+import TheProfileMenu from '@/components/layouts/sidebar/profile/the-profile-menu.vue'
 withDefaults(
   defineProps<{
     collapse: boolean;

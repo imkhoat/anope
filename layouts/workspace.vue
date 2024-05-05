@@ -1,8 +1,8 @@
 <template>
   <div class="default-layout font-sans flex flex-row justify-start items-stretch w-screen h-screen max-h-screen">
-    <the-default-sidebar />
+    <the-sidebar-workspace />
     <div class="flex-grow flex flex-col justify-start items-stretch max-h-screen">
-      <the-default-header />
+      <the-header-default />
       <div class="flex-grow overflow-y-auto bg-white">
         <u-container :ui="containerUI" class="min-w-full min-h-full">
           <div class="w-full h-full">
@@ -15,8 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-import TheDefaultHeader from '@/components/layouts/header/the-default-header.vue'
-import TheDefaultSidebar from '@/components/layouts/sidebar/the-default-sidebar.vue'
+import TheHeaderDefault from '@/components/layouts/header/the-header-default.vue'
+import TheSidebarWorkspace from '@/components/layouts/sidebar/the-sidebar-workspace.vue'
 
 const containerUI = {
   base: '',
