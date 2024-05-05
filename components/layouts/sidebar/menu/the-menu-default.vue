@@ -1,5 +1,5 @@
 <template>
-  <div class="the-main-menu">
+  <div class="the-menu-default">
     <u-vertical-navigation :links="collapsedMenus" :ui="mainVerticalUI" />
   </div>
 </template>

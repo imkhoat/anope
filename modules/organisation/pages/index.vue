@@ -15,13 +15,13 @@
     </template>
     <div class="grid grid-cols-12 gap-4 h-fit">
       <div class="col-span-12 md:col-span-12 lg:col-span-10 row-span-1 grid grid-cols-12 gap-4">
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 row-span-1">
+        <div class="col-span-6 sm:col-span-6 md:col-span-4 row-span-1">
           <organisation-summary-card v-bind="summaryData.totalOrganisations" />
         </div>
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 row-span-1">
+        <div class="col-span-6 sm:col-span-6 md:col-span-4 row-span-1">
           <organisation-summary-card v-bind="summaryData.activeOrganisations" />
         </div>
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 row-span-1">
+        <div class="col-span-6 sm:col-span-6 md:col-span-4 row-span-1">
           <organisation-summary-card v-bind="summaryData.newOrganisations" />
         </div>
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="the-default-sidebar border-r border-gray-200">
+  <div class="the-sidebar-workspace border-r border-gray-200">
     <!-- MOBILE -->
     <div class="flex lg:hidden">
       <u-slideover :model-value="collapse && !isDesktop" :side="'left'">
